@@ -150,12 +150,6 @@
             }
         },
         {
-            "plugin": "nx-oxlint",
-            "options": {
-                "lintTargetName": "lint"
-            }
-        },
-        {
             "plugin": "@nx/oxlint",
             "options": {
                 "targetName": "oxlint"
