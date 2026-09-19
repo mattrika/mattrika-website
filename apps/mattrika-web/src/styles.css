@@ -53,6 +53,10 @@ html {
     scroll-behavior: smooth;
 }
 
+main > section {
+    scroll-margin-top: 5rem;
+}
+
 *,
 html,
 body {

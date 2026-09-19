@@ -13,10 +13,18 @@ export class NavbarComponent {
     mobileOpen = signal(false)
 
     navLinks = [
-        { label: 'Services', href: '#services' },
-        { label: 'Portfolio', href: '#portfolio' },
-        { label: 'Work', href: '#work' },
-        { label: 'Why Us', href: '#why-us' },
-        { label: 'Contact', href: '#contact' },
+        { label: 'Services', id: 'services' },
+        { label: 'Portfolio', id: 'portfolio' },
+        { label: 'Work', id: 'work' },
+        { label: 'Why Us', id: 'why-us' },
+        { label: 'Contact', id: 'contact' },
     ]
+
+    scrollTo(event: Event, id: string) {
+        event.preventDefault()
+        document
+            .getElementById(id)
+            ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        this.mobileOpen.set(false)
+    }
 }

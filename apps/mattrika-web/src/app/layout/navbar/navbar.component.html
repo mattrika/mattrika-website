@@ -4,14 +4,19 @@
     <div
         class="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
     >
-        <a href="#top" class="flex shrink-0 items-center">
+        <a
+            href="#top"
+            class="flex shrink-0 items-center"
+            (click)="scrollTo($event, 'top')"
+        >
             <img src="Mattrika_logo.svg" alt="Mattrika" class="h-9 w-auto" />
         </a>
 
         <nav class="hidden items-center gap-1 md:flex" aria-label="Main">
-            @for (link of navLinks; track link.href) {
+            @for (link of navLinks; track link.id) {
                 <a
-                    [href]="link.href"
+                    [href]="'#' + link.id"
+                    (click)="scrollTo($event, link.id)"
                     class="text-muted-foreground hover:bg-muted hover:text-foreground rounded-md px-3 py-2 text-sm font-medium transition-colors"
                 >
                     {{ link.label }}
@@ -20,7 +25,12 @@
         </nav>
 
         <div class="flex items-center gap-2">
-            <a hlmBtn class="hidden md:inline-flex" href="#contact">
+            <a
+                hlmBtn
+                class="hidden md:inline-flex"
+                href="#contact"
+                (click)="scrollTo($event, 'contact')"
+            >
                 Start a Project
                 <ng-icon name="lucideArrowRight" class="h-4 w-4" />
             </a>
@@ -48,10 +58,10 @@
             aria-label="Mobile"
         >
             <div class="flex flex-col gap-1">
-                @for (link of navLinks; track link.href) {
+                @for (link of navLinks; track link.id) {
                     <a
-                        [href]="link.href"
-                        (click)="mobileOpen.set(false)"
+                        [href]="'#' + link.id"
+                        (click)="scrollTo($event, link.id)"
                         class="text-muted-foreground hover:bg-muted hover:text-foreground rounded-md px-3 py-2.5 text-sm font-medium transition-colors"
                     >
                         {{ link.label }}
@@ -61,7 +71,7 @@
                     hlmBtn
                     class="mt-2"
                     href="#contact"
-                    (click)="mobileOpen.set(false)"
+                    (click)="scrollTo($event, 'contact')"
                 >
                     Start a Project
                     <ng-icon name="lucideArrowRight" class="h-4 w-4" />
