@@ -25,7 +25,7 @@
                 "ssr": {
                     "entry": "apps/mattrika-web/src/server.ts"
                 },
-                "outputMode": "server"
+                "prerender": true
             },
             "configurations": {
                 "production": {
