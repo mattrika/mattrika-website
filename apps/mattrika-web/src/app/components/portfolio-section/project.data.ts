@@ -4,11 +4,11 @@ export const projects: Project[] = [
     {
         title: 'ChainLink Logistics',
         category: 'SaaS Platform',
-        thumbnail: '/portfolio/project-1.svg',
+        thumbnail: 'portfolio/project-1.svg',
         images: [
-            '/portfolio/project-1.svg',
-            '/portfolio/detail-1.svg',
-            '/portfolio/detail-2.svg',
+            'portfolio/project-1.svg',
+            'portfolio/detail-1.svg',
+            'portfolio/detail-2.svg',
         ],
         summary:
             'A dispatch and tracking platform that cut delivery exceptions by 38% for a freight company.',
@@ -22,11 +22,11 @@ export const projects: Project[] = [
     {
         title: 'MedEase Health',
         category: 'Health Platform',
-        thumbnail: '/portfolio/project-2.svg',
+        thumbnail: 'portfolio/project-2.svg',
         images: [
-            '/portfolio/project-2.svg',
-            '/portfolio/detail-2.svg',
-            '/portfolio/detail-1.svg',
+            'portfolio/project-2.svg',
+            'portfolio/detail-2.svg',
+            'portfolio/detail-1.svg',
         ],
         summary:
             'Telehealth booking and records system rolled out across 40+ clinics.',
@@ -40,11 +40,11 @@ export const projects: Project[] = [
     {
         title: 'ShopGrid Commerce',
         category: 'E-commerce',
-        thumbnail: '/portfolio/project-3.svg',
+        thumbnail: 'portfolio/project-3.svg',
         images: [
-            '/portfolio/project-3.svg',
-            '/portfolio/detail-1.svg',
-            '/portfolio/detail-2.svg',
+            'portfolio/project-3.svg',
+            'portfolio/detail-1.svg',
+            'portfolio/detail-2.svg',
         ],
         summary:
             'Headless storefront that lifted checkout conversion by 22% within two months.',
@@ -58,11 +58,11 @@ export const projects: Project[] = [
     {
         title: 'EduFlow Learning',
         category: 'EdTech',
-        thumbnail: '/portfolio/project-4.svg',
+        thumbnail: 'portfolio/project-4.svg',
         images: [
-            '/portfolio/project-4.svg',
-            '/portfolio/detail-1.svg',
-            '/portfolio/detail-2.svg',
+            'portfolio/project-4.svg',
+            'portfolio/detail-1.svg',
+            'portfolio/detail-2.svg',
         ],
         summary:
             'An online academy platform serving 20k+ students with live and recorded classes.',
@@ -76,11 +76,11 @@ export const projects: Project[] = [
     {
         title: 'KiloFit Fitness',
         category: 'Mobile App',
-        thumbnail: '/portfolio/project-5.svg',
+        thumbnail: 'portfolio/project-5.svg',
         images: [
-            '/portfolio/project-5.svg',
-            '/portfolio/detail-2.svg',
-            '/portfolio/detail-1.svg',
+            'portfolio/project-5.svg',
+            'portfolio/detail-2.svg',
+            'portfolio/detail-1.svg',
         ],
         summary:
             'A coaching app with personalized workout plans that grew to 35k monthly actives.',
@@ -94,11 +94,11 @@ export const projects: Project[] = [
     {
         title: 'FinBoard SaaS',
         category: 'Fintech',
-        thumbnail: '/portfolio/project-6.svg',
+        thumbnail: 'portfolio/project-6.svg',
         images: [
-            '/portfolio/project-6.svg',
-            '/portfolio/detail-1.svg',
-            '/portfolio/detail-2.svg',
+            'portfolio/project-6.svg',
+            'portfolio/detail-1.svg',
+            'portfolio/detail-2.svg',
         ],
         summary:
             'A finance dashboard that replaced weekly spreadsheets for 120+ accounting teams.',
