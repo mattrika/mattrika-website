@@ -1,0 +1,71 @@
+<section class="relative overflow-hidden">
+    <div
+        aria-hidden="true"
+        class="bg-brand/15 pointer-events-none absolute -top-40 left-1/2 h-125 w-125 -translate-x-1/2 rounded-full blur-3xl"
+    ></div>
+
+    <div
+        class="mx-auto flex w-full max-w-7xl flex-col items-center px-4 pt-24 pb-16 text-center sm:px-6 sm:pt-32 sm:pb-24 lg:px-8"
+    >
+        <span
+            hlmBadge
+            variant="secondary"
+            class="gap-1.5 rounded-full px-4 py-1.5 text-xs font-medium"
+        >
+            <ng-icon name="lucideSparkles" class="h-3.5 w-3.5" />
+            Software &amp; Web Development Agency
+        </span>
+
+        <h1
+            class="text-foreground mt-6 max-w-4xl text-4xl leading-tight font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl"
+        >
+            We design &amp; build digital products
+            <span
+                class="from-brand via-brand-dark to-brand bg-gradient-to-r bg-clip-text text-transparent"
+            >
+                that people love
+            </span>
+        </h1>
+
+        <p
+            class="text-muted-foreground mt-6 max-w-2xl text-base leading-7 sm:text-lg"
+        >
+            Mattrika is a full-cycle development agency partnering with startups
+            and enterprises to ship fast, scalable web platforms and mobile
+            apps—from first wireframe to global scale.
+        </p>
+
+        <div class="mt-10 flex flex-col items-center gap-3 sm:flex-row">
+            <a hlmBtn size="lg" href="#contact" class="w-full sm:w-auto">
+                Start a Project
+                <ng-icon name="lucideArrowRight" class="h-4 w-4" />
+            </a>
+            <a
+                hlmBtn
+                size="lg"
+                variant="outline"
+                href="#services"
+                class="w-full sm:w-auto"
+            >
+                Explore Services
+            </a>
+        </div>
+
+        <div
+            class="mt-16 grid w-full max-w-4xl grid-cols-2 gap-8 sm:grid-cols-4"
+        >
+            @for (stat of stats; track stat.label) {
+                <div class="flex flex-col items-center gap-1">
+                    <span
+                        class="text-foreground text-2xl font-semibold tracking-tight sm:text-3xl"
+                    >
+                        {{ stat.value }}
+                    </span>
+                    <span class="text-muted-foreground text-sm">
+                        {{ stat.label }}
+                    </span>
+                </div>
+            }
+        </div>
+    </div>
+</section>

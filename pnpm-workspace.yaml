@@ -1,0 +1,17 @@
+allowBuilds:
+    '@parcel/watcher': true
+    '@swc/core': true
+    esbuild: true
+    lefthook: true
+    less: true
+    lmdb: true
+    msgpackr-extract: true
+    nx: true
+    workerd: true
+minimumReleaseAgeExclude:
+    - '@aws-sdk/client-s3@3.1135.0'
+    - '@aws-sdk/s3-request-presigner@3.1135.0'
+    - dotenv@18.0.0
+    - miniflare@5.20260917.0-alpha
+    - prettier@3.9.8
+    - wrangler@4.134.0

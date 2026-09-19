@@ -1,0 +1,72 @@
+<footer class="border-border/70 border-t bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="lg:col-span-2">
+                <div class="flex items-center gap-2.5">
+                    <a href="#top" class="flex shrink-0 items-center">
+                        <img
+                            src="/Mattrika_logo.svg"
+                            alt="Mattrika"
+                            class="h-9 w-auto"
+                        />
+                    </a>
+                </div>
+                <p
+                    class="text-muted-foreground mt-4 max-w-sm text-sm leading-6"
+                >
+                    A software &amp; web development agency helping startups and
+                    enterprises design, build, and scale products people love.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-foreground text-sm font-semibold">Company</h3>
+                <ul class="mt-4 space-y-3">
+                    @for (link of companyLinks; track link.label) {
+                        <li>
+                            <a
+                                [href]="link.href"
+                                class="text-muted-foreground hover:text-foreground inline-flex items-center gap-1 text-sm transition-colors"
+                            >
+                                {{ link.label }}
+                                <ng-icon
+                                    name="lucideArrowUpRight"
+                                    class="h-3.5 w-3.5"
+                                />
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-foreground text-sm font-semibold">Contact</h3>
+                <ul class="text-muted-foreground mt-4 space-y-3 text-sm">
+                    <li class="flex items-center gap-2">
+                        <ng-icon name="lucideMail" class="h-4 w-4" />
+                        info@mattrika.com
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <ng-icon name="lucidePhone" class="h-4 w-4" />
+                        (774) 260-5004, (857) 272-4248
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <ng-icon name="lucideMapPin" class="h-4 w-4" />
+                        Northborough, Massachusetts
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div
+            class="border-border/70 mt-10 flex flex-col items-center justify-between gap-4 border-t pt-6 sm:flex-row"
+        >
+            <p class="text-muted-foreground text-xs">
+                © {{ currentYear }} Mattrika. All rights reserved.
+            </p>
+            <p class="text-muted-foreground text-xs">
+                Crafted with care in Northborough, Massachusetts.
+            </p>
+        </div>
+    </div>
+</footer>

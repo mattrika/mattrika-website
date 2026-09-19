@@ -1,60 +1,43 @@
 {
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
-    "typescript.format.semicolons": "remove",
-    "javascript.format.semicolons": "remove",
-    "prettier.semi": false,
-    "importSorter.importStringConfiguration.hasSemicolon": false,
-    "eslint.options": {
-        "extensions": [".ts", ".html"]
-    },
-    "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "html"],
-    "editor.defaultFormatter": "biomejs.biome",
-    "[javascript]": {
-        "editor.defaultFormatter": "biomejs.biome",
-        "editor.codeActionsOnSave": {
-            "quickfix.biome": "explicit",
-            "source.organizeImports.biome": "explicit"
-        },
-        "editor.formatOnSave": true
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.codeActionsOnSave": {
-            "quickfix.biome": "always",
-            "source.organizeImports.biome": "always"
-        },
-        "editor.formatOnSave": true
-    },
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features",
-        "editor.codeActionsOnSave": {
-            "source.fixAll.eslint": "explicit"
-        },
-        "editor.formatOnSave": false
-    },
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
-    },
-    "[javascript][typescript]": {
-        "editor.codeActionsOnSave": {
-            "quickfix.biome": "explicit",
-            "source.organizeImports.biome": "explicit"
-        }
-    },
+    "angular.enable-strict-mode-prompt": false,
     "angular-schematics.schematicsDefaultOptions": {
         "angular-*": {
             "style": "scss",
             "externalTemplate": true
-        },
-        "angular-component": {
-            "skipChangeDetectionOnPush": true,
-            "ngOnInit": false
-        },
-        "angular-page": {
-            "skipChangeDetectionOnPush": true,
-            "skipNgOnInit": false
+        }
+    },
+    "editor.defaultFormatter": "oxc.oxc-vscode",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.oxlint": "explicit"
+    },
+    "nxConsole.nxWorkspacePath": "",
+    "cSpell.words": ["Alova", "mattrika", "primeng"],
+    "files.associations": {
+        "*.compose.yml": "dockercompose",
+        "*.scss": "tailwindcss",
+        "*.css": "tailwindcss",
+        "*.compose.yaml": "dockercompose"
+    },
+    "html.customData": ["node_modules/angular-three/metadata.json"],
+    "[javascript]": {
+        "editor.defaultFormatter": "oxc.oxc-vscode",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.oxlint": "always"
+        }
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "oxc.oxc-vscode",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.oxlint": "always"
+        }
+    },
+    "[html]": {
+        "editor.defaultFormatter": "oxc.oxc-vscode",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.oxlint": "always"
         }
     }
 }

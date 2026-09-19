@@ -1,0 +1,45 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "rootDir": ".",
+        "sourceMap": true,
+        "declaration": false,
+        "moduleResolution": "bundler",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "esModuleInterop": true,
+        "importHelpers": true,
+        "target": "es2022",
+        "module": "esnext",
+        "lib": ["es2022", "dom"],
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
+        "baseUrl": ".",
+        "paths": {
+            "@mattrika/util": ["libs/util/src/index.ts"],
+            "@spartan-ng/helm/button": ["./libs/ui/button/src/index.ts"],
+            "@spartan-ng/helm/carousel": ["./libs/ui/carousel/src/index.ts"],
+            "@spartan-ng/helm/dialog": ["./libs/ui/dialog/src/index.ts"],
+            "@spartan-ng/helm/table": ["./libs/ui/table/src/index.ts"],
+            "@spartan-ng/helm/avatar": ["./libs/ui/avatar/src/index.ts"],
+            "@spartan-ng/helm/card": ["./libs/ui/card/src/index.ts"],
+            "@spartan-ng/helm/badge": ["./libs/ui/badge/src/index.ts"],
+            "@spartan-ng/helm/separator": ["./libs/ui/separator/src/index.ts"],
+            "@spartan-ng/helm/tabs": ["./libs/ui/tabs/src/index.ts"],
+            "@spartan-ng/helm/utils": ["./libs/ui/utils/src/index.ts"],
+            "@mattrika/common-utils": ["libs/common-utils/src/index.ts"],
+            "@spartan-ng/helm/input": ["./libs/ui/input/src/index.ts"],
+            "@spartan-ng/helm/label": ["./libs/ui/label/src/index.ts"],
+            "@spartan-ng/helm/input-group": [
+                "./libs/ui/input-group/src/index.ts"
+            ],
+            "@spartan-ng/helm/textarea": ["./libs/ui/textarea/src/index.ts"],
+            "@spartan-ng/helm/input-otp": ["./libs/ui/input-otp/src/index.ts"]
+        },
+        "strict": false,
+        "noUncheckedSideEffectImports": false,
+        "types": ["*"],
+        "ignoreDeprecations": "6.0"
+    },
+    "exclude": ["node_modules", "tmp", "plop-templates", "**/*.hbs"]
+}

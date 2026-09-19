@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@import '@angular/cdk/overlay-prebuilt.css';
+@import '@spartan-ng/brain/hlm-tailwind-preset.css';
+
+@import 'tailwindcss';
+
+:root {
+    --radius: 0.625rem;
+
+    --background: #fafafa;
+    --foreground: #111113;
+
+    --card: #ffffff;
+    --card-foreground: #111113;
+
+    --popover: #ffffff;
+    --popover-foreground: #111113;
+
+    --primary: #1aafab;
+    --primary-foreground: #ffffff;
+
+    --secondary: #e6f7f6;
+    --secondary-foreground: #0f766e;
+
+    --muted: #f4f4f5;
+    --muted-foreground: #6b6b73;
+
+    --accent: #e6f7f6;
+    --accent-foreground: #0f766e;
+
+    --destructive: #dc2626;
+    --destructive-foreground: #ffffff;
+
+    --border: #e4e4e7;
+    --input: #e4e4e7;
+    --ring: #1aafab;
+}
+
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+    --color-brand: #1aafab;
+    --color-brand-dark: #159692;
+    --color-brand-foreground: #ffffff;
+    --color-ink: #0c0c0f;
+    --color-ink-soft: #6b6b73;
+    --color-mist: #f4f4f5;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+*,
+html,
+body {
+    font-family: var(--font-sans);
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+body {
+    @apply bg-background text-foreground;
+}

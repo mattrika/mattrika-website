@@ -1,0 +1,25 @@
+{
+    "name": "table",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "libs/ui/table/src",
+    "prefix": "hlm",
+    "tags": [],
+    "projectType": "library",
+    "targets": {
+        "build": {
+            "executor": "@nx/angular:ng-packagr-lite",
+            "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+            "options": {
+                "project": "libs/ui/table/ng-package.json",
+                "tsConfig": "libs/ui/table/tsconfig.lib.json"
+            },
+            "configurations": {
+                "production": {
+                    "tsConfig": "libs/ui/table/tsconfig.lib.prod.json"
+                },
+                "development": {}
+            },
+            "defaultConfiguration": "production"
+        }
+    }
+}

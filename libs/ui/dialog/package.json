@@ -1,0 +1,10 @@
+{
+    "name": "@spartan-ng/helm/dialog",
+    "version": "0.0.1",
+    "private": true,
+    "sideEffects": false,
+    "peerDependencies": {
+        "@angular/common": "^22.1.0",
+        "@angular/core": "^22.1.0"
+    }
+}

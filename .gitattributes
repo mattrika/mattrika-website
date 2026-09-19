@@ -1,0 +1,11 @@
+# Set all files to use LF line endings by default
+* text=auto eol=lf
+
+# Explicitly handle specific file types if needed
+*.sh text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.json text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.md text eol=lf

@@ -3,20 +3,12 @@ root = true
 
 [*]
 charset = utf-8
-end_of_line = lf
-indent_size = 4
 indent_style = space
+indent_size = 4
 insert_final_newline = true
 trim_trailing_whitespace = true
+tab_width = 4
 
-[*.ts]
-quote_type = single
-
-[{*.json,*.yml}]
-indent_style = space
-
-[{*.md,*.markdown}]
+[*.md]
+max_line_length = off
 trim_trailing_whitespace = false
-
-[{package.json,package-lock.json}]
-indent_size = 2
