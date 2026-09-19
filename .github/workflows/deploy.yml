@@ -46,7 +46,7 @@ jobs:
         run: cp dist/apps/mattrika-web/browser/index.html dist/apps/mattrika-web/browser/404.html
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v7
+        uses: actions/upload-pages-artifact@v6
         with:
           path: 'dist/apps/mattrika-web/browser'
 
