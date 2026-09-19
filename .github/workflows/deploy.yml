@@ -42,7 +42,7 @@ jobs:
         run: pnpm exec nx build mattrika-web --configuration=production --base-href=/mattrika-website/
 
       - name: Add 404.html for Angular SPA Routing
-        run: cp dist/apps/mattrika-web/browser/index.html dist/apps/mattrika-web/browser/404.html
+        run: cp dist/apps/mattrika-web/browser/index.csr.html dist/apps/mattrika-web/browser/404.html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
