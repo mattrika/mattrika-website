@@ -1,6 +1,7 @@
 import { Component, signal, ChangeDetectionStrategy } from '@angular/core'
 import { NgIcon } from '@ng-icons/core'
 import { HlmButtonImports } from '@spartan-ng/helm/button'
+import { GET_IN_TOUCH_TEXT } from '../../models/constants'
 
 @Component({
     selector: 'app-navbar',
@@ -19,6 +20,8 @@ export class NavbarComponent {
         { label: 'Why Us', id: 'why-us' },
         { label: 'Contact', id: 'contact' },
     ]
+
+    getInTouchText = GET_IN_TOUCH_TEXT
 
     scrollTo(event: Event, id: string) {
         event.preventDefault()
