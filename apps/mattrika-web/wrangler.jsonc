@@ -1,0 +1,11 @@
+{
+    "name": "mattrika-web",
+    "compatibility_date": "2026-09-19",
+    "compatibility_flags": [
+        "nodejs_compat", // Required if using Angular SSR or Node.js APIs
+    ],
+    "assets": {
+        "directory": "../../dist/apps/mattrika-web/browser",
+        "not_found_handling": "single-page-application",
+    },
+}
