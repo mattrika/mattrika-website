@@ -5,14 +5,15 @@ import { FooterComponent } from '../../layout/footer/footer.component'
 import { NavbarComponent } from '../../layout/navbar/navbar.component'
 
 @Component({
-    selector: 'app-portfolio-page',
+    selector: 'app-projects-page',
     imports: [
         NavbarComponent,
         FooterComponent,
         PortfolioSectionComponent,
         CtaSectionComponent,
     ],
-    templateUrl: './portfolio.component.html',
+    templateUrl: './projects.component.html',
+    styleUrl: './projects.component.css',
     changeDetection: ChangeDetectionStrategy.Eager,
 })
-export class PortfolioComponent {}
+export class ProjectsComponent {}

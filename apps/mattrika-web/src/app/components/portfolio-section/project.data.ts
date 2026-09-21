@@ -4,14 +4,14 @@ export const projects: Project[] = [
     {
         title: 'Sheresta',
         category: 'Legal Platform',
-        thumbnail: 'portfolio/sheresta.png',
+        thumbnail: 'projects/Sheresta/main.png',
         images: [
-            'portfolio/sheresta.png',
-            'portfolio/Sheresta/case-list.png',
-            'portfolio/Sheresta/cause-list.png',
-            'portfolio/Sheresta/document.png',
-            'portfolio/Sheresta/case-event.png',
-            'portfolio/Sheresta/organization.png',
+            'projects/Sheresta/main.png',
+            'projects/Sheresta/case-list.png',
+            'projects/Sheresta/cause-list.png',
+            'projects/Sheresta/document.png',
+            'projects/Sheresta/case-event.png',
+            'projects/Sheresta/organization.png',
         ],
         summary: 'Smart Legal Case Management Platform',
         description:
@@ -25,14 +25,14 @@ export const projects: Project[] = [
     {
         title: 'Quizzaro',
         category: 'Entertainment',
-        thumbnail: 'portfolio/quizzaro.png',
+        thumbnail: 'projects/Quizzaro/main.png',
         images: [
-            'portfolio/quizzaro.png',
-            'portfolio/Quizzaro/quiz.png',
-            'portfolio/Quizzaro/game-list.png',
-            'portfolio/Quizzaro/rank.png',
-            'portfolio/Quizzaro/rank-list.png',
-            'portfolio/Quizzaro/knowladge.png',
+            'projects/Quizzaro/main.png',
+            'projects/Quizzaro/quiz.png',
+            'projects/Quizzaro/game-list.png',
+            'projects/Quizzaro/rank.png',
+            'projects/Quizzaro/rank-list.png',
+            'projects/Quizzaro/knowladge.png',
         ],
         summary: 'Play, Learn & Win Quiz Platform',
         description:
@@ -46,14 +46,14 @@ export const projects: Project[] = [
     {
         title: 'Lieblings Mode',
         category: 'Ecommerce',
-        thumbnail: 'portfolio/libslingsmode.png',
+        thumbnail: 'projects/Lieblings-Mode/main.png',
         images: [
-            'portfolio/libslingsmode.png',
-            'portfolio/Lieblings-Mode/product-category.png',
-            'portfolio/Lieblings-Mode/product-design.png',
-            'portfolio/Lieblings-Mode/product-design-custom-image.png',
-            'portfolio/Lieblings-Mode/single-product.png',
-            'portfolio/Lieblings-Mode/terndig-product.png',
+            'projects/Lieblings-Mode/main.png',
+            'projects/Lieblings-Mode/product-category.png',
+            'projects/Lieblings-Mode/product-design.png',
+            'projects/Lieblings-Mode/product-design-custom-image.png',
+            'projects/Lieblings-Mode/single-product.png',
+            'projects/Lieblings-Mode/terndig-product.png',
         ],
         summary: 'Custom Fashion Design & E-Commerce Platform',
         description:
@@ -67,15 +67,15 @@ export const projects: Project[] = [
     {
         title: 'ContentERP',
         category: 'Enterprise',
-        thumbnail: 'portfolio/contenterp.png',
+        thumbnail: 'projects/ContentERP/main.png',
         images: [
-            'portfolio/contenterp.png',
-            'portfolio/ContentERP/Dashboard.png',
-            'portfolio/ContentERP/Dashboard-Article-Editor.png',
-            'portfolio/ContentERP/Dashboard-Contents.png',
-            'portfolio/ContentERP/Dashboard-Queue.png',
-            'portfolio/ContentERP/Dashboard-Chat.png',
-            'portfolio/ContentERP/Dashboard-Social.png',
+            'projects/ContentERP/main.png',
+            'projects/ContentERP/Dashboard.png',
+            'projects/ContentERP/Dashboard-Article-Editor.png',
+            'projects/ContentERP/Dashboard-Contents.png',
+            'projects/ContentERP/Dashboard-Queue.png',
+            'projects/ContentERP/Dashboard-Chat.png',
+            'projects/ContentERP/Dashboard-Social.png',
         ],
         summary: 'Smart Content Workflow Platform',
         description:
@@ -89,8 +89,8 @@ export const projects: Project[] = [
     {
         title: 'Shared Auth',
         category: 'Enterprise',
-        thumbnail: 'portfolio/shared_auth.png',
-        images: ['portfolio/shared_auth.png'],
+        thumbnail: 'projects/Shared-Auth/main.png',
+        images: ['projects/Shared-Auth/main.png'],
         summary: 'Enterprise Identity Management System',
         description:
             'A centralized authorization engine built to manage hierarchical organizational structures. It facilitates secure user onboarding, organization-specific group creation, and granular Role-Based Access Control (RBAC). The system enables administrators to define custom permissions and manage user access levels within specific organization and group boundaries.',
@@ -102,8 +102,8 @@ export const projects: Project[] = [
     {
         title: 'PdfAir',
         category: 'Tools',
-        thumbnail: 'portfolio/pdfair.png',
-        images: ['portfolio/pdfair.png'],
+        thumbnail: 'projects/PdfAir/main.png',
+        images: ['projects/PdfAir/main.png'],
         summary: 'Manage and Sync Your PDF Library Across Devices',
         description:
             'You have always wanted to read the books in your collection. You see interesting artictes online and want to save it as PDF to read it later. But you dont have enough time. Also, you forget where you stored them.',

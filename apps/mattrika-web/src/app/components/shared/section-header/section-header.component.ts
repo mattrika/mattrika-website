@@ -5,6 +5,7 @@ import { HlmBadgeImports } from '@spartan-ng/helm/badge'
     selector: 'app-section-header',
     imports: [...HlmBadgeImports],
     templateUrl: './section-header.component.html',
+    styleUrl: './section-header.component.css',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SectionHeaderComponent {

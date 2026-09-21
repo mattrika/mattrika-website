@@ -16,8 +16,8 @@ export const appRoutes: Route[] = [
     {
         path: 'projects',
         loadComponent: () =>
-            import('./pages/portfolio/portfolio.component').then(
-                (m) => m.PortfolioComponent,
+            import('./pages/projects/projects.component').then(
+                (m) => m.ProjectsComponent,
             ),
     },
     {

@@ -13,6 +13,7 @@ import type { Project } from '../project.model'
     selector: 'app-project-card',
     imports: [NgIcon, ...HlmBadgeImports, ...HlmCardImports],
     templateUrl: './project-card.component.html',
+    styleUrl: './project-card.component.css',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectCardComponent {
