@@ -27,12 +27,12 @@ export class NavbarComponent {
     private readonly _router = inject(Router)
     mobileOpen = signal(false)
 
-    get isPortfolioRoute(): boolean {
-        return this._router.url.includes('/portfolio')
+    get isProjectsRoute(): boolean {
+        return this._router.url.includes('/projects')
     }
 
     get navLinks(): NavLink[] {
-        if (this.isPortfolioRoute) {
+        if (this.isProjectsRoute) {
             return [
                 { label: 'Home', id: 'home', isRoute: true, path: '/' },
                 { label: 'Portfolio', id: 'portfolio' },
@@ -51,7 +51,7 @@ export class NavbarComponent {
     getInTouchText = GET_IN_TOUCH_TEXT
 
     handleLogoClick(event: Event) {
-        if (this.isPortfolioRoute) {
+        if (this.isProjectsRoute) {
             event.preventDefault()
             this._router.navigate(['/'])
         } else {

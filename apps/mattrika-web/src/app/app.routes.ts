@@ -14,7 +14,7 @@ export const appRoutes: Route[] = [
             ),
     },
     {
-        path: 'portfolio',
+        path: 'projects',
         loadComponent: () =>
             import('./pages/portfolio/portfolio.component').then(
                 (m) => m.PortfolioComponent,
