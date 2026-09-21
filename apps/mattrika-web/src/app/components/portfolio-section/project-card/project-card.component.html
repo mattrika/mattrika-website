@@ -2,7 +2,7 @@
     hlmCard
     role="button"
     tabindex="0"
-    class="border-border/70 hover:border-brand/40 group focus-visible:ring-brand/50 cursor-pointer overflow-hidden rounded-xl transition-all hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus-visible:ring-2"
+    class="border-border/70 hover:border-brand/40 group focus-visible:ring-brand/50 flex h-full cursor-pointer flex-col overflow-hidden rounded-xl transition-all hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus-visible:ring-2"
     (click)="onClick()"
     (keydown.enter)="onClick()"
     (keydown.space)="onClick()"
@@ -12,14 +12,13 @@
             [src]="project().thumbnail"
             [alt]="project().title"
             loading="lazy"
-            class="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            class="aspect-4/3 w-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
         <div
             class="bg-brand/45 absolute inset-0 transition-opacity duration-300 group-hover:opacity-35"
         ></div>
-        <!-- Gradient overlay for text visibility -->
         <div
-            class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            class="absolute inset-0 bg-linear-to-t from-black/55 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         ></div>
         <span
             class="absolute top-3 left-3 rounded-md bg-black/40 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm"
@@ -34,7 +33,7 @@
         </span>
     </div>
 
-    <div hlmCardHeader>
+    <div hlmCardHeader class="flex-grow">
         <h3 hlmCardTitle class="text-base">
             {{ project().title }}
         </h3>
