@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
+import {
+    ChangeDetectionStrategy,
+    Component,
+    inject,
+    input,
+    computed,
+} from '@angular/core'
+import { RouterLink } from '@angular/router'
 import { NgIcon } from '@ng-icons/core'
 import { HlmBadgeImports } from '@spartan-ng/helm/badge'
 import { HlmButtonImports } from '@spartan-ng/helm/button'
@@ -15,6 +22,7 @@ import type { Project } from './project.model'
         ...HlmBadgeImports,
         ...HlmButtonImports,
         ...HlmCardImports,
+        RouterLink,
     ],
     templateUrl: './portfolio-section.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
@@ -23,7 +31,11 @@ import type { Project } from './project.model'
 export class PortfolioSectionComponent {
     private readonly _dialogService = inject(HlmDialogService)
 
-    projects: Project[] = projects
+    maxProjects = input<number>()
+
+    displayedProjects = computed(() =>
+        this.maxProjects() ? projects.slice(0, this.maxProjects()) : projects,
+    )
 
     openProject(project: Project) {
         this._dialogService.open(ProjectDialogComponent, {
