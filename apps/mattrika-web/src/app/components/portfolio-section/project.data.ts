@@ -184,4 +184,22 @@ export const projects: Project[] = [
         role: 'Full project build',
         stack: ['Angular', 'Tailwind CSS', 'Node.js', 'Drizzle', 'PostgreSQL'],
     },
+    {
+        title: 'Pagung',
+        category: 'Construction',
+        thumbnail: 'projects/Pagung/main.png',
+        images: [
+            'projects/Pagung/main.png',
+            'projects/Pagung/service.png',
+            'projects/Pagung/work.png',
+            'projects/Pagung/appoinment.png',
+        ],
+        summary: 'Construction & Remodeling Services Landing Page',
+        description:
+            'A professional landing page for Pagung Construction & Remodeling. It showcases their expertise in home improvement with dedicated sections for services like kitchen and bathroom remodeling, a portfolio of their past works, client testimonials, an FAQ section, and an integrated contact form with Google Maps for easy client outreach.',
+        client: 'Pagung',
+        year: '2024',
+        role: 'Full project build',
+        stack: ['Angular', 'Tailwind CSS', 'Node.js', 'Drizzle', 'PostgreSQL'],
+    },
 ]
