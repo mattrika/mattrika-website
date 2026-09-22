@@ -165,4 +165,23 @@ export const projects: Project[] = [
         role: 'Full project build',
         stack: ['Angular', 'Tailwind CSS', 'Node.js', 'Drizzle', 'PostgreSQL'],
     },
+    {
+        title: 'Mr. Tasty',
+        category: 'Restaurant',
+        thumbnail: 'projects/Mrtasty/main.png',
+        images: [
+            'projects/Mrtasty/main.png',
+            'projects/Mrtasty/loaded favorites.png',
+            'projects/Mrtasty/sandwiches.png',
+            'projects/Mrtasty/chicken-and-sides.png',
+            'projects/Mrtasty/hot-dog.png',
+        ],
+        summary: 'Restaurant Landing Page & Online Menu',
+        description:
+            'A vibrant and appetizing landing page for Mr. Tasty, a comfort food restaurant. The website features beautifully categorized menus including loaded favorites, premium subs, crispy sides, and sweet treats. It also includes an interactive menu section, contact form, and Google Maps integration to attract and guide local food lovers.',
+        client: 'Mr. Tasty',
+        year: '2024',
+        role: 'Full project build',
+        stack: ['Angular', 'Tailwind CSS', 'Node.js', 'Drizzle', 'PostgreSQL'],
+    },
 ]
