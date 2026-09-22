@@ -3,7 +3,7 @@
         <img
             [src]="project.images[activeImage()]"
             [alt]="project.title"
-            class="aspect-[4/3] w-full rounded-lg object-cover"
+            class="bg-secondary/20 aspect-video w-full rounded-lg object-cover object-top"
         />
 
         @if (project.images.length > 1) {
@@ -23,7 +23,7 @@
                         <img
                             [src]="image"
                             [alt]="''"
-                            class="h-14 w-20 object-cover"
+                            class="bg-secondary/20 h-14 w-20 object-cover object-top"
                             width="80"
                             height="56"
                         />
