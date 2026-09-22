@@ -131,4 +131,21 @@ export const projects: Project[] = [
         role: 'Full product build',
         stack: ['Angular', 'Node.js', 'Tailwind CSS'],
     },
+    {
+        title: 'Montuams',
+        category: 'Automotive',
+        thumbnail: 'projects/Montuams/main.png',
+        images: [
+            'projects/Montuams/main.png',
+            'projects/Montuams/service-deal.png',
+            'projects/Montuams/appoinments-review.png',
+        ],
+        summary: 'Professional Auto Repair and Maintenance Services',
+        description:
+            "A professional landing page for Montuam's Auto Services, designed to attract local customers and streamline appointment bookings. The site features a clear breakdown of automotive services, promotional offers, customer testimonials, an interactive FAQ section, and a direct Google Maps integration for easy location access.",
+        client: 'Montuams',
+        year: '2024',
+        role: 'Full project build',
+        stack: ['Angular', 'Tailwind CSS', 'Node.js', 'Drizzle', 'PostgreSQL'],
+    },
 ]
