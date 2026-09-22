@@ -113,4 +113,22 @@ export const projects: Project[] = [
         stack: ['Angular', 'HONOJS', 'DRIZZLE', 'POSTGRESQL'],
         link: 'https://pdfair.com/',
     },
+    {
+        title: 'Michrobux',
+        category: 'Ecommerce',
+        thumbnail: 'projects/Michrobux/main.png',
+        images: [
+            'projects/Michrobux/main.png',
+            'projects/Michrobux/hot-products.png',
+            'projects/Michrobux/product-details.png',
+            'projects/Michrobux/player-says.png',
+        ],
+        summary: 'Level Up Your Roblox Experience',
+        description:
+            'A dedicated e-commerce platform for Roblox players to purchase Robux, game cards, and exclusive in-game items for popular titles like Pet Sim X and Blox Fruits. Features include secure transactions, flash sales, instant delivery, and a seamless user experience.',
+        client: 'Michrobux',
+        year: '2024',
+        role: 'Full product build',
+        stack: ['Angular', 'Node.js', 'Tailwind CSS'],
+    },
 ]
