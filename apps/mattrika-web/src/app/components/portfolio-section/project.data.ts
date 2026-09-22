@@ -148,4 +148,21 @@ export const projects: Project[] = [
         role: 'Full project build',
         stack: ['Angular', 'Tailwind CSS', 'Node.js', 'Drizzle', 'PostgreSQL'],
     },
+    {
+        title: 'Al-Firdaous',
+        category: 'Community',
+        thumbnail: 'projects/Mosque/main.png',
+        images: [
+            'projects/Mosque/main.png',
+            'projects/Mosque/seeking-clarity-in-islam.png',
+            'projects/Mosque/upcomming-events.png',
+        ],
+        summary: 'Comprehensive Mosque Management & Community Platform',
+        description:
+            "A comprehensive platform designed for mosques to manage their daily operations and connect with the community. It features real-time prayer schedules, event management, announcements, spiritual guidance resources, and a direct 'Ask Shaykh' Q&A system to foster community engagement and learning.",
+        client: 'Al-Firdaous',
+        year: '2024',
+        role: 'Full project build',
+        stack: ['Angular', 'Tailwind CSS', 'Node.js', 'Drizzle', 'PostgreSQL'],
+    },
 ]
