@@ -1,0 +1,52 @@
+<section
+    hlmCard
+    role="button"
+    tabindex="0"
+    class="border-border/70 hover:border-brand/40 group focus-visible:ring-brand/50 flex h-full cursor-pointer flex-col overflow-hidden rounded-xl transition-all hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus-visible:ring-2"
+    (click)="onClick()"
+    (keydown.enter)="onClick()"
+    (keydown.space)="onClick()"
+>
+    <div class="relative overflow-hidden">
+        <img
+            [src]="project().thumbnail"
+            [alt]="project().title"
+            loading="lazy"
+            class="aspect-video w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+        />
+        <div
+            class="bg-brand/45 absolute inset-0 transition-opacity duration-300 group-hover:opacity-35"
+        ></div>
+        <div
+            class="absolute inset-0 bg-linear-to-t from-black/55 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        ></div>
+        <span
+            class="absolute top-3 left-3 rounded-md bg-black/40 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm"
+        >
+            {{ project().category }}
+        </span>
+        <span
+            class="absolute right-3 bottom-3 flex items-center gap-1 text-sm font-medium text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        >
+            View case study
+            <ng-icon name="lucideArrowUpRight" class="h-4 w-4" />
+        </span>
+    </div>
+
+    <div hlmCardHeader class="flex-grow">
+        <h3 hlmCardTitle class="text-base">
+            {{ project().title }}
+        </h3>
+        <p hlmCardDescription class="text-sm">
+            {{ project().summary }}
+        </p>
+    </div>
+
+    <div hlmCardFooter class="flex-wrap gap-1.5">
+        @for (tech of project().stack.slice(0, 3); track tech) {
+            <span hlmBadge variant="secondary" class="rounded-full text-xs">
+                {{ tech }}
+            </span>
+        }
+    </div>
+</section>

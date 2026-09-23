@@ -14,6 +14,13 @@ export const appRoutes: Route[] = [
             ),
     },
     {
+        path: 'projects',
+        loadComponent: () =>
+            import('./pages/projects/projects.component').then(
+                (m) => m.ProjectsComponent,
+            ),
+    },
+    {
         path: '**',
         loadComponent: () =>
             import('./pages/landing/landing.component').then(
