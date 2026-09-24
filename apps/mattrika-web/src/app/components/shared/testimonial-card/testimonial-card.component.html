@@ -1,0 +1,51 @@
+<div
+    class="bg-ink rounded-2xl p-8 text-white shadow-lg transition-colors sm:p-10"
+>
+    <div class="flex items-center gap-3">
+        <div class="flex items-center gap-0.5 text-yellow-400">
+            @for (i of [1, 2, 3, 4, 5]; track i) {
+                <ng-icon
+                    name="lucideStar"
+                    class="h-5 w-5 text-yellow-400! drop-shadow-sm [&_svg]:fill-current"
+                />
+            }
+        </div>
+        <span class="text-sm font-bold tracking-wide text-white">5.0</span>
+        <div class="hidden h-1 w-1 rounded-full bg-white/30 sm:block"></div>
+        <span
+            class="hidden items-center gap-1 text-xs font-medium tracking-wider text-white/70 uppercase sm:flex"
+        >
+            <ng-icon name="lucideBadgeCheck" class="h-4 w-4 text-green-400!" />
+            Verified
+        </span>
+    </div>
+
+    <blockquote
+        class="mt-6 text-xl leading-relaxed font-medium tracking-tight text-balance text-white sm:text-2xl"
+    >
+        "{{ shortText() }}"
+    </blockquote>
+
+    <div class="mt-8 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+            <span
+                class="bg-brand text-brand-foreground flex h-11 w-11 items-center justify-center rounded-full text-sm font-semibold"
+            >
+                {{ avatarInitials() }}
+            </span>
+            <div>
+                <p class="text-sm font-semibold text-white">
+                    {{ authorName() }}
+                </p>
+                <p class="text-sm text-white/60">{{ authorTitle() }}</p>
+            </div>
+        </div>
+        <button
+            (click)="openModal()"
+            class="text-brand focus-visible:ring-brand cursor-pointer rounded-sm text-sm font-medium hover:underline focus:outline-none focus-visible:ring-2"
+            aria-label="Read full testimonial"
+        >
+            Read full story &rarr;
+        </button>
+    </div>
+</div>

@@ -31,6 +31,8 @@ import {
     lucideUsers,
     lucideX,
     lucideZap,
+    lucideStar,
+    lucideBadgeCheck,
 } from '@ng-icons/lucide'
 import { provideSpartanHlm } from '@spartan-ng/helm/utils'
 import { appRoutes } from './app.routes'
@@ -69,6 +71,8 @@ export const appConfig: ApplicationConfig = {
             lucideUsers,
             lucideX,
             lucideZap,
+            lucideStar,
+            lucideBadgeCheck,
         }),
     ],
 }
