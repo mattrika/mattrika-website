@@ -23,7 +23,7 @@ export const projects: Project[] = [
         link: 'https://sheresta.com',
     },
     {
-        title: 'Lieblings Mode',
+        title: 'Lieblingsmode',
         category: 'Ecommerce',
         thumbnail: 'projects/Lieblings-Mode/main.png',
         images: [
@@ -44,7 +44,7 @@ export const projects: Project[] = [
         link: 'https://lieblings-mode.com',
     },
     {
-        title: 'Montuams',
+        title: 'Montuams Auto',
         category: 'Automotive',
         thumbnail: 'projects/Montuams/main.png',
         images: [
@@ -56,7 +56,7 @@ export const projects: Project[] = [
         description:
             "A professional landing page for Montuam's Auto Services, designed to attract local customers and streamline appointment bookings. The site features a clear breakdown of automotive services, promotional offers, customer testimonials, an interactive FAQ section, and a direct Google Maps integration for easy location access.",
         client: 'Montuams',
-        year: '2024',
+        year: '2026',
         role: 'Full project build',
         stack: ['Angular', 'Tailwind CSS', 'Node.js', 'Drizzle', 'PostgreSQL'],
     },
@@ -77,13 +77,13 @@ export const projects: Project[] = [
         description:
             'An all-in-one content management and workflow platform designed to streamline the entire content creation process—from idea generation to publishing—while enabling team collaboration, task automation, analytics, and seamless integrations in a single centralized system.',
         client: 'ContentERP',
-        year: '2024',
+        year: '2023',
         role: 'Full product build',
         stack: ['Angular', 'Node.js', 'PostgreSQL', 'Prisma'],
         link: 'https://contenterp.com',
     },
     {
-        title: 'Pagung',
+        title: 'Pagung Construction',
         category: 'Construction',
         thumbnail: 'projects/Pagung/main.png',
         images: [
@@ -96,7 +96,7 @@ export const projects: Project[] = [
         description:
             'A professional landing page for Pagung Construction & Remodeling. It showcases their expertise in home improvement with dedicated sections for services like kitchen and bathroom remodeling, a portfolio of their past works, client testimonials, an FAQ section, and an integrated contact form with Google Maps for easy client outreach.',
         client: 'Pagung',
-        year: '2024',
+        year: '2026',
         role: 'Full project build',
         stack: ['Angular', 'Tailwind CSS', 'Node.js', 'Drizzle', 'PostgreSQL'],
     },
@@ -116,7 +116,7 @@ export const projects: Project[] = [
         description:
             'An interactive quiz platform where users can test their knowledge, compete with others, and win real cash prizes. Designed for both desktop and mobile, Quizzaro combines education, entertainment, and fast-paced gameplay to create an exciting and rewarding quiz experience.',
         client: 'Quizzaro',
-        year: '2024',
+        year: '2025',
         role: 'Full product build',
         stack: ['Angular', 'Node.js', 'Socket.io'],
         link: 'https://quizzaro.com',
@@ -130,7 +130,7 @@ export const projects: Project[] = [
         description:
             'A centralized authorization engine built to manage hierarchical organizational structures. It facilitates secure user onboarding, organization-specific group creation, and granular Role-Based Access Control (RBAC). The system enables administrators to define custom permissions and manage user access levels within specific organization and group boundaries.',
         client: 'Shared Auth',
-        year: '2024',
+        year: '2025',
         role: 'Full product build',
         stack: ['Angular', 'Hono.js', 'PostgreSQL', 'Drizzle'],
     },
@@ -143,7 +143,7 @@ export const projects: Project[] = [
         description:
             'You have always wanted to read the books in your collection. You see interesting artictes online and want to save it as PDF to read it later. But you dont have enough time. Also, you forget where you stored them.',
         client: 'PdfAir',
-        year: '2024',
+        year: '2025',
         role: 'Full product build',
         stack: ['Angular', 'HONOJS', 'DRIZZLE', 'POSTGRESQL'],
         link: 'https://pdfair.com/',
@@ -162,7 +162,7 @@ export const projects: Project[] = [
         description:
             'A dedicated e-commerce platform for Roblox players to purchase Robux, game cards, and exclusive in-game items for popular titles like Pet Sim X and Blox Fruits. Features include secure transactions, flash sales, instant delivery, and a seamless user experience.',
         client: 'Michrobux',
-        year: '2024',
+        year: '2025',
         role: 'Full product build',
         stack: ['Angular', 'Node.js', 'Tailwind CSS'],
     },
@@ -179,7 +179,7 @@ export const projects: Project[] = [
         description:
             "A comprehensive platform designed for mosques to manage their daily operations and connect with the community. It features real-time prayer schedules, event management, announcements, spiritual guidance resources, and a direct 'Ask Shaykh' Q&A system to foster community engagement and learning.",
         client: 'Al-Firdaous',
-        year: '2024',
+        year: '2025',
         role: 'Full project build',
         stack: ['Angular', 'Tailwind CSS', 'Node.js', 'Drizzle', 'PostgreSQL'],
     },
@@ -198,7 +198,7 @@ export const projects: Project[] = [
         description:
             'A vibrant and appetizing landing page for Mr. Tasty, a comfort food restaurant. The website features beautifully categorized menus including loaded favorites, premium subs, crispy sides, and sweet treats. It also includes an interactive menu section, contact form, and Google Maps integration to attract and guide local food lovers.',
         client: 'Mr. Tasty',
-        year: '2024',
+        year: '2026',
         role: 'Full project build',
         stack: ['Angular', 'Tailwind CSS', 'Node.js', 'Drizzle', 'PostgreSQL'],
     },
