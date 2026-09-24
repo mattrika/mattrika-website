@@ -11,6 +11,8 @@ import { provideRouter, withInMemoryScrolling } from '@angular/router'
 import { provideIcons } from '@ng-icons/core'
 import {
     lucideArrowRight,
+    lucideGlobe,
+    lucideLink,
     lucideArrowUpRight,
     lucideCloud,
     lucideCode2,
@@ -46,6 +48,8 @@ export const appConfig: ApplicationConfig = {
         provideAnimations(),
         provideSpartanHlm(),
         provideIcons({
+            lucideGlobe,
+            lucideLink,
             lucideArrowRight,
             lucideArrowUpRight,
             lucideCloud,
