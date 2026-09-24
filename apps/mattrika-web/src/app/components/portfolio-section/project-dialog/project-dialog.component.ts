@@ -8,11 +8,17 @@ import { NgIcon } from '@ng-icons/core'
 import { BrnDialogRef, injectBrnDialogContext } from '@spartan-ng/brain/dialog'
 import { HlmBadgeImports } from '@spartan-ng/helm/badge'
 import { HlmButtonImports } from '@spartan-ng/helm/button'
+import { HlmDialogImports } from '@spartan-ng/helm/dialog'
 import type { Project } from '../project.model'
 
 @Component({
     selector: 'app-project-dialog',
-    imports: [NgIcon, ...HlmBadgeImports, ...HlmButtonImports],
+    imports: [
+        NgIcon,
+        ...HlmBadgeImports,
+        ...HlmButtonImports,
+        ...HlmDialogImports,
+    ],
     changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: './project-dialog.component.html',
 })
