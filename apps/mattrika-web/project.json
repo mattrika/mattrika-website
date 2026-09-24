@@ -20,7 +20,10 @@
                         "input": "apps/mattrika-web/public"
                     }
                 ],
-                "styles": ["apps/mattrika-web/src/styles.css"],
+                "styles": [
+                    "node_modules/@angular/cdk/overlay-prebuilt.css",
+                    "apps/mattrika-web/src/styles.css"
+                ],
                 "server": "apps/mattrika-web/src/main.server.ts",
                 "ssr": {
                     "entry": "apps/mattrika-web/src/server.ts"
