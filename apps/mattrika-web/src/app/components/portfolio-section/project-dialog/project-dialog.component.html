@@ -34,19 +34,22 @@
     </div>
 
     <div class="flex flex-col sm:col-span-2">
-        <span
-            hlmBadge
-            variant="outline"
-            class="w-fit rounded-full px-3 py-1 text-xs"
-        >
-            {{ project.category }}
-        </span>
+        <hlm-dialog-header class="text-left">
+            <span
+                hlmBadge
+                variant="outline"
+                class="w-fit rounded-full px-3 py-1 text-xs"
+            >
+                {{ project.category }}
+            </span>
 
-        <h2
-            class="text-foreground mt-4 text-2xl font-semibold tracking-tight text-balance"
-        >
-            {{ project.title }}
-        </h2>
+            <h2
+                hlmDialogTitle
+                class="text-foreground mt-4 text-2xl font-semibold tracking-tight text-balance"
+            >
+                {{ project.title }}
+            </h2>
+        </hlm-dialog-header>
 
         <dl class="border-border/70 mt-4 space-y-2 border-y py-4 text-sm">
             <div class="flex items-start justify-between gap-4">
@@ -63,7 +66,7 @@
             </div>
         </dl>
 
-        <p class="text-muted-foreground mt-4 text-sm leading-7">
+        <p hlmDialogDescription class="mt-4 text-sm leading-7">
             {{ project.description }}
         </p>
 

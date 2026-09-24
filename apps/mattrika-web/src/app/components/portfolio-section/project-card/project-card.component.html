@@ -15,18 +15,18 @@
             class="aspect-video w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
         />
         <div
-            class="bg-brand/45 absolute inset-0 transition-opacity duration-300 group-hover:opacity-35"
+            class="bg-brand/45 pointer-events-none absolute inset-0 transition-opacity duration-300 group-hover:opacity-35"
         ></div>
         <div
-            class="absolute inset-0 bg-linear-to-t from-black/55 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            class="pointer-events-none absolute inset-0 bg-linear-to-t from-black/55 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         ></div>
         <span
-            class="absolute top-3 left-3 rounded-md bg-black/40 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm"
+            class="pointer-events-none absolute top-3 left-3 rounded-md bg-black/40 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm"
         >
             {{ project().category }}
         </span>
         <span
-            class="absolute right-3 bottom-3 flex items-center gap-1 text-sm font-medium text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            class="pointer-events-none absolute right-3 bottom-3 flex items-center gap-1 text-sm font-medium text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         >
             View case study
             <ng-icon name="lucideArrowUpRight" class="h-4 w-4" />
