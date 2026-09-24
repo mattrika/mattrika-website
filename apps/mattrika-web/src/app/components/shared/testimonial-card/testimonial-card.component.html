@@ -1,5 +1,5 @@
 <div
-    class="bg-ink rounded-2xl p-8 text-white shadow-lg transition-colors sm:p-10"
+    class="bg-ink flex h-full flex-col rounded-2xl p-6 text-white shadow-lg transition-colors sm:p-8"
 >
     <div class="flex items-center gap-3">
         <div class="flex items-center gap-0.5 text-yellow-400">
@@ -21,12 +21,12 @@
     </div>
 
     <blockquote
-        class="mt-6 text-xl leading-relaxed font-medium tracking-tight text-balance text-white sm:text-2xl"
+        class="my-auto line-clamp-4 text-xl leading-relaxed font-medium tracking-tight text-balance text-white sm:text-2xl"
     >
         "{{ shortText() }}"
     </blockquote>
 
-    <div class="mt-8 flex items-center justify-between">
+    <div class="flex items-center justify-between">
         <div class="flex items-center gap-4">
             <span
                 class="bg-brand text-brand-foreground flex h-11 w-11 items-center justify-center rounded-full text-sm font-semibold"
@@ -42,10 +42,11 @@
         </div>
         <button
             (click)="openModal()"
-            class="text-brand focus-visible:ring-brand cursor-pointer rounded-sm text-sm font-medium hover:underline focus:outline-none focus-visible:ring-2"
+            class="text-brand focus-visible:ring-brand flex cursor-pointer items-center rounded-sm text-sm font-medium hover:underline focus:outline-none focus-visible:ring-2"
             aria-label="Read full testimonial"
         >
-            Read full story &rarr;
+            Read full story
+            <ng-icon name="lucideArrowRight" class="ml-1 h-4 w-4" />
         </button>
     </div>
 </div>

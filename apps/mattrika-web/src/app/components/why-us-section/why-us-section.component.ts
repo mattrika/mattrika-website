@@ -1,7 +1,14 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core'
+import {
+    Component,
+    ChangeDetectionStrategy,
+    signal,
+    OnInit,
+    OnDestroy,
+} from '@angular/core'
 import { NgIcon } from '@ng-icons/core'
 import { HlmBadgeImports } from '@spartan-ng/helm/badge'
 import { TestimonialCardComponent } from '../shared/testimonial-card/testimonial-card.component'
+import { TESTIMONIALS } from './testimonials.data'
 
 interface Feature {
     icon: string
@@ -13,10 +20,9 @@ interface Feature {
     selector: 'app-why-us-section',
     imports: [NgIcon, ...HlmBadgeImports, TestimonialCardComponent],
     templateUrl: './why-us-section.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './why-us-section.component.css',
 })
-export class WhyUsSectionComponent {
+export class WhyUsSectionComponent implements OnInit, OnDestroy {
     features: Feature[] = [
         {
             icon: 'lucideUsers',
@@ -44,18 +50,48 @@ export class WhyUsSectionComponent {
         },
     ]
 
-    testimonial = {
-        shortText:
-            "Working with the Mattrika team was honestly a dream come true. I've worked with development teams and contractors for over 15 years, and this team really stands out. They're hardworking, dependable, and care about understanding what you're trying to build.",
-        fullText: [
-            "Working with the Mattrika team was honestly a dream come true. I've worked with development teams and contractors for over 15 years, and this team really stands out. They're hardworking, dependable, and care about understanding what you're trying to build.",
-            'We talked almost daily while working on ContentERP, which made it easy to stay updated and keep everyone on the same page. They asked questions when something needed clarification and took the time to understand how the features should work, with security in mind throughout development.',
-            "I also really appreciated their honesty. I'd sometimes dream up a feature and think it could be done that same day, and they were great at helping me understand what was involved and setting realistic expectations. They weren't afraid to push back when needed, and that was a good thing. Those conversations helped keep the project focused and moving forward.",
-            'They also went beyond the development work itself. When we needed to move servers to reduce costs, they researched better options to help me save money. That kind of effort meant a lot to me.',
-            "They stayed committed throughout the project, and when issues came up, they worked through them and got them fixed. I really appreciated having a team I could communicate openly with and trust to follow through. I'd happily work with Mattrika again and highly recommend them.",
-        ],
-        authorName: 'Shannon Kempenich',
-        authorTitle: 'CEO, ContentERP',
-        avatarInitials: 'SK',
+    testimonials = TESTIMONIALS
+
+    activeIndex = signal(0)
+    private intervalId: any
+
+    ngOnInit() {
+        this.startInterval()
+    }
+
+    ngOnDestroy() {
+        this.pause()
+    }
+
+    startInterval() {
+        if (this.intervalId) return
+        this.intervalId = setInterval(() => {
+            this.activeIndex.update((i) => (i + 1) % this.testimonials.length)
+        }, 5000)
+    }
+
+    pause() {
+        if (this.intervalId) {
+            clearInterval(this.intervalId)
+            this.intervalId = null
+        }
+    }
+
+    resume() {
+        this.startInterval()
+    }
+
+    getCardStyle(index: number): string {
+        const active = this.activeIndex()
+        const length = this.testimonials.length
+        const difference = (index - active + length) % length
+
+        if (difference === 0) {
+            return 'z-30 translate-x-0 translate-y-0 rotate-0 scale-100 opacity-100 shadow-2xl'
+        } else if (difference === 1) {
+            return 'z-20 translate-x-6 translate-y-4 rotate-6 scale-[0.95] opacity-80 shadow-lg'
+        } else {
+            return 'z-10 translate-x-12 translate-y-8 rotate-12 scale-[0.90] opacity-40 shadow-md'
+        }
     }
 }
