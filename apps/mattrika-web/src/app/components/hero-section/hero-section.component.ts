@@ -20,4 +20,11 @@ export class HeroSectionComponent {
     ]
 
     getInTouchText = GET_IN_TOUCH_TEXT
+
+    scrollTo(event: Event, id: string) {
+        event.preventDefault()
+        document
+            .getElementById(id)
+            ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
 }

@@ -21,9 +21,9 @@ export const TESTIMONIALS = [
             'What impressed us most was how affordable their services were without compromising on quality. They built a robust, user-friendly website that has been incredibly reliable since day one.',
             "The team was responsive, understood our vision, and delivered the project on time. Our customers love the new seamless shopping experience, and we couldn't be happier with the results.",
         ],
-        authorName: 'Markus Schmidt',
-        authorTitle: 'CEO, Lieblings Mode, Germany',
-        avatarInitials: 'MS',
+        authorName: 'Mohammad Alamin',
+        authorTitle: 'CEO, Lieblingsmode e.K., Germany',
+        avatarInitials: 'MA',
     },
     {
         shortText:
@@ -33,8 +33,8 @@ export const TESTIMONIALS = [
             'They were incredibly fast, taking our initial requirements and turning them into a fully functional app in record time. Every single requirement we had was not only met but exceeded.',
             'Their attention to detail and commitment to performance optimization made a huge difference. The app handles concurrent users flawlessly, and I highly recommend their expertise for any complex application development.',
         ],
-        authorName: 'Nikola Jovanovic',
+        authorName: 'Stephan Katic',
         authorTitle: 'CEO, Quizzaro, Serbia',
-        avatarInitials: 'NJ',
+        avatarInitials: 'SK',
     },
 ]
