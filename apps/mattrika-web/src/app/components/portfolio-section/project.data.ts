@@ -4,14 +4,14 @@ export const projects: Project[] = [
     {
         title: 'Sheresta',
         category: 'Legal Platform',
-        thumbnail: 'projects/Sheresta/main.png',
+        thumbnail: '/projects/Sheresta/main.png',
         images: [
-            'projects/Sheresta/main.png',
-            'projects/Sheresta/case-list.png',
-            'projects/Sheresta/cause-list.png',
+            '/projects/Sheresta/main.png',
+            '/projects/Sheresta/case-list.png',
+            '/projects/Sheresta/cause-list.png',
             'projects/Sheresta/document.png',
-            'projects/Sheresta/case-event.png',
-            'projects/Sheresta/organization.png',
+            '/projects/Sheresta/case-event.png',
+            '/projects/Sheresta/organization.png',
         ],
         summary: 'Smart Legal Case Management Platform',
         description:
