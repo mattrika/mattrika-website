@@ -1,9 +1,9 @@
-<div class="grid max-h-[85vh] gap-8 overflow-y-auto sm:grid-cols-5">
+<div class="-mr-6 grid max-h-[85vh] gap-8 overflow-y-auto pr-6 sm:grid-cols-5">
     <div class="sm:col-span-3">
         <img
             [src]="project.images[activeImage()]"
             [alt]="project.title"
-            class="bg-secondary/20 aspect-video w-full rounded-lg object-cover object-top"
+            class="bg-secondary/20 aspect-[21/9] w-full rounded-lg object-cover object-top"
         />
 
         @if (project.images.length > 1) {
@@ -49,6 +49,19 @@
             >
                 {{ project.title }}
             </h2>
+            <a
+                [href]="project.link || '#'"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-muted-foreground hover:text-brand mt-1 flex w-fit items-center gap-1.5 text-sm font-medium transition-colors"
+            >
+                <ng-icon name="lucideGlobe" class="h-4 w-4" />
+                @if (displayUrl) {
+                    {{ displayUrl }}
+                } @else {
+                    Website Link
+                }
+            </a>
         </hlm-dialog-header>
 
         <dl class="border-border/70 mt-4 space-y-2 border-y py-4 text-sm">
@@ -79,8 +92,13 @@
         </div>
 
         <div class="mt-6 flex items-center gap-3">
-            <a hlmBtn href="#contact" (click)="close()">
-                Start a similar project
+            <a
+                hlmBtn
+                [href]="project.link || '#'"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Visit live project
                 <ng-icon name="lucideArrowUpRight" class="ml-1.5 h-4 w-4" />
             </a>
             <button hlmBtn variant="ghost" (click)="close()">Close</button>

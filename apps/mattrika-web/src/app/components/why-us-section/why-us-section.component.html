@@ -1,4 +1,4 @@
-<section id="why-us" class="border-border/70 border-t bg-white">
+<section id="why-us" class="border-border/70 overflow-hidden border-t bg-white">
     <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
         <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
             <div>
@@ -48,30 +48,30 @@
                 </div>
             </div>
 
-            <div class="bg-ink rounded-2xl p-8 text-white sm:p-10">
-                <div class="flex items-center gap-1">
-                    <ng-icon name="lucideQuote" class="text-brand h-6 w-6" />
-                </div>
-                <blockquote
-                    class="mt-6 text-2xl leading-relaxed font-medium tracking-tight text-balance text-white"
-                >
-                    "Mattrika didn't just build our platform—they challenged our
-                    assumptions and shipped a product our users actually rave
-                    about."
-                </blockquote>
-                <div class="mt-8 flex items-center gap-4">
-                    <span
-                        class="bg-brand text-brand-foreground flex h-11 w-11 items-center justify-center rounded-full text-sm font-semibold"
+            <!-- testimonial section -->
+            <div
+                class="group relative h-[380px] w-full max-w-lg lg:ml-auto"
+                (mouseenter)="pause()"
+                (mouseleave)="resume()"
+            >
+                @for (
+                    testimonial of testimonials;
+                    track testimonial.authorName;
+                    let i = $index
+                ) {
+                    <div
+                        class="absolute inset-0 origin-bottom-right transition-all duration-700 ease-in-out"
+                        [class]="getCardStyle(i)"
                     >
-                        AR
-                    </span>
-                    <div>
-                        <p class="text-sm font-semibold text-white">
-                            Asif Rahman
-                        </p>
-                        <p class="text-sm text-white/60">Founder, Chainly</p>
+                        <app-testimonial-card
+                            [shortText]="testimonial.shortText"
+                            [fullText]="testimonial.fullText"
+                            [authorName]="testimonial.authorName"
+                            [authorTitle]="testimonial.authorTitle"
+                            [avatarInitials]="testimonial.avatarInitials"
+                        ></app-testimonial-card>
                     </div>
-                </div>
+                }
             </div>
         </div>
     </div>

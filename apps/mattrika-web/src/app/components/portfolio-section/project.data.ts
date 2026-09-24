@@ -41,7 +41,7 @@ export const projects: Project[] = [
         year: '2024',
         role: 'Full product build',
         stack: ['Angular', 'Stripe', 'Tailwind CSS', 'Prisma'],
-        link: 'https://lieblings-mode.com',
+        link: 'https://www.lieblings-mode.com',
     },
     {
         title: 'Montuams Auto',
@@ -59,6 +59,7 @@ export const projects: Project[] = [
         year: '2026',
         role: 'Full project build',
         stack: ['Angular', 'Tailwind CSS', 'Node.js', 'Drizzle', 'PostgreSQL'],
+        link: 'http://montuamsauto.com',
     },
     {
         title: 'ContentERP',
@@ -99,6 +100,7 @@ export const projects: Project[] = [
         year: '2026',
         role: 'Full project build',
         stack: ['Angular', 'Tailwind CSS', 'Node.js', 'Drizzle', 'PostgreSQL'],
+        link: 'https://pagung.mattrika.com',
     },
     {
         title: 'Quizzaro',
@@ -133,6 +135,7 @@ export const projects: Project[] = [
         year: '2025',
         role: 'Full product build',
         stack: ['Angular', 'Hono.js', 'PostgreSQL', 'Drizzle'],
+        link: 'https://auth.mattrika.com',
     },
     {
         title: 'PdfAir',
@@ -146,7 +149,7 @@ export const projects: Project[] = [
         year: '2025',
         role: 'Full product build',
         stack: ['Angular', 'HONOJS', 'DRIZZLE', 'POSTGRESQL'],
-        link: 'https://pdfair.com/',
+        link: 'https://pdfair.com',
     },
     {
         title: 'Michrobux',
@@ -165,6 +168,7 @@ export const projects: Project[] = [
         year: '2025',
         role: 'Full product build',
         stack: ['Angular', 'Node.js', 'Tailwind CSS'],
+        link: '#',
     },
     {
         title: 'Al-Firdaous',
@@ -182,6 +186,7 @@ export const projects: Project[] = [
         year: '2025',
         role: 'Full project build',
         stack: ['Angular', 'Tailwind CSS', 'Node.js', 'Drizzle', 'PostgreSQL'],
+        link: '#',
     },
     {
         title: 'Mr. Tasty',
@@ -201,5 +206,6 @@ export const projects: Project[] = [
         year: '2026',
         role: 'Full project build',
         stack: ['Angular', 'Tailwind CSS', 'Node.js', 'Drizzle', 'PostgreSQL'],
+        link: '#',
     },
 ]

@@ -34,4 +34,10 @@ export class ProjectDialogComponent {
     selectImage(index: number) {
         this.activeImage.set(index)
     }
+
+    get displayUrl(): string | null {
+        const link = this.project.link
+        if (!link || link === '#') return null
+        return link.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')
+    }
 }

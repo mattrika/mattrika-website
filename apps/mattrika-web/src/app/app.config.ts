@@ -11,6 +11,8 @@ import { provideRouter, withInMemoryScrolling } from '@angular/router'
 import { provideIcons } from '@ng-icons/core'
 import {
     lucideArrowRight,
+    lucideGlobe,
+    lucideLink,
     lucideArrowUpRight,
     lucideCloud,
     lucideCode2,
@@ -29,6 +31,8 @@ import {
     lucideUsers,
     lucideX,
     lucideZap,
+    lucideStar,
+    lucideBadgeCheck,
 } from '@ng-icons/lucide'
 import { provideSpartanHlm } from '@spartan-ng/helm/utils'
 import { appRoutes } from './app.routes'
@@ -46,6 +50,8 @@ export const appConfig: ApplicationConfig = {
         provideAnimations(),
         provideSpartanHlm(),
         provideIcons({
+            lucideGlobe,
+            lucideLink,
             lucideArrowRight,
             lucideArrowUpRight,
             lucideCloud,
@@ -65,6 +71,8 @@ export const appConfig: ApplicationConfig = {
             lucideUsers,
             lucideX,
             lucideZap,
+            lucideStar,
+            lucideBadgeCheck,
         }),
     ],
 }

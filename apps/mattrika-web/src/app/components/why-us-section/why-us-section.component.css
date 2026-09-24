@@ -1,0 +1,16 @@
+:host {
+    display: block;
+}
+
+@keyframes marquee-vertical {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(calc(-50% - 12px));
+    }
+}
+
+.animate-marquee-vertical {
+    animation: marquee-vertical 30s linear infinite;
+}
