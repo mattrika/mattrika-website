@@ -6,17 +6,17 @@ import {
     provideClientHydration,
     withEventReplay,
 } from '@angular/platform-browser'
-import { provideAnimations } from '@angular/platform-browser/animations'
 import { provideRouter, withInMemoryScrolling } from '@angular/router'
 import { provideIcons } from '@ng-icons/core'
 import {
     lucideArrowRight,
-    lucideGlobe,
-    lucideLink,
     lucideArrowUpRight,
+    lucideBadgeCheck,
     lucideCloud,
     lucideCode2,
     lucideDatabase,
+    lucideGlobe,
+    lucideLink,
     lucideMail,
     lucideMapPin,
     lucideMenu,
@@ -27,12 +27,11 @@ import {
     lucideShoppingCart,
     lucideSmartphone,
     lucideSparkles,
+    lucideStar,
     lucideTrendingUp,
     lucideUsers,
     lucideX,
     lucideZap,
-    lucideStar,
-    lucideBadgeCheck,
 } from '@ng-icons/lucide'
 import { provideSpartanHlm } from '@spartan-ng/helm/utils'
 import { appRoutes } from './app.routes'
@@ -47,7 +46,6 @@ export const appConfig: ApplicationConfig = {
                 scrollPositionRestoration: 'enabled',
             }),
         ),
-        provideAnimations(),
         provideSpartanHlm(),
         provideIcons({
             lucideGlobe,

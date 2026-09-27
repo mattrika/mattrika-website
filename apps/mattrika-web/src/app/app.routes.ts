@@ -17,6 +17,11 @@ export const appRoutes: Route[] = [
             ),
     },
     {
+        path: 'sign',
+        loadComponent: () =>
+            import('./pages/sign/sign.component').then((m) => m.SignComponent),
+    },
+    {
         path: '**',
         loadComponent: () =>
             import('./pages/landing/landing.component').then(
