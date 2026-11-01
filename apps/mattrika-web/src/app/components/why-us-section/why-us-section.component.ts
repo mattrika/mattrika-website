@@ -1,14 +1,8 @@
-import {
-    Component,
-    ChangeDetectionStrategy,
-    signal,
-    OnInit,
-    OnDestroy,
-} from '@angular/core'
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core'
 import { NgIcon } from '@ng-icons/core'
-import { HlmBadgeImports } from '@spartan-ng/helm/badge'
-import { TestimonialCardComponent } from '../shared/testimonial-card/testimonial-card.component'
-import { TESTIMONIALS } from './testimonials.data'
+import { HlmDialogService } from '@spartan-ng/helm/dialog'
+import { TestimonialDialogComponent } from '../shared/testimonial-dialog/testimonial-dialog.component'
+import { TESTIMONIALS, ClientTestimonial } from './testimonials.data'
 
 interface Feature {
     icon: string
@@ -18,17 +12,20 @@ interface Feature {
 
 @Component({
     selector: 'app-why-us-section',
-    imports: [NgIcon, ...HlmBadgeImports, TestimonialCardComponent],
+    imports: [NgIcon],
     templateUrl: './why-us-section.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './why-us-section.component.css',
 })
-export class WhyUsSectionComponent implements OnInit, OnDestroy {
+export class WhyUsSectionComponent {
+    private readonly _dialogService = inject(HlmDialogService)
+
     features: Feature[] = [
         {
             icon: 'lucideUsers',
             title: 'Senior-only teams',
             description:
-                'No hand-offs to juniors. You work directly with the people architecting your product.',
+                'No hand-offs to juniors. You work directly with the senior engineers architecting your product.',
         },
         {
             icon: 'lucideZap',
@@ -46,52 +43,32 @@ export class WhyUsSectionComponent implements OnInit, OnDestroy {
             icon: 'lucideTrendingUp',
             title: 'Outcome-driven',
             description:
-                'We measure our success by your growth—traffic, revenue, retention, and beyond.',
+                'We measure our success by your growth—conversion, user retention, and production stability.',
         },
     ]
 
-    testimonials = TESTIMONIALS
+    readonly testimonials: ClientTestimonial[] = TESTIMONIALS
 
-    activeIndex = signal(0)
-    private intervalId: any
-
-    ngOnInit() {
-        this.startInterval()
+    // Duplicated list to create infinite seamless marquee loop (repeats 3 default items)
+    get duplicatedTestimonials(): ClientTestimonial[] {
+        return [
+            ...this.testimonials,
+            ...this.testimonials,
+            ...this.testimonials,
+            ...this.testimonials,
+        ]
     }
 
-    ngOnDestroy() {
-        this.pause()
-    }
-
-    startInterval() {
-        if (this.intervalId) return
-        this.intervalId = setInterval(() => {
-            this.activeIndex.update((i) => (i + 1) % this.testimonials.length)
-        }, 5000)
-    }
-
-    pause() {
-        if (this.intervalId) {
-            clearInterval(this.intervalId)
-            this.intervalId = null
-        }
-    }
-
-    resume() {
-        this.startInterval()
-    }
-
-    getCardStyle(index: number): string {
-        const active = this.activeIndex()
-        const length = this.testimonials.length
-        const difference = (index - active + length) % length
-
-        if (difference === 0) {
-            return 'z-30 translate-x-0 translate-y-0 rotate-0 scale-100 opacity-100 shadow-2xl'
-        } else if (difference === 1) {
-            return 'z-20 translate-x-6 translate-y-4 rotate-6 scale-[0.95] opacity-80 shadow-lg'
-        } else {
-            return 'z-10 translate-x-12 translate-y-8 rotate-12 scale-[0.90] opacity-40 shadow-md'
-        }
+    openTestimonialModal(testimonial: ClientTestimonial): void {
+        this._dialogService.open(TestimonialDialogComponent, {
+            contentClass: 'sm:max-w-3xl!',
+            context: {
+                shortText: testimonial.shortText,
+                fullText: testimonial.fullText,
+                authorName: testimonial.authorName,
+                authorTitle: testimonial.authorTitle,
+                avatarInitials: testimonial.avatarInitials,
+            },
+        })
     }
 }

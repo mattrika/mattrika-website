@@ -1,37 +1,58 @@
-<footer class="border-border/70 border-t bg-white">
-    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+<footer
+    class="text-ink relative isolate overflow-hidden border-t border-slate-300/80 bg-gradient-to-b from-[#e2e7ed] via-[#d8e0e7] to-[#cfd8df] backdrop-blur-xl"
+>
+    <!-- Subtle Ambient Glows (Gentle Tint) -->
+    <div
+        aria-hidden="true"
+        class="bg-brand/5 pointer-events-none absolute -top-32 right-1/4 -z-10 h-96 w-96 rounded-full blur-[120px]"
+    ></div>
+    <div
+        aria-hidden="true"
+        class="pointer-events-none absolute -bottom-32 left-1/4 -z-10 h-96 w-96 rounded-full bg-slate-400/10 blur-[120px]"
+    ></div>
+
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            <div class="lg:col-span-2">
-                <div class="flex items-center gap-2.5">
-                    <a href="#top" class="flex shrink-0 items-center">
-                        <img
-                            src="/Mattrika_logo.svg"
-                            alt="Mattrika"
-                            class="h-9 w-auto"
-                        />
-                    </a>
-                </div>
-                <p
-                    class="text-muted-foreground mt-4 max-w-sm text-sm leading-6"
+            <div class="reveal-init reveal-delay-1 lg:col-span-2">
+                <!-- Original Mattrika Brand Logo (Prominent / Big) -->
+                <a
+                    href="#top"
+                    (click)="scrollTo($event, '#top')"
+                    class="inline-flex shrink-0 cursor-pointer items-center"
                 >
-                    A software &amp; web development agency helping startups and
-                    enterprises design, build, and scale products people love.
+                    <img
+                        src="/Mattrika_logo.svg"
+                        alt="Mattrika"
+                        class="h-12 w-auto transition-transform duration-300 hover:scale-105 sm:h-14"
+                    />
+                </a>
+                <p
+                    class="font-tight text-ink/75 mt-5 max-w-sm text-sm leading-relaxed"
+                >
+                    A full-cycle software agency partnering with startups and
+                    enterprises to design, engineer, and scale high-performance
+                    digital products.
                 </p>
             </div>
 
-            <div>
-                <h3 class="text-foreground text-sm font-semibold">Company</h3>
-                <ul class="mt-4 space-y-3">
+            <div class="reveal-init reveal-delay-2">
+                <h3
+                    class="font-tight text-ink text-sm font-bold tracking-wider uppercase"
+                >
+                    Navigation
+                </h3>
+                <ul class="mt-4 space-y-2.5">
                     @for (link of companyLinks; track link.label) {
                         <li>
                             <a
                                 [href]="link.href"
-                                class="text-muted-foreground hover:text-foreground inline-flex items-center gap-1 text-sm transition-colors"
+                                (click)="scrollTo($event, link.href)"
+                                class="font-tight text-ink/80 hover:text-brand inline-flex cursor-pointer items-center gap-1 text-sm transition-colors"
                             >
                                 {{ link.label }}
                                 <ng-icon
                                     name="lucideArrowUpRight"
-                                    class="h-3.5 w-3.5"
+                                    class="text-ink/40 h-3.5 w-3.5"
                                 />
                             </a>
                         </li>
@@ -39,19 +60,29 @@
                 </ul>
             </div>
 
-            <div>
-                <h3 class="text-foreground text-sm font-semibold">Contact</h3>
-                <ul class="text-muted-foreground mt-4 space-y-3 text-sm">
-                    <li class="flex items-center gap-2">
-                        <ng-icon name="lucideMail" class="h-4 w-4" />
+            <div class="reveal-init reveal-delay-3">
+                <h3
+                    class="font-tight text-ink text-sm font-bold tracking-wider uppercase"
+                >
+                    Contact
+                </h3>
+                <ul class="font-tight text-ink/80 mt-4 space-y-3 text-sm">
+                    <li class="flex items-center gap-2.5">
+                        <ng-icon name="lucideMail" class="text-brand h-4 w-4" />
                         info@mattrika.com
                     </li>
-                    <li class="flex items-center gap-2">
-                        <ng-icon name="lucidePhone" class="h-4 w-4" />
+                    <li class="flex items-center gap-2.5">
+                        <ng-icon
+                            name="lucidePhone"
+                            class="text-brand h-4 w-4"
+                        />
                         (774) 260-5004, (774) 223-9731
                     </li>
-                    <li class="flex items-center gap-2">
-                        <ng-icon name="lucideMapPin" class="h-4 w-4" />
+                    <li class="flex items-center gap-2.5">
+                        <ng-icon
+                            name="lucideMapPin"
+                            class="text-brand h-4 w-4"
+                        />
                         Northborough, Massachusetts
                     </li>
                 </ul>
@@ -59,14 +90,10 @@
         </div>
 
         <div
-            class="border-border/70 mt-10 flex flex-col items-center justify-between gap-4 border-t pt-6 sm:flex-row"
+            class="reveal-init reveal-delay-4 font-tight text-ink/60 mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-300/70 pt-6 text-xs sm:flex-row"
         >
-            <p class="text-muted-foreground text-xs">
-                © {{ currentYear }} Mattrika. All rights reserved.
-            </p>
-            <p class="text-muted-foreground text-xs">
-                Crafted with care in Northborough, Massachusetts.
-            </p>
+            <p>© {{ currentYear }} Mattrika. All rights reserved.</p>
+            <p>Crafted with care in Northborough, Massachusetts.</p>
         </div>
     </div>
 </footer>

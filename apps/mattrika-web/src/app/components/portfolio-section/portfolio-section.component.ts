@@ -32,10 +32,10 @@ export class PortfolioSectionComponent {
     private readonly _dialogService = inject(HlmDialogService)
 
     maxProjects = input<number>()
-    sectionTitle = input<string>('Portfolio')
-    sectionHeading = input<string>("Selected work we're proud of")
+    sectionTitle = input<string>('Selected Work')
+    sectionHeading = input<string>('Real projects. Real impact.')
     sectionDescription = input<string>(
-        "A snapshot of products we've designed, built, and shipped — from SaaS platforms to mobile apps. Click any project to see the full story.",
+        "A selection of digital products, scalable web platforms, and mobile applications we've architected and built.",
     )
 
     displayedProjects = computed(() =>

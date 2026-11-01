@@ -1,88 +1,111 @@
 <header
-    class="border-border/70 bg-background/80 sticky top-0 z-50 w-full border-b backdrop-blur-md"
+    class="pointer-events-none fixed inset-x-0 top-0 z-50 pt-2.5 transition-all duration-300 sm:pt-3.5"
 >
-    <div
-        class="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
-    >
-        <div class="flex items-center gap-8">
+    <!-- Constrained exactly to the section content width (max-w-7xl px-4 sm:px-6 lg:px-8) -->
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <!-- Ultra-Glassy Floating Pill -->
+        <div
+            class="pointer-events-auto relative flex w-full items-center justify-between rounded-full py-1.5 pr-1.5 pl-5 backdrop-blur-2xl transition-all duration-300 sm:pl-7"
+            [class]="
+                isScrolled()
+                    ? 'text-foreground border border-white/70 bg-white/45 shadow-[0_12px_40px_-8px_rgba(13,18,32,0.12),inset_0_1px_1px_rgba(255,255,255,0.95)] backdrop-saturate-150'
+                    : 'text-foreground border border-white/55 bg-white/30 shadow-[0_8px_32px_0_rgba(13,18,32,0.06),inset_0_1px_1px_rgba(255,255,255,0.9)]'
+            "
+        >
+            <!-- Logo (Left) -->
             <a
                 href="/"
-                class="flex shrink-0 cursor-pointer items-center"
+                class="group flex shrink-0 cursor-pointer items-center py-1"
                 (click)="handleLogoClick($event)"
+                aria-label="Mattrika Home"
             >
                 <img
                     src="/Mattrika_logo.svg"
                     alt="Mattrika"
-                    class="h-9 w-auto"
+                    class="h-8.5 w-auto transition-transform duration-300 group-hover:scale-105 sm:h-9.5"
                 />
             </a>
 
-            <nav class="hidden items-center gap-1 md:flex" aria-label="Main">
+            <!-- Desktop Navigation Links with Animated Hairline Underline (like alhelaljehad.site) -->
+            <nav
+                class="hidden items-center gap-7 md:flex lg:gap-9"
+                aria-label="Main"
+            >
                 @for (link of navLinks; track link.id) {
                     <a
                         [href]="link.isRoute ? link.path : '#' + link.id"
                         (click)="handleLinkClick($event, link)"
-                        class="text-muted-foreground hover:bg-muted hover:text-foreground cursor-pointer rounded-md px-3 py-2 text-sm font-medium transition-colors"
+                        class="group font-tight text-foreground/80 hover:text-foreground relative cursor-pointer py-1 text-[15px] font-medium transition-colors"
                     >
-                        {{ link.label }}
+                        <span>{{ link.label }}</span>
+                        <!-- Motion Underline -->
+                        <span
+                            aria-hidden="true"
+                            class="bg-brand absolute -bottom-0.5 left-0 h-[2px] w-full origin-left scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100"
+                        ></span>
                     </a>
                 }
             </nav>
-        </div>
 
-        <div class="flex items-center gap-2">
-            <a
-                hlmBtn
-                class="hidden md:inline-flex"
-                href="#contact"
-                (click)="scrollTo($event, 'contact')"
-            >
-                {{ getInTouchText }}
-                <ng-icon name="lucideArrowRight" class="h-4 w-4" />
-            </a>
-
-            <button
-                hlmBtn
-                variant="ghost"
-                size="icon"
-                class="md:hidden"
-                aria-label="Toggle navigation menu"
-                (click)="mobileOpen.set(!mobileOpen())"
-            >
-                @if (mobileOpen()) {
-                    <ng-icon name="lucideX" class="h-5 w-5" />
-                } @else {
-                    <ng-icon name="lucideMenu" class="h-5 w-5" />
-                }
-            </button>
-        </div>
-    </div>
-
-    @if (mobileOpen()) {
-        <nav
-            class="border-border/70 bg-background border-t px-4 py-3 md:hidden"
-            aria-label="Mobile"
-        >
-            <div class="flex flex-col gap-1">
-                @for (link of navLinks; track link.id) {
-                    <a
-                        [href]="link.isRoute ? link.path : '#' + link.id"
-                        (click)="handleLinkClick($event, link)"
-                        class="text-muted-foreground hover:bg-muted hover:text-foreground cursor-pointer rounded-md px-3 py-2.5 text-sm font-medium transition-colors"
-                    >
-                        {{ link.label }}
-                    </a>
-                }
+            <!-- Right Side: Let's Work Together CTA Button & Mobile Double-Circle Toggle -->
+            <div class="flex items-center gap-2">
                 <a
-                    hlmBtn
-                    class="mt-2"
                     href="#contact"
                     (click)="scrollTo($event, 'contact')"
+                    class="bg-brand font-tight hover:bg-brand-dark relative hidden h-[52px] w-[190px] items-center justify-center overflow-hidden rounded-full text-base font-semibold text-white shadow-[0px_4px_32px_0px_rgba(26,175,171,0.25)] transition-all duration-300 hover:scale-[1.02] active:scale-95 sm:inline-flex sm:w-[200px]"
                 >
-                    {{ getInTouchText }}
-                    <ng-icon name="lucideArrowRight" class="h-4 w-4" />
+                    <span class="relative">Let’s Work Together</span>
                 </a>
+
+                <!-- Mobile Double-Circle Toggle Button (like alhelaljehad.site) -->
+                <button
+                    type="button"
+                    class="border-brand/30 bg-brand/10 hover:bg-brand/20 flex size-[52px] shrink-0 items-center justify-center rounded-full border transition-colors md:hidden"
+                    aria-label="Toggle navigation menu"
+                    [attr.aria-expanded]="mobileOpen()"
+                    (click)="mobileOpen.set(!mobileOpen())"
+                >
+                    <span
+                        class="bg-brand flex size-10 items-center justify-center rounded-full text-white shadow-xs transition-transform duration-200"
+                    >
+                        @if (mobileOpen()) {
+                            <ng-icon name="lucideX" class="h-4 w-4" />
+                        } @else {
+                            <ng-icon name="lucideMenu" class="h-4 w-4" />
+                        }
+                    </span>
+                </button>
             </div>
-        </nav>
-    }
+
+            <!-- Mobile Dropdown Menu -->
+            @if (mobileOpen()) {
+                <div
+                    class="text-foreground pointer-events-auto absolute top-full right-0 mt-2.5 w-64 rounded-2xl border border-white/60 bg-white/85 p-4 shadow-[0px_24px_48px_-24px_rgba(13,18,32,0.25),inset_0_1px_1px_rgba(255,255,255,0.9)] backdrop-blur-2xl transition-all md:hidden"
+                    aria-label="Mobile Navigation"
+                >
+                    <nav class="flex flex-col gap-2.5">
+                        @for (link of navLinks; track link.id) {
+                            <a
+                                [href]="
+                                    link.isRoute ? link.path : '#' + link.id
+                                "
+                                (click)="handleLinkClick($event, link)"
+                                class="font-tight text-foreground/80 hover:text-foreground cursor-pointer rounded-lg px-3 py-2 text-[15px] font-medium transition-colors hover:bg-black/5"
+                            >
+                                {{ link.label }}
+                            </a>
+                        }
+                    </nav>
+
+                    <a
+                        href="#contact"
+                        (click)="scrollTo($event, 'contact')"
+                        class="font-tight bg-brand hover:bg-brand-dark mt-3 flex h-[48px] w-full items-center justify-center rounded-full text-[15px] font-semibold text-white shadow-xs transition-all"
+                    >
+                        <span>Let’s Work Together</span>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
 </header>

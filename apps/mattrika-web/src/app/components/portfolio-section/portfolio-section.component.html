@@ -1,5 +1,5 @@
-<section id="portfolio" class="border-border/70 border-t bg-white">
-    <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+<section id="portfolio" class="border-line border-t bg-white py-24 sm:py-28">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <app-section-header
             [badge]="sectionTitle()"
             [title]="sectionHeading()"
@@ -7,8 +7,14 @@
         />
 
         <div class="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            @for (project of displayedProjects(); track project.title) {
+            @for (
+                project of displayedProjects();
+                track project.title;
+                let idx = $index
+            ) {
                 <app-project-card
+                    class="reveal-card block h-full"
+                    [style.transition-delay]="(idx % 3) * 120 + 'ms'"
                     [project]="project"
                     (projectClick)="openProject($event)"
                 />
@@ -16,12 +22,12 @@
         </div>
 
         @if (maxProjects()) {
-            <div class="mt-12 flex justify-end">
+            <div class="reveal-init reveal-delay-2 mt-14 flex justify-center">
                 <a
                     routerLink="/projects"
-                    class="text-brand decoration-brand flex items-center gap-1 text-sm font-medium transition-all hover:underline hover:underline-offset-4"
+                    class="font-tight inline-flex items-center gap-2 rounded-full border border-black/10 bg-[#03040a] px-6 py-3 text-sm font-medium text-white shadow-md transition-all duration-300 hover:scale-105 hover:bg-[#1a1f2e] active:scale-95"
                 >
-                    View all projects
+                    <span>View All Projects</span>
                     <ng-icon name="lucideArrowUpRight" class="h-4 w-4" />
                 </a>
             </div>

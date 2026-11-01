@@ -1,13 +1,16 @@
+import { isPlatformBrowser } from '@angular/common'
 import {
     Component,
     signal,
     ChangeDetectionStrategy,
     inject,
+    PLATFORM_ID,
 } from '@angular/core'
 import { Router } from '@angular/router'
 import { NgIcon } from '@ng-icons/core'
 import { HlmButtonImports } from '@spartan-ng/helm/button'
 import { GET_IN_TOUCH_TEXT } from '../../models/constants'
+import { SmoothScrollService } from '../../services/smooth-scroll.service'
 
 interface NavLink {
     label: string
@@ -25,7 +28,23 @@ interface NavLink {
 })
 export class NavbarComponent {
     private readonly _router = inject(Router)
+    private readonly _platformId = inject(PLATFORM_ID)
+    private readonly _smoothScroll = inject(SmoothScrollService)
     mobileOpen = signal(false)
+    isScrolled = signal(false)
+
+    constructor() {
+        if (isPlatformBrowser(this._platformId)) {
+            this.isScrolled.set(window.scrollY > 30)
+            window.addEventListener(
+                'scroll',
+                () => {
+                    this.isScrolled.set(window.scrollY > 30)
+                },
+                { passive: true },
+            )
+        }
+    }
 
     get isProjectsRoute(): boolean {
         return this._router.url.includes('/projects')
@@ -40,11 +59,11 @@ export class NavbarComponent {
             ]
         }
         return [
+            { label: 'Work', id: 'portfolio' },
             { label: 'Services', id: 'services' },
-            { label: 'Portfolio', id: 'portfolio' },
-            { label: 'Work', id: 'work' },
+            { label: 'Process', id: 'process' },
             { label: 'Why Us', id: 'why-us' },
-            { label: 'Contact', id: 'contact' },
+            { label: 'FAQ', id: 'faq' },
         ]
     }
 
@@ -71,9 +90,14 @@ export class NavbarComponent {
 
     scrollTo(event: Event, id: string) {
         event.preventDefault()
-        document
-            .getElementById(id)
-            ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
         this.mobileOpen.set(false)
+        if (id === 'top' || id === 'home') {
+            this._smoothScroll.scrollTo(0)
+            return
+        }
+        const target = document.getElementById(id)
+        if (target) {
+            this._smoothScroll.scrollTo(target, 70)
+        }
     }
 }
