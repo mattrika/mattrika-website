@@ -1,99 +1,214 @@
 <section
-    class="bg-background text-foreground relative isolate flex min-h-[88vh] flex-col justify-start overflow-hidden px-4 pt-28 pb-20 sm:px-6 sm:pt-32 sm:pb-28 lg:px-8 lg:pt-36"
+    class="bg-background text-foreground relative isolate flex min-h-[95vh] flex-col justify-center overflow-hidden px-4 pt-24 pb-20 sm:px-6 lg:px-8"
 >
-    <!-- Mattrika Brand Ambient Glows & Subtle Grid -->
-    <div
+    <!-- ══════════════════════════════════════════════════════
+         DIGITAL ARCHITECTURAL LINES — distributed across hero
+    ═══════════════════════════════════════════════════════ -->
+    <svg
         aria-hidden="true"
-        class="bg-brand/12 pointer-events-none absolute -top-40 left-1/2 -z-10 h-[600px] w-[600px] -translate-x-1/2 rounded-full blur-[130px]"
-    ></div>
-    <div
-        aria-hidden="true"
-        class="bg-secondary/60 pointer-events-none absolute top-1/3 -right-20 -z-10 h-[450px] w-[450px] rounded-full blur-[120px]"
-    ></div>
-    <div
-        aria-hidden="true"
-        class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(rgba(26,175,171,0.08)_1px,transparent_1px)] [background-size:28px_28px] opacity-70"
-    ></div>
-
-    <div
-        class="mx-auto flex w-full max-w-5xl flex-col items-center text-center"
+        class="pointer-events-none absolute inset-0 -z-10 h-full w-full opacity-70"
+        viewBox="0 0 1440 900"
+        fill="none"
+        preserveAspectRatio="xMidYMid slice"
     >
-        <!-- Live Status Pill Badge (Mattrika Theme) -->
-        <span
-            class="hero-enter reveal-init reveal-delay-1 font-tight border-border text-foreground inline-flex items-center gap-2 rounded-full border bg-white px-3.5 py-1.5 text-xs font-semibold shadow-2xs backdrop-blur-md"
-        >
-            <span class="relative flex h-2 w-2">
-                <span
-                    class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75"
-                ></span>
-                <span
-                    class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"
-                ></span>
-            </span>
-            <span>Available for New Projects · Full-Cycle Engineering</span>
-        </span>
-
-        <!-- Punchy Bold Main Heading (Inter Tight + Mattrika Teal Gradient) -->
-        <h1
-            class="hero-enter reveal-init reveal-delay-2 font-tight text-foreground mt-6 text-4xl leading-[1.08] font-bold tracking-tight text-balance sm:text-5xl md:text-6xl lg:text-7xl"
-        >
-            Engineering digital products
-            <span
-                class="from-brand via-brand-dark to-brand bg-gradient-to-r bg-clip-text text-transparent"
+        <defs>
+            <linearGradient
+                id="beam-grad-teal"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%"
             >
-                that move markets
+                <stop offset="0%" stop-color="#1aafab" stop-opacity="0" />
+                <stop offset="50%" stop-color="#1aafab" stop-opacity="0.5" />
+                <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0" />
+            </linearGradient>
+            <linearGradient
+                id="beam-grad-indigo"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%"
+            >
+                <stop offset="0%" stop-color="#6366f1" stop-opacity="0" />
+                <stop offset="50%" stop-color="#6366f1" stop-opacity="0.45" />
+                <stop offset="100%" stop-color="#1aafab" stop-opacity="0" />
+            </linearGradient>
+        </defs>
+
+        <!-- Static Base Traces (whisper-faint 1px architectural paths) -->
+        <g class="tech-lines-base">
+            <!-- Line 1: Upper traverse -->
+            <path
+                d="M -20,140 L 280,140 L 380,220 L 760,220 L 840,150 L 1180,150 L 1260,230 L 1460,230"
+            />
+            <!-- Line 2: Left vertical stepped jog -->
+            <path
+                d="M 160,-20 L 160,260 L 240,340 L 240,640 L 140,740 L 140,920"
+            />
+            <!-- Line 3: Mid transverse line -->
+            <path
+                d="M -20,440 L 320,440 L 440,540 L 700,540 L 820,430 L 1120,430 L 1220,530 L 1460,530"
+            />
+            <!-- Line 4: Right vertical stepped jog -->
+            <path
+                d="M 1280,-20 L 1280,280 L 1200,360 L 1200,660 L 1280,740 L 1280,920"
+            />
+            <!-- Line 5: Diagonal network trace across hero -->
+            <path
+                d="M 1460,100 L 1080,100 L 980,200 L 980,340 L 860,460 L 580,460 L 460,580 L 460,760 L 360,860 L -20,860"
+            />
+            <!-- Line 6: Lower baseline across stats -->
+            <path
+                d="M -20,720 L 420,720 L 520,660 L 920,660 L 1020,740 L 1460,740"
+            />
+        </g>
+
+        <!-- Animated Running Light Pulses (pure CSS stroke-dashoffset) -->
+        <g class="tech-lines-pulses">
+            <path
+                pathLength="1000"
+                class="pulse-path pulse-1"
+                stroke="url(#beam-grad-teal)"
+                d="M -20,140 L 280,140 L 380,220 L 760,220 L 840,150 L 1180,150 L 1260,230 L 1460,230"
+            />
+            <path
+                pathLength="1000"
+                class="pulse-path pulse-2"
+                stroke="url(#beam-grad-indigo)"
+                d="M 160,-20 L 160,260 L 240,340 L 240,640 L 140,740 L 140,920"
+            />
+            <path
+                pathLength="1000"
+                class="pulse-path pulse-3"
+                stroke="url(#beam-grad-teal)"
+                d="M -20,440 L 320,440 L 440,540 L 700,540 L 820,430 L 1120,430 L 1220,530 L 1460,530"
+            />
+            <path
+                pathLength="1000"
+                class="pulse-path pulse-4"
+                stroke="url(#beam-grad-indigo)"
+                d="M 1280,-20 L 1280,280 L 1200,360 L 1200,660 L 1280,740 L 1280,920"
+            />
+            <path
+                pathLength="1000"
+                class="pulse-path pulse-5"
+                stroke="url(#beam-grad-teal)"
+                d="M 1460,100 L 1080,100 L 980,200 L 980,340 L 860,460 L 580,460 L 460,580 L 460,760 L 360,860 L -20,860"
+            />
+            <path
+                pathLength="1000"
+                class="pulse-path pulse-6"
+                stroke="url(#beam-grad-indigo)"
+                d="M -20,720 L 420,720 L 520,660 L 920,660 L 1020,740 L 1460,740"
+            />
+        </g>
+
+        <!-- Micro Junction Dots -->
+        <g class="tech-nodes">
+            <circle cx="380" cy="220" r="2.5" />
+            <circle cx="840" cy="150" r="2.5" />
+            <circle cx="240" cy="340" r="2.5" />
+            <circle cx="440" cy="540" r="2.5" />
+            <circle cx="1200" cy="360" r="2.5" />
+            <circle cx="860" cy="460" r="2.5" />
+            <circle cx="520" cy="660" r="2.5" />
+        </g>
+    </svg>
+
+    <!-- Very subtle top-edge line -->
+    <div
+        aria-hidden="true"
+        class="via-brand/30 pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent to-transparent"
+    ></div>
+
+    <!-- ══════════════════════════════════════════════════════
+         HERO CONTENT
+    ═══════════════════════════════════════════════════════ -->
+    <div
+        class="hero-content relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center text-center"
+    >
+        <!-- Eyebrow -->
+        <div
+            class="hero-enter reveal-init reveal-delay-1 border-border/60 bg-muted/50 text-muted-foreground inline-flex items-center gap-2 rounded-full border px-3.5 py-1 text-[11px] font-medium tracking-wide"
+        >
+            <span class="relative flex h-1.5 w-1.5">
+                <span
+                    class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-70"
+                ></span>
+                <span
+                    class="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500"
+                ></span>
             </span>
+            Available for new projects
+        </div>
+
+        <!-- Headline -->
+        <h1
+            class="hero-enter reveal-init reveal-delay-2 font-tight text-foreground mt-8 max-w-4xl text-[2.7rem] leading-[1.06] font-extrabold tracking-[-0.03em] text-balance sm:text-5xl md:text-6xl lg:text-[4.5rem]"
+        >
+            We build digital products<br />
+            <span class="digital-gradient-text">that move markets</span>
         </h1>
 
         <!-- Subtitle -->
         <p
             class="hero-enter reveal-init reveal-delay-3 font-tight text-muted-foreground mt-6 max-w-2xl text-base leading-relaxed text-pretty sm:text-lg"
         >
-            Mattrika is a full-cycle software agency partnering with ambitious
-            startups and enterprises. We take products from architectural
-            blueprint to high-velocity launch and global scale.
+            Mattrika is a full-cycle development agency partnering with startups
+            and enterprises to ship fast, scalable web platforms and mobile
+            apps—from first wireframe to global scale.
         </p>
 
-        <!-- Action Buttons (Mattrika Primary Brand Teal) -->
+        <!-- CTAs -->
         <div
-            class="hero-enter reveal-init reveal-delay-4 mt-10 flex flex-col items-center gap-3.5 sm:flex-row"
+            class="hero-enter reveal-init reveal-delay-4 mt-10 flex flex-col items-center gap-3 sm:flex-row"
         >
             <a
                 href="#contact"
                 (click)="scrollTo($event, 'contact')"
-                class="font-tight bg-brand shadow-brand/25 hover:bg-brand-dark flex w-full items-center justify-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 sm:w-auto"
+                class="cta-primary group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full px-8 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] sm:w-auto"
             >
-                <span>Let's Build Together</span>
-                <ng-icon name="lucideArrowRight" class="h-4 w-4" />
+                <span class="relative z-10">Let's Build Together</span>
+                <ng-icon
+                    name="lucideArrowRight"
+                    class="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
+                />
+                <span
+                    class="absolute inset-0 -translate-x-full bg-gradient-to-r from-white/0 via-white/20 to-white/0 transition-transform duration-700 ease-in-out group-hover:translate-x-full"
+                ></span>
             </a>
-
             <a
                 href="#portfolio"
                 (click)="scrollTo($event, 'portfolio')"
-                class="font-tight border-border text-foreground hover:bg-muted flex w-full items-center justify-center gap-2 rounded-full border bg-white px-7 py-3.5 text-base font-medium shadow-2xs backdrop-blur-md transition-all duration-300 sm:w-auto"
+                class="group border-border/70 text-foreground/70 hover:border-border hover:text-foreground flex w-full items-center justify-center gap-2 rounded-full border bg-white px-8 py-3.5 text-sm font-medium shadow-2xs transition-all duration-300 sm:w-auto"
             >
-                Explore Selected Work
+                See Our Work
+                <ng-icon
+                    name="lucideExternalLink"
+                    class="h-3.5 w-3.5 opacity-40 transition-colors duration-300 group-hover:opacity-70"
+                />
             </a>
         </div>
 
-        <!-- Metric Stats Bar -->
-        <div
-            class="hero-enter reveal-card reveal-delay-5 border-border mt-16 grid w-full max-w-4xl grid-cols-2 gap-6 border-t pt-10 sm:grid-cols-4"
-        >
-            @for (stat of stats; track stat.label) {
-                <div class="flex flex-col items-center gap-1">
-                    <span
-                        class="font-tight text-foreground text-3xl font-bold tracking-tight sm:text-4xl"
+        <!-- Stats -->
+        <div class="hero-enter reveal-card reveal-delay-5 mt-20 w-full">
+            <div class="grid grid-cols-2 sm:grid-cols-4">
+                @for (stat of stats; track stat.label) {
+                    <div
+                        class="[&:not(:last-child)]:border-border/40 hover:bg-muted/30 flex flex-col items-center gap-1.5 py-6 transition-colors duration-300 [&:not(:last-child)]:border-r"
                     >
-                        {{ stat.value }}
-                    </span>
-                    <span
-                        class="font-tight text-muted-foreground text-xs font-medium sm:text-sm"
-                    >
-                        {{ stat.label }}
-                    </span>
-                </div>
-            }
+                        <span
+                            class="font-tight text-foreground text-3xl font-extrabold tracking-[-0.03em] tabular-nums sm:text-4xl"
+                            >{{ stat.displayValue }}</span
+                        >
+                        <span
+                            class="font-tight text-muted-foreground text-xs font-medium"
+                            >{{ stat.label }}</span
+                        >
+                    </div>
+                }
+            </div>
         </div>
     </div>
 </section>
