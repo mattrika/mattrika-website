@@ -2,7 +2,14 @@
     hlmCard
     class="border-border/70 hover:border-brand/40 group flex h-full flex-col overflow-hidden rounded-xl pt-0! transition-all hover:-translate-y-0.5 hover:shadow-md"
 >
-    <div class="relative overflow-hidden">
+    <div
+        class="relative cursor-pointer overflow-hidden"
+        (click)="onClick()"
+        role="button"
+        tabindex="0"
+        (keydown.enter)="onClick()"
+        [attr.aria-label]="'Open case study for ' + project().title"
+    >
         <img
             [src]="project().thumbnail"
             [alt]="project().title"
@@ -21,16 +28,27 @@
             {{ project().category }}
         </span>
         <button
-            class="absolute right-3 bottom-3 flex cursor-pointer items-center gap-1 text-sm font-medium text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-            (click)="onClick()"
+            type="button"
+            class="absolute right-3 bottom-3 flex cursor-pointer items-center gap-1.5 rounded-lg bg-black/70 px-3 py-1.5 text-xs font-medium text-white opacity-0 shadow-2xs backdrop-blur-md transition-all group-focus-within:opacity-100 group-hover:opacity-100 hover:bg-black/90 active:scale-95"
+            (click)="onClick(); $event.stopPropagation()"
         >
             View case study
-            <ng-icon name="lucideArrowUpRight" class="h-4 w-4" />
+            <ng-icon name="lucideArrowUpRight" class="h-3.5 w-3.5" />
         </button>
     </div>
 
-    <div hlmCardHeader class="flex-grow">
-        <h3 hlmCardTitle class="text-base">
+    <div
+        hlmCardHeader
+        class="flex-grow cursor-pointer"
+        (click)="onClick()"
+        role="button"
+        tabindex="0"
+        (keydown.enter)="onClick()"
+    >
+        <h3
+            hlmCardTitle
+            class="group-hover:text-brand text-base transition-colors"
+        >
             {{ project().title }}
         </h3>
         <p hlmCardDescription class="text-sm">

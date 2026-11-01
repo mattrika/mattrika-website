@@ -141,7 +141,11 @@ export const projects: Project[] = [
         title: 'PdfAir',
         category: 'Tools',
         thumbnail: '/projects/PdfAir/main.png',
-        images: ['/projects/PdfAir/main.png'],
+        images: [
+            '/projects/PdfAir/main.png',
+            '/projects/PdfAir/1.png',
+            '/projects/PdfAir/2.png',
+        ],
         summary: 'Manage and Sync Your PDF Library Across Devices',
         description:
             'You have always wanted to read the books in your collection. You see interesting artictes online and want to save it as PDF to read it later. But you dont have enough time. Also, you forget where you stored them.',

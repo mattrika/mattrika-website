@@ -7,9 +7,7 @@ import {
 } from '@angular/core'
 import { RouterLink } from '@angular/router'
 import { NgIcon } from '@ng-icons/core'
-import { HlmBadgeImports } from '@spartan-ng/helm/badge'
 import { HlmButtonImports } from '@spartan-ng/helm/button'
-import { HlmCardImports } from '@spartan-ng/helm/card'
 import { HlmDialogService } from '@spartan-ng/helm/dialog'
 import { SectionHeaderComponent } from '../shared/section-header/section-header.component'
 import { ProjectCardComponent } from './project-card/project-card.component'
@@ -46,7 +44,10 @@ export class PortfolioSectionComponent {
 
     openProject(project: Project) {
         this._dialogService.open(ProjectDialogComponent, {
-            contentClass: 'sm:max-w-4xl!',
+            contentClass:
+                'max-w-[calc(100%-1.5rem)] sm:max-w-3xl lg:max-w-4xl p-0! gap-0! overflow-hidden rounded-2xl border border-border/70 shadow-2xl bg-card max-h-[92vh] sm:mx-auto!',
+            backdropClass: 'bg-black/60! backdrop-blur-xs!',
+            showCloseButton: false,
             context: project,
         })
     }
