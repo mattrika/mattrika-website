@@ -3,30 +3,30 @@
 >
     <!-- Constrained exactly to the section content width (max-w-7xl px-4 sm:px-6 lg:px-8) -->
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <!-- Ultra-Glassy Floating Pill -->
+        <!-- Floating Pill Header Container -->
         <div
-            class="pointer-events-auto relative flex w-full items-center justify-between rounded-full py-1.5 pr-1.5 pl-5 backdrop-blur-2xl transition-all duration-300 sm:pl-7"
+            class="pointer-events-auto relative flex w-full items-center justify-between rounded-full py-2 pr-2.5 pl-4.5 backdrop-blur-2xl transition-all duration-300 sm:py-2 sm:pr-3 sm:pl-6"
             [class]="
                 isScrolled()
-                    ? 'text-foreground border border-white/70 bg-white/45 shadow-[0_12px_40px_-8px_rgba(13,18,32,0.12),inset_0_1px_1px_rgba(255,255,255,0.95)] backdrop-saturate-150'
-                    : 'text-foreground border border-white/55 bg-white/30 shadow-[0_8px_32px_0_rgba(13,18,32,0.06),inset_0_1px_1px_rgba(255,255,255,0.9)]'
+                    ? 'text-foreground border border-white/70 bg-white/60 shadow-[0_12px_40px_-8px_rgba(13,18,32,0.12),inset_0_1px_1px_rgba(255,255,255,0.95)] backdrop-saturate-150'
+                    : 'text-foreground border border-white/55 bg-white/45 shadow-[0_8px_32px_0_rgba(13,18,32,0.06),inset_0_1px_1px_rgba(255,255,255,0.9)]'
             "
         >
-            <!-- Logo (Left) -->
+            <!-- Logo (Left) - Increased Size -->
             <a
                 href="/"
-                class="group flex shrink-0 cursor-pointer items-center py-1"
+                class="group flex shrink-0 cursor-pointer items-center py-0.5"
                 (click)="handleLogoClick($event)"
                 aria-label="Mattrika Home"
             >
                 <img
                     src="/Mattrika_logo.svg"
                     alt="Mattrika"
-                    class="h-8.5 w-auto transition-transform duration-300 group-hover:scale-105 sm:h-9.5"
+                    class="h-10 w-auto transition-transform duration-300 group-hover:scale-105 sm:h-12"
                 />
             </a>
 
-            <!-- Desktop Navigation Links with Animated Hairline Underline (like alhelaljehad.site) -->
+            <!-- Desktop Navigation Links with Animated Hairline Underline -->
             <nav
                 class="hidden items-center gap-7 md:flex lg:gap-9"
                 aria-label="Main"
@@ -47,50 +47,53 @@
                 }
             </nav>
 
-            <!-- Right Side: Let's Work Together CTA Button & Mobile Double-Circle Toggle -->
+            <!-- Right Side: Compact CTA Button (matching hero) & Mobile Toggle -->
             <div class="flex items-center gap-2">
                 <a
                     href="#contact"
                     (click)="scrollTo($event, 'contact')"
-                    class="bg-brand font-tight hover:bg-brand-dark relative hidden h-[52px] w-[190px] items-center justify-center overflow-hidden rounded-full text-base font-semibold text-white shadow-[0px_4px_32px_0px_rgba(26,175,171,0.25)] transition-all duration-300 hover:scale-[1.02] active:scale-95 sm:inline-flex sm:w-[200px]"
+                    class="nav-cta-btn group relative hidden h-[42px] items-center justify-center gap-2 overflow-hidden rounded-full px-6 text-sm font-semibold text-white transition-all duration-300 hover:scale-[1.02] active:scale-[0.97] sm:inline-flex"
                 >
-                    <span class="relative">Let’s Work Together</span>
+                    <span class="relative z-10">Let’s Work Together</span>
+                    <span
+                        class="absolute inset-0 -translate-x-full bg-gradient-to-r from-white/0 via-white/20 to-white/0 transition-transform duration-700 ease-in-out group-hover:translate-x-full"
+                    ></span>
                 </a>
 
-                <!-- Mobile Double-Circle Toggle Button (like alhelaljehad.site) -->
+                <!-- Mobile Double-Circle Toggle Button -->
                 <button
                     type="button"
-                    class="border-brand/30 bg-brand/10 hover:bg-brand/20 flex size-[52px] shrink-0 items-center justify-center rounded-full border transition-colors md:hidden"
+                    class="border-brand/30 bg-brand/10 hover:bg-brand/20 flex size-[42px] shrink-0 items-center justify-center rounded-full border transition-colors md:hidden"
                     aria-label="Toggle navigation menu"
                     [attr.aria-expanded]="mobileOpen()"
                     (click)="mobileOpen.set(!mobileOpen())"
                 >
                     <span
-                        class="bg-brand flex size-10 items-center justify-center rounded-full text-white shadow-xs transition-transform duration-200"
+                        class="bg-brand flex size-8 items-center justify-center rounded-full text-white shadow-xs transition-transform duration-200"
                     >
                         @if (mobileOpen()) {
-                            <ng-icon name="lucideX" class="h-4 w-4" />
+                            <ng-icon name="lucideX" class="size-4" />
                         } @else {
-                            <ng-icon name="lucideMenu" class="h-4 w-4" />
+                            <ng-icon name="lucideMenu" class="size-4" />
                         }
                     </span>
                 </button>
             </div>
 
-            <!-- Mobile Dropdown Menu -->
+            <!-- Mobile Dropdown Menu (Opaque, Visible Solid Background, High Contrast) -->
             @if (mobileOpen()) {
                 <div
-                    class="text-foreground pointer-events-auto absolute top-full right-0 mt-2.5 w-64 rounded-2xl border border-white/60 bg-white/85 p-4 shadow-[0px_24px_48px_-24px_rgba(13,18,32,0.25),inset_0_1px_1px_rgba(255,255,255,0.9)] backdrop-blur-2xl transition-all md:hidden"
+                    class="text-foreground pointer-events-auto absolute top-full right-0 mt-3 w-72 rounded-2xl border border-border bg-white p-4 shadow-[0_20px_50px_-10px_rgba(13,18,32,0.22),0_0_0_1px_rgba(0,0,0,0.04)] transition-all md:hidden"
                     aria-label="Mobile Navigation"
                 >
-                    <nav class="flex flex-col gap-2.5">
+                    <nav class="flex flex-col gap-1">
                         @for (link of navLinks; track link.id) {
                             <a
                                 [href]="
                                     link.isRoute ? link.path : '#' + link.id
                                 "
                                 (click)="handleLinkClick($event, link)"
-                                class="font-tight text-foreground/80 hover:text-foreground cursor-pointer rounded-lg px-3 py-2 text-[15px] font-medium transition-colors hover:bg-black/5"
+                                class="font-tight text-foreground hover:text-brand flex cursor-pointer items-center rounded-xl px-3.5 py-2.5 text-[15px] font-semibold transition-colors hover:bg-slate-100/80 active:bg-slate-100"
                             >
                                 {{ link.label }}
                             </a>
@@ -100,9 +103,12 @@
                     <a
                         href="#contact"
                         (click)="scrollTo($event, 'contact')"
-                        class="font-tight bg-brand hover:bg-brand-dark mt-3 flex h-[48px] w-full items-center justify-center rounded-full text-[15px] font-semibold text-white shadow-xs transition-all"
+                        class="nav-cta-btn group relative mt-3.5 flex h-[42px] w-full items-center justify-center overflow-hidden rounded-full text-sm font-semibold text-white transition-all duration-300 hover:scale-[1.02] active:scale-[0.97]"
                     >
-                        <span>Let’s Work Together</span>
+                        <span class="relative z-10">Let’s Work Together</span>
+                        <span
+                            class="absolute inset-0 -translate-x-full bg-gradient-to-r from-white/0 via-white/20 to-white/0 transition-transform duration-700 ease-in-out group-hover:translate-x-full"
+                        ></span>
                     </a>
                 </div>
             }

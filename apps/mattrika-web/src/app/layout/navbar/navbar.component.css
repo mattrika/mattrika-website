@@ -1,0 +1,19 @@
+:host {
+    display: block;
+}
+
+.nav-cta-btn {
+    background: linear-gradient(135deg, #1aafab 0%, #0ea5e9 60%, #6366f1 100%);
+    background-size: 200% auto;
+    box-shadow: 0 4px 18px rgba(26, 175, 171, 0.28);
+    transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease,
+        background-position 0.5s ease;
+}
+
+.nav-cta-btn:hover {
+    background-position: right center;
+    box-shadow: 0 6px 24px rgba(26, 175, 171, 0.38);
+}
+

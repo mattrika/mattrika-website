@@ -1,74 +1,115 @@
-<section id="faq" class="border-line bg-surface/50 border-t py-24 sm:py-28">
+<section
+    id="faq"
+    class="relative isolate border-t border-border/60 bg-surface/30 py-20 sm:py-28 overflow-hidden"
+>
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
         <div class="mx-auto max-w-3xl text-center">
             <span
-                class="reveal-init reveal-delay-1 font-tight border-line text-ink inline-flex items-center gap-2 rounded-full border bg-white px-3.5 py-1.5 text-xs font-semibold tracking-tight shadow-2xs"
+                class="reveal-init reveal-delay-1 font-tight border-border/80 text-foreground inline-flex items-center gap-2 rounded-full border bg-white px-3.5 py-1.5 text-xs font-semibold tracking-tight shadow-2xs backdrop-blur-md"
             >
-                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                <span class="size-2 rounded-full bg-brand"></span>
                 Frequently Asked Questions
             </span>
+
             <h2
-                class="reveal-init reveal-delay-2 font-tight text-ink mt-5 text-3xl leading-[1.12] font-bold tracking-tight text-balance sm:text-4xl lg:text-5xl"
+                class="reveal-init reveal-delay-2 font-tight text-foreground mt-5 text-3xl leading-[1.12] font-bold tracking-tight text-balance sm:text-4xl lg:text-5xl"
             >
-                Answers to Common Questions.
+                Clear Answers to
+                <span
+                    class="from-brand via-teal-600 to-cyan-500 bg-gradient-to-r bg-clip-text text-transparent"
+                >
+                    Common Questions.
+                </span>
             </h2>
+
             <p
-                class="reveal-init reveal-delay-3 font-tight text-ink-soft mx-auto mt-4 max-w-2xl text-base leading-relaxed text-pretty sm:text-lg"
+                class="reveal-init reveal-delay-3 font-tight text-muted-foreground mx-auto mt-4 max-w-2xl text-base leading-relaxed text-pretty sm:text-lg"
             >
-                Everything you need to know about how we partner, build, and
-                deliver production software.
+                Everything you need to know about our collaboration models,
+                delivery milestones, engineering standards, and post-launch
+                scale.
             </p>
         </div>
 
-        <!-- Accordion Container -->
+        <!-- Minimalist Cards with Crisp Gradient Border (No Glow) -->
         <div
-            class="reveal-card reveal-delay-2 divide-line border-line mx-auto mt-14 max-w-3xl divide-y overflow-hidden rounded-2xl border bg-white shadow-xs"
+            class="reveal-card reveal-delay-2 mx-auto mt-12 flex max-w-3xl flex-col gap-3.5 sm:mt-14 sm:gap-4"
         >
             @for (faq of faqs; track faq.question; let idx = $index) {
-                <div class="transition-colors">
-                    <button
-                        type="button"
-                        (click)="toggle(idx)"
-                        class="hover:bg-surface/50 flex w-full cursor-pointer items-center justify-between gap-4 p-5 text-left transition-colors sm:p-6"
-                        [attr.aria-expanded]="openIndex() === idx"
+                <div
+                    class="group relative rounded-2xl p-[1.5px] transition-all duration-300"
+                    [class]="
+                        openIndex() === idx
+                            ? 'bg-gradient-to-r from-brand via-cyan-400 to-teal-400 shadow-sm'
+                            : 'bg-border/80 hover:bg-gradient-to-r hover:from-brand/40 hover:via-cyan-400/30 hover:to-teal-400/40 hover:shadow-xs'
+                    "
+                >
+                    <!-- Card Body Interior (Clean White) -->
+                    <div
+                        class="overflow-hidden rounded-[15px] bg-white transition-colors duration-200"
                     >
-                        <span
-                            class="font-tight text-ink text-base font-bold sm:text-lg"
+                        <!-- Accordion Trigger Button -->
+                        <button
+                            type="button"
+                            (click)="toggle(idx)"
+                            class="flex w-full cursor-pointer items-center justify-between gap-3.5 p-4.5 text-left transition-colors sm:gap-4 sm:p-5.5 hover:bg-slate-50/50"
+                            [attr.aria-expanded]="openIndex() === idx"
                         >
-                            {{ faq.question }}
-                        </span>
-                        <span
-                            class="border-line bg-surface text-ink flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-transform duration-300"
-                            [class.rotate-180]="openIndex() === idx"
-                        >
-                            <ng-icon name="lucideChevronDown" class="h-4 w-4" />
-                        </span>
-                    </button>
+                            <div class="flex items-center gap-3 sm:gap-3.5">
+                                <!-- Minimal Numeric Pill -->
+                                <span
+                                    class="font-mono text-xs font-semibold px-2 py-0.5 rounded-md transition-colors shrink-0"
+                                    [class]="
+                                        openIndex() === idx
+                                            ? 'bg-brand/10 text-brand-dark'
+                                            : 'bg-surface text-muted-foreground group-hover:bg-brand/5 group-hover:text-foreground'
+                                    "
+                                >
+                                    {{ faq.number }}
+                                </span>
 
-                    @if (openIndex() === idx) {
-                        <div class="px-5 pt-0 pb-5 sm:px-6 sm:pb-6">
-                            <p
-                                class="font-tight text-ink-soft text-sm leading-relaxed sm:text-base"
+                                <span
+                                    class="font-tight text-foreground text-base font-bold transition-colors group-hover:text-brand sm:text-lg"
+                                    [class.text-brand-dark]="
+                                        openIndex() === idx
+                                    "
+                                >
+                                    {{ faq.question }}
+                                </span>
+                            </div>
+
+                            <!-- Expand / Collapse Icon Circle -->
+                            <span
+                                class="flex size-8 shrink-0 items-center justify-center rounded-full transition-all duration-300"
+                                [class]="
+                                    openIndex() === idx
+                                        ? 'bg-brand text-white shadow-xs rotate-180'
+                                        : 'border border-border/80 bg-surface/70 text-muted-foreground group-hover:border-border group-hover:text-foreground'
+                                "
                             >
-                                {{ faq.answer }}
-                            </p>
-                        </div>
-                    }
+                                <ng-icon
+                                    name="lucideChevronDown"
+                                    class="size-4"
+                                />
+                            </span>
+                        </button>
+
+                        <!-- Expanded Answer Content with Clean Divider -->
+                        @if (openIndex() === idx) {
+                            <div class="px-4.5 pb-5 pt-0 sm:px-6 sm:pb-6">
+                                <div class="border-t border-border/50 pt-4">
+                                    <p
+                                        class="font-tight text-muted-foreground text-sm leading-relaxed sm:text-base"
+                                    >
+                                        {{ faq.answer }}
+                                    </p>
+                                </div>
+                            </div>
+                        }
+                    </div>
                 </div>
             }
-        </div>
-
-        <!-- Bottom Prompt -->
-        <div class="reveal-init reveal-delay-3 mt-12 text-center">
-            <p class="font-tight text-ink-soft text-sm">
-                Still have questions?
-                <a
-                    href="#contact"
-                    class="text-ink hover:text-brand font-semibold underline underline-offset-4 transition-colors"
-                >
-                    Let’s start a conversation
-                </a>
-            </p>
         </div>
     </div>
 </section>
