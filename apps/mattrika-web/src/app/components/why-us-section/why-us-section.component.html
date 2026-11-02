@@ -1495,7 +1495,9 @@
 
     <!-- Why Us Feature Pillars: 4 Compact Value Props Below -->
     <div class="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 gap-3.5 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
+        <div
+            class="grid grid-cols-1 gap-3.5 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4"
+        >
             @for (item of features; track item.title; let idx = $index) {
                 <div
                     class="reveal-card flex flex-col gap-2.5 rounded-xl border border-white/[0.08] bg-[#0c0d12]/90 p-4.5 backdrop-blur-md transition-all duration-300 hover:border-white/20 hover:bg-[#12131a] sm:p-5"
@@ -1504,12 +1506,19 @@
                     <span
                         class="bg-brand/15 text-brand flex size-9 items-center justify-center rounded-lg font-semibold sm:size-10 sm:rounded-xl"
                     >
-                        <ng-icon [name]="item.icon" class="h-4.5 w-4.5 sm:h-5 sm:w-5" />
+                        <ng-icon
+                            [name]="item.icon"
+                            class="h-4.5 w-4.5 sm:h-5 sm:w-5"
+                        />
                     </span>
-                    <h3 class="font-tight text-sm font-bold text-white sm:text-base">
+                    <h3
+                        class="font-tight text-sm font-bold text-white sm:text-base"
+                    >
                         {{ item.title }}
                     </h3>
-                    <p class="font-tight text-xs leading-relaxed text-white/65 sm:text-sm">
+                    <p
+                        class="font-tight text-xs leading-relaxed text-white/65 sm:text-sm"
+                    >
                         {{ item.description }}
                     </p>
                 </div>

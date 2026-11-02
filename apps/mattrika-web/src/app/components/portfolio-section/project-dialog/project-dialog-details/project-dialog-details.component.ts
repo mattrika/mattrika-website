@@ -1,9 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    input,
-    output,
-} from '@angular/core'
+import { Component, input, output } from '@angular/core'
 import { NgIcon, provideIcons } from '@ng-icons/core'
 import {
     lucideArrowUpRight,
@@ -34,7 +29,6 @@ import type { Project } from '../../project.model'
             lucideUser,
         }),
     ],
-    changeDetection: ChangeDetectionStrategy.OnPush,
     templateUrl: './project-dialog-details.component.html',
 })
 export class ProjectDialogDetailsComponent {

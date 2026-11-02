@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core'
+import { Component } from '@angular/core'
 import { HlmBadgeImports } from '@spartan-ng/helm/badge'
 import { HlmCardImports } from '@spartan-ng/helm/card'
 
@@ -14,7 +14,6 @@ interface ProcessStep {
     selector: 'app-process-section',
     imports: [...HlmBadgeImports, ...HlmCardImports],
     templateUrl: './process-section.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './process-section.component.css',
 })
 export class ProcessSectionComponent {

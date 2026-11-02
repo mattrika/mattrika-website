@@ -1,10 +1,4 @@
-import {
-    Component,
-    ChangeDetectionStrategy,
-    inject,
-    afterNextRender,
-    OnDestroy,
-} from '@angular/core'
+import { Component, inject, afterNextRender, OnDestroy } from '@angular/core'
 import { CtaSectionComponent } from '../../components/cta-section/cta-section.component'
 import { FaqSectionComponent } from '../../components/faq-section/faq-section.component'
 import { HeroSectionComponent } from '../../components/hero-section/hero-section.component'
@@ -31,7 +25,6 @@ import { SmoothScrollService } from '../../services/smooth-scroll.service'
         CtaSectionComponent,
     ],
     templateUrl: './landing.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './landing.component.css',
 })
 export class LandingComponent implements OnDestroy {

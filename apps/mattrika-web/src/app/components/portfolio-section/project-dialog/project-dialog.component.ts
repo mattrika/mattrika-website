@@ -1,10 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    HostListener,
-    inject,
-    signal,
-} from '@angular/core'
+import { Component, HostListener, inject, signal } from '@angular/core'
 import { BrnDialogRef, injectBrnDialogContext } from '@spartan-ng/brain/dialog'
 import type { Project } from '../project.model'
 import { ProjectDialogBrowserComponent } from './project-dialog-browser/project-dialog-browser.component'
@@ -13,7 +7,6 @@ import { ProjectDialogDetailsComponent } from './project-dialog-details/project-
 @Component({
     selector: 'app-project-dialog',
     imports: [ProjectDialogBrowserComponent, ProjectDialogDetailsComponent],
-    changeDetection: ChangeDetectionStrategy.OnPush,
     templateUrl: './project-dialog.component.html',
 })
 export class ProjectDialogComponent {

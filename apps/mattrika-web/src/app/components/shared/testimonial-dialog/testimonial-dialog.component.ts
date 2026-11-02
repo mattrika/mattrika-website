@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
+import { Component, inject } from '@angular/core'
 import { NgIconComponent } from '@ng-icons/core'
 import { BrnDialogRef, injectBrnDialogContext } from '@spartan-ng/brain/dialog'
 import { HlmDialogImports } from '@spartan-ng/helm/dialog'
@@ -16,7 +16,6 @@ export interface TestimonialContext {
     standalone: true,
     imports: [...HlmDialogImports, NgIconComponent],
     templateUrl: './testimonial-dialog.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TestimonialDialogComponent {
     private readonly _dialogRef = inject(BrnDialogRef)

@@ -1,11 +1,5 @@
 import { isPlatformBrowser } from '@angular/common'
-import {
-    Component,
-    signal,
-    ChangeDetectionStrategy,
-    inject,
-    PLATFORM_ID,
-} from '@angular/core'
+import { Component, signal, inject, PLATFORM_ID } from '@angular/core'
 import { Router } from '@angular/router'
 import { NgIcon } from '@ng-icons/core'
 import { HlmButtonImports } from '@spartan-ng/helm/button'
@@ -23,7 +17,6 @@ interface NavLink {
     selector: 'app-navbar',
     imports: [NgIcon, ...HlmButtonImports],
     templateUrl: './navbar.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {

@@ -1,10 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    computed,
-    input,
-    output,
-} from '@angular/core'
+import { Component, computed, input, output } from '@angular/core'
 import { NgIcon, provideIcons } from '@ng-icons/core'
 import {
     lucideArrowUpRight,
@@ -29,7 +23,6 @@ import type { Project } from '../../project.model'
             lucideArrowUpRight,
         }),
     ],
-    changeDetection: ChangeDetectionStrategy.OnPush,
     templateUrl: './project-dialog-browser.component.html',
 })
 export class ProjectDialogBrowserComponent {

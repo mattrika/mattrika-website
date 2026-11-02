@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core'
+import { Component, signal } from '@angular/core'
 import { NgIcon, provideIcons } from '@ng-icons/core'
 import { lucideChevronDown } from '@ng-icons/lucide'
 
@@ -17,7 +17,6 @@ interface FaqItem {
         }),
     ],
     templateUrl: './faq-section.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FaqSectionComponent {
     openIndex = signal<number | null>(0)

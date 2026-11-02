@@ -1,7 +1,6 @@
 import { isPlatformBrowser } from '@angular/common'
 import {
     Component,
-    ChangeDetectionStrategy,
     inject,
     AfterViewInit,
     OnDestroy,
@@ -29,7 +28,6 @@ interface StatItem {
     imports: [NgIcon, ...HlmButtonImports, ...HlmBadgeImports],
     providers: [provideIcons({ lucideArrowRight, lucideExternalLink })],
     templateUrl: './hero-section.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './hero-section.component.css',
 })
 export class HeroSectionComponent implements AfterViewInit, OnDestroy {

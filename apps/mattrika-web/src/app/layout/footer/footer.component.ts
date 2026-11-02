@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject } from '@angular/core'
+import { Component, inject } from '@angular/core'
 import { NgIcon } from '@ng-icons/core'
 import { SmoothScrollService } from '../../services/smooth-scroll.service'
 
@@ -6,7 +6,6 @@ import { SmoothScrollService } from '../../services/smooth-scroll.service'
     selector: 'app-footer',
     imports: [NgIcon],
     templateUrl: './footer.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './footer.component.css',
 })
 export class FooterComponent {

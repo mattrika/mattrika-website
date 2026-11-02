@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject } from '@angular/core'
+import { Component, inject } from '@angular/core'
 import { NgIcon } from '@ng-icons/core'
 import { HlmDialogService } from '@spartan-ng/helm/dialog'
 import { TestimonialDialogComponent } from '../shared/testimonial-dialog/testimonial-dialog.component'
@@ -14,7 +14,6 @@ interface Feature {
     selector: 'app-why-us-section',
     imports: [NgIcon],
     templateUrl: './why-us-section.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
     styleUrl: './why-us-section.component.css',
 })
 export class WhyUsSectionComponent {

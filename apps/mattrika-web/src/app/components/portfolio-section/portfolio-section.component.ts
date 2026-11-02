@@ -1,10 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    inject,
-    input,
-    computed,
-} from '@angular/core'
+import { Component, inject, input, computed } from '@angular/core'
 import { RouterLink } from '@angular/router'
 import { NgIcon } from '@ng-icons/core'
 import { HlmButtonImports } from '@spartan-ng/helm/button'
@@ -25,7 +19,6 @@ import type { Project } from './project.model'
         ProjectCardComponent,
     ],
     templateUrl: './portfolio-section.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './portfolio-section.component.css',
 })
 export class PortfolioSectionComponent {
