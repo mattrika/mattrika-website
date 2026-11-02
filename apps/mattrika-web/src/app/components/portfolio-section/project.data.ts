@@ -197,10 +197,10 @@ export const projects: Project[] = [
         thumbnail: '/projects/Mrtasty/main.png',
         images: [
             'projects/Mrtasty/main.png',
-            'projects/Mrtasty/loaded favorites.png',
-            'projects/Mrtasty/sandwiches.png',
             'projects/Mrtasty/chicken-and-sides.png',
             'projects/Mrtasty/hot-dog.png',
+            'projects/Mrtasty/loaded favorites.png',
+            'projects/Mrtasty/sandwiches.png',
         ],
         summary: 'Restaurant Landing Page & Online Menu',
         description:
