@@ -1,0 +1,88 @@
+<a
+    href="#top"
+    (click)="scrollTo($event, '#top')"
+    class="inline-flex shrink-0 cursor-pointer items-center"
+    aria-label="Mattrika Home"
+>
+    <img
+        src="/Mattrika_logo.svg"
+        alt="Mattrika"
+        class="h-12 w-auto transition-transform duration-300 hover:scale-105 sm:h-14"
+    />
+</a>
+<p class="font-tight text-ink/75 mt-5 max-w-sm text-sm leading-relaxed">
+    A full-cycle software agency partnering with startups and enterprises to
+    design, engineer, and scale high-performance digital products.
+</p>
+
+<div class="mt-5">
+    <div
+        class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3.5 py-1.5 text-xs font-semibold text-emerald-800 shadow-2xs backdrop-blur-xs"
+    >
+        <span class="relative flex h-2 w-2">
+            <span
+                class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75"
+            ></span>
+            <span
+                class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"
+            ></span>
+        </span>
+        <span>Available for new projects Q2 2026</span>
+    </div>
+</div>
+
+<div class="mt-6">
+    <p
+        class="font-tight text-ink/50 text-[11px] font-semibold tracking-wider uppercase"
+    >
+        Follow our work
+    </p>
+    <div class="mt-3 flex items-center gap-3">
+        @for (social of socialLinks; track social.name) {
+            <a
+                [href]="social.href"
+                target="_blank"
+                rel="noopener noreferrer"
+                [attr.aria-label]="social.ariaLabel"
+                [title]="social.name"
+                class="group text-ink/75 hover:border-brand hover:bg-brand flex size-10 items-center justify-center rounded-full border border-slate-300/80 bg-white/80 shadow-xs backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:text-white hover:shadow-md"
+            >
+                @switch (social.icon) {
+                    @case ('linkedin') {
+                        <svg
+                            class="h-4 w-auto fill-current transition-transform duration-300 group-hover:scale-110"
+                            viewBox="0 0 448 512"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                            />
+                        </svg>
+                    }
+                    @case ('facebook') {
+                        <svg
+                            class="h-[18px] w-auto fill-current transition-transform duration-300 group-hover:scale-110"
+                            viewBox="0 0 320 512"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                            />
+                        </svg>
+                    }
+                    @case ('behance') {
+                        <svg
+                            class="h-[15px] w-auto fill-current transition-transform duration-300 group-hover:scale-110"
+                            viewBox="0 0 576 512"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M232 237.2c31.8-15.2 48.4-38.2 48.4-74 0-70.6-52.6-92.1-124.3-92.1H0v357.8h164.6c77.9 0 131.6-28.7 131.6-107.5 0-41.9-20.7-68.5-64.2-84.2zM75.3 129.2h68.6c32.7 0 54.8 9.1 54.8 37.7 0 29.3-22.1 39.4-54.8 39.4H75.3v-77.1zm84.4 200.7H75.3v-84.7h84.4c36.4 0 61.9 10.6 61.9 42.1 0 32.5-25.5 42.6-61.9 42.6zm307.7-175.6c-78.1 0-129.5 54.2-129.5 131.5 0 80.3 55.4 133.4 134.4 133.4 56.7 0 101.1-27.1 118.3-77.3h-58.3c-9.9 16.1-27.1 24.9-57.9 24.9-42.3 0-66.2-24.9-69.2-65.7h187.6c1.5-9.3 2.2-18.7 2.2-28.1 0-71.7-44.8-118.7-127.6-118.7zm-67.7 99.4c5.9-34 26.6-53.7 65.5-53.7 37.9 0 58.6 19.7 63 53.7h-128.5zM363.2 80.9h148.6v37.7H363.2V80.9z"
+                            />
+                        </svg>
+                    }
+                }
+            </a>
+        }
+    </div>
+</div>

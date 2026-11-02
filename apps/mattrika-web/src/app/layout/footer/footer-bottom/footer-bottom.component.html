@@ -1,0 +1,23 @@
+<p>© {{ currentYear }} Mattrika. All rights reserved.</p>
+
+<p class="hidden sm:block">Crafted with care in Northborough, Massachusetts.</p>
+
+<button
+    type="button"
+    (click)="scrollToTop($event)"
+    class="group text-ink/75 hover:border-brand hover:text-brand inline-flex cursor-pointer items-center gap-2 rounded-full border border-slate-300/80 bg-white/80 px-4 py-1.5 text-xs font-semibold shadow-2xs backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-sm"
+>
+    <span>Back to top</span>
+    <svg
+        class="size-3.5 transition-transform duration-300 group-hover:-translate-y-0.5"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+    >
+        <path d="m18 15-6-6-6 6" />
+    </svg>
+</button>

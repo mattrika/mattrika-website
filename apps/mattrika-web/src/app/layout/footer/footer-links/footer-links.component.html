@@ -1,0 +1,45 @@
+<div>
+    <h3 class="font-tight text-ink text-xs font-bold tracking-wider uppercase">
+        Navigation
+    </h3>
+    <ul class="mt-4 space-y-2.5">
+        @for (link of companyLinks; track link.label) {
+            <li>
+                <a
+                    [href]="link.href"
+                    (click)="scrollTo($event, link.href)"
+                    class="group font-tight text-ink/80 hover:text-brand inline-flex cursor-pointer items-center gap-1.5 text-sm transition-colors"
+                >
+                    <span>{{ link.label }}</span>
+                    <ng-icon
+                        name="lucideArrowUpRight"
+                        class="text-ink/35 group-hover:text-brand size-3.5 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    />
+                </a>
+            </li>
+        }
+    </ul>
+</div>
+
+<div>
+    <h3 class="font-tight text-ink text-xs font-bold tracking-wider uppercase">
+        Capabilities
+    </h3>
+    <ul class="mt-4 space-y-2.5">
+        @for (service of serviceLinks; track service.label) {
+            <li>
+                <a
+                    [href]="service.href"
+                    (click)="scrollTo($event, service.href)"
+                    class="group font-tight text-ink/80 hover:text-brand inline-flex cursor-pointer items-center gap-1.5 text-sm transition-colors"
+                >
+                    <span>{{ service.label }}</span>
+                    <ng-icon
+                        name="lucideArrowUpRight"
+                        class="text-ink/35 group-hover:text-brand size-3.5 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    />
+                </a>
+            </li>
+        }
+    </ul>
+</div>
