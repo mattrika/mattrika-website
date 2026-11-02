@@ -68,7 +68,7 @@
     </div>
 
     <!-- Center: Modern Browser Omnibar -->
-    <div class="mx-auto max-w-sm flex-1 sm:max-w-md">
+    <div class="mx-auto max-w-sm flex-1 sm:max-w-md lg:max-w-lg">
         @if (project().link && project().link !== '#') {
             <a
                 [href]="project().link"
@@ -129,7 +129,7 @@
 
 <!-- Browser Viewport (The Display Screen) -->
 <div
-    class="group/stage relative flex h-[210px] w-full shrink-0 items-center justify-center overflow-hidden bg-zinc-950/5 select-none sm:h-[260px] md:h-[300px] lg:h-[330px] dark:bg-zinc-950/40"
+    class="group/stage relative flex h-[220px] w-full shrink-0 items-center justify-center overflow-hidden bg-zinc-950/5 select-none sm:h-[300px] md:h-[370px] lg:h-[430px] dark:bg-zinc-950/40"
 >
     <img
         [src]="project().images[activeImage()]"
@@ -201,7 +201,7 @@
                 <img
                     [src]="image"
                     [alt]="''"
-                    class="bg-secondary/20 h-8 w-13 object-cover object-top sm:h-9 sm:w-16"
+                    class="bg-secondary/20 h-8 w-14 object-cover object-top sm:h-9 sm:w-16"
                     width="64"
                     height="36"
                     loading="lazy"

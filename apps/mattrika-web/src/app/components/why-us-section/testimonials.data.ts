@@ -4,6 +4,7 @@ export interface ClientTestimonial {
     company: string
     avatarInitials: string
     avatarImage: string
+    logo?: string
     headline: string
     shortText: string
     fullText: string[]
@@ -16,6 +17,7 @@ export const TESTIMONIALS: ClientTestimonial[] = [
         company: 'ContentERP',
         avatarInitials: 'SK',
         avatarImage: '/projects/p/p-one.jpg',
+        logo: '/testimonials/cerp.png',
         headline:
             'Working with the Mattrika team was honestly a dream come true',
         shortText:
@@ -34,6 +36,7 @@ export const TESTIMONIALS: ClientTestimonial[] = [
         company: 'Lieblingsmode',
         avatarInitials: 'MA',
         avatarImage: '/projects/p/p-two.jpg',
+        logo: '/testimonials/lb.png',
         headline: 'Completely transformed our e-commerce operations',
         shortText:
             'Mattrika Technologies completely transformed our e-commerce operations. They developed a seamless, user-friendly custom T-shirt printing platform that was surprisingly affordable for us. Their team is exceptionally responsive, technically skilled, and the end-product has been incredibly reliable since the day we launched.',
@@ -49,6 +52,7 @@ export const TESTIMONIALS: ClientTestimonial[] = [
         company: 'Quizzaro',
         avatarInitials: 'SK',
         avatarImage: '/projects/p/p-three.jpg',
+        logo: '/testimonials/quzz.png',
         headline: 'Incredibly fast, efficient and scaled flawlessly under load',
         shortText:
             'These guys were incredibly fast and efficient. They delivered a highly performant project that not only covered every single requirement of my quiz app but also scaled flawlessly under load. Their attention to detail and commitment to quality is truly unmatched.',

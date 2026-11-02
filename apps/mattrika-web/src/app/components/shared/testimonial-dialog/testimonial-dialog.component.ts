@@ -9,6 +9,8 @@ export interface TestimonialContext {
     authorName: string
     authorTitle: string
     avatarInitials: string
+    company?: string
+    logo?: string
 }
 
 @Component({

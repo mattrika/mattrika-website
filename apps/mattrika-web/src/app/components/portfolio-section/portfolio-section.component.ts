@@ -38,7 +38,7 @@ export class PortfolioSectionComponent {
     openProject(project: Project) {
         this._dialogService.open(ProjectDialogComponent, {
             contentClass:
-                'max-w-[calc(100%-1.5rem)] sm:max-w-3xl lg:max-w-4xl p-0! gap-0! overflow-hidden rounded-2xl border border-border/70 shadow-2xl bg-card max-h-[92vh] sm:mx-auto!',
+                'w-full max-w-[calc(100%-1.5rem)] sm:max-w-3xl md:max-w-4xl lg:max-w-5xl p-0! gap-0! overflow-hidden rounded-2xl border border-border/70 shadow-2xl bg-card max-h-[92vh] sm:mx-auto!',
             backdropClass: 'bg-black/60! backdrop-blur-xs!',
             showCloseButton: false,
             context: project,

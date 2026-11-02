@@ -16,6 +16,8 @@ export class TestimonialCardComponent {
     authorName = input<string>('')
     authorTitle = input<string>('')
     avatarInitials = input<string>('')
+    company = input<string>('')
+    logo = input<string>('')
 
     private readonly _dialogService = inject(HlmDialogService)
 
@@ -28,6 +30,8 @@ export class TestimonialCardComponent {
                 authorName: this.authorName(),
                 authorTitle: this.authorTitle(),
                 avatarInitials: this.avatarInitials(),
+                company: this.company(),
+                logo: this.logo(),
             },
         })
     }

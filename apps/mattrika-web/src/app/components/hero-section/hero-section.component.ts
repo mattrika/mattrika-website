@@ -6,6 +6,8 @@ import {
     OnDestroy,
     PLATFORM_ID,
     ChangeDetectorRef,
+    signal,
+    WritableSignal,
 } from '@angular/core'
 import { NgIcon, provideIcons } from '@ng-icons/core'
 import { lucideArrowRight, lucideExternalLink } from '@ng-icons/lucide'
@@ -19,8 +21,7 @@ interface StatItem {
     decimals: number
     suffix: string
     label: string
-    displayValue: string
-    value: string
+    displayValue: WritableSignal<string>
 }
 
 @Component({
@@ -41,32 +42,28 @@ export class HeroSectionComponent implements AfterViewInit, OnDestroy {
             decimals: 0,
             suffix: '+',
             label: 'Products shipped',
-            displayValue: '10+',
-            value: '10+',
+            displayValue: signal('10+'),
         },
         {
             target: 12,
             decimals: 0,
             suffix: '+',
             label: 'Happy clients',
-            displayValue: '12+',
-            value: '12+',
+            displayValue: signal('12+'),
         },
         {
             target: 3,
             decimals: 0,
             suffix: '+',
             label: 'Years in the craft',
-            displayValue: '3+',
-            value: '3+',
+            displayValue: signal('3+'),
         },
         {
             target: 99.9,
             decimals: 1,
             suffix: '%',
             label: 'Uptime delivered',
-            displayValue: '99.9%',
-            value: '99.9%',
+            displayValue: signal('99.9%'),
         },
     ]
 
@@ -126,26 +123,18 @@ export class HeroSectionComponent implements AfterViewInit, OnDestroy {
     }
 
     private startCountAnimation(): void {
-        const duration = 1800
-        const delay = 350
+        const duration = 1200
         let startTimestamp: number | null = null
 
         // Initialize display to zero
         for (const stat of this.stats) {
-            const initial = (0).toFixed(stat.decimals) + stat.suffix
-            stat.displayValue = initial
-            stat.value = initial
+            stat.displayValue.set((0).toFixed(stat.decimals) + stat.suffix)
         }
-        this._cdr.markForCheck()
+        this._cdr.detectChanges()
 
         const step = (timestamp: number) => {
             if (startTimestamp === null) {
-                startTimestamp = timestamp + delay
-            }
-
-            if (timestamp < startTimestamp) {
-                this.countAnimId = requestAnimationFrame(step)
-                return
+                startTimestamp = timestamp
             }
 
             const elapsed = timestamp - startTimestamp
@@ -155,23 +144,21 @@ export class HeroSectionComponent implements AfterViewInit, OnDestroy {
 
             for (const stat of this.stats) {
                 const currentVal = stat.target * easeOut
-                const formatted =
-                    currentVal.toFixed(stat.decimals) + stat.suffix
-                stat.displayValue = formatted
-                stat.value = formatted
+                stat.displayValue.set(
+                    currentVal.toFixed(stat.decimals) + stat.suffix,
+                )
             }
-            this._cdr.markForCheck()
+            this._cdr.detectChanges()
 
             if (progress < 1) {
                 this.countAnimId = requestAnimationFrame(step)
             } else {
                 for (const stat of this.stats) {
-                    const finalVal =
-                        stat.target.toFixed(stat.decimals) + stat.suffix
-                    stat.displayValue = finalVal
-                    stat.value = finalVal
+                    stat.displayValue.set(
+                        stat.target.toFixed(stat.decimals) + stat.suffix,
+                    )
                 }
-                this._cdr.markForCheck()
+                this._cdr.detectChanges()
                 this.countAnimId = null
             }
         }

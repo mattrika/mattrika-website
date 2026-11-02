@@ -1,23 +1,39 @@
 <div
     class="bg-ink flex h-full flex-col rounded-2xl p-6 text-white shadow-lg transition-colors sm:p-8"
 >
-    <div class="flex items-center gap-3">
-        <div class="flex items-center gap-0.5 text-yellow-400">
-            @for (i of [1, 2, 3, 4, 5]; track i) {
+    <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="flex items-center gap-0.5 text-yellow-400">
+                @for (i of [1, 2, 3, 4, 5]; track i) {
+                    <ng-icon
+                        name="lucideStar"
+                        class="h-5 w-5 text-yellow-400! drop-shadow-sm [&_svg]:fill-current"
+                    />
+                }
+            </div>
+            <span class="text-sm font-bold tracking-wide text-white">5.0</span>
+            <div class="hidden h-1 w-1 rounded-full bg-white/30 sm:block"></div>
+            <span
+                class="hidden items-center gap-1 text-xs font-medium tracking-wider text-white/70 uppercase sm:flex"
+            >
                 <ng-icon
-                    name="lucideStar"
-                    class="h-5 w-5 text-yellow-400! drop-shadow-sm [&_svg]:fill-current"
+                    name="lucideBadgeCheck"
+                    class="h-4 w-4 text-green-400!"
                 />
-            }
+                Verified
+            </span>
         </div>
-        <span class="text-sm font-bold tracking-wide text-white">5.0</span>
-        <div class="hidden h-1 w-1 rounded-full bg-white/30 sm:block"></div>
-        <span
-            class="hidden items-center gap-1 text-xs font-medium tracking-wider text-white/70 uppercase sm:flex"
-        >
-            <ng-icon name="lucideBadgeCheck" class="h-4 w-4 text-green-400!" />
-            Verified
-        </span>
+        @if (logo()) {
+            <span
+                class="flex h-8 shrink-0 items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.06] px-3.5 py-1 backdrop-blur-xs"
+            >
+                <img
+                    [src]="logo()"
+                    [alt]="company()"
+                    class="h-4.5 w-auto max-w-[85px] object-contain brightness-105"
+                />
+            </span>
+        }
     </div>
 
     <blockquote

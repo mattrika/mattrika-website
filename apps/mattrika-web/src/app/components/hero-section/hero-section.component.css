@@ -7,7 +7,7 @@
 
 /* ── 1. Base architectural traces (whisper-faint 1px static lines) ── */
 .tech-lines-base path {
-    stroke: rgba(26, 175, 171, 0.08);
+    stroke: rgba(26, 175, 171, 0.1);
     stroke-width: 1.2px;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -16,18 +16,19 @@
 
 /* ── 2. Micro junction nodes ─────────────────────────────────────── */
 .tech-nodes circle {
-    fill: rgba(26, 175, 171, 0.2);
-    filter: drop-shadow(0 0 1px rgba(26, 175, 171, 0.2));
+    fill: rgba(26, 175, 171, 0.28);
+    filter: drop-shadow(0 0 1.5px rgba(26, 175, 171, 0.25));
 }
 
 /* ── 3. Running light pulse beams along traces ───────────────────── */
 .pulse-path {
     fill: none;
-    stroke-width: 1.5px;
+    stroke-width: 1.6px;
     stroke-linecap: round;
     stroke-linejoin: round;
-    stroke-dasharray: 100 900;
+    stroke-dasharray: 110 890;
     stroke-dashoffset: 1000;
+    filter: drop-shadow(0 0 2.5px rgba(26, 175, 171, 0.25));
     animation: trace-pulse var(--dur, 9s) cubic-bezier(0.4, 0, 0.2, 1)
         var(--delay, 0s) infinite;
 }
@@ -63,13 +64,13 @@
         opacity: 0;
     }
     12% {
-        opacity: 0.45;
+        opacity: 0.6;
     }
     88% {
-        opacity: 0.45;
+        opacity: 0.6;
     }
     100% {
-        stroke-dashoffset: -100;
+        stroke-dashoffset: -110;
         opacity: 0;
     }
 }

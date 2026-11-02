@@ -1408,52 +1408,24 @@
                                 </div>
                             </div>
 
-                            <!-- White Company Logo Pill Badge -->
-                            <span
-                                aria-hidden="true"
-                                class="flex h-9 min-w-20 shrink-0 items-center justify-center gap-2 rounded-full bg-white px-3.5 py-1.5 shadow-sm sm:h-11 sm:min-w-24"
+                            <!-- Company Logo Badge on Dark Pill -->
+                            <div
+                                class="flex h-9 shrink-0 items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.06] px-3.5 py-1.5 backdrop-blur-xs sm:h-10 sm:px-4"
                             >
-                                @if (testimonial.company === 'ContentERP') {
-                                    <svg
-                                        class="size-3.5 text-[#0284c7] sm:size-4"
-                                        viewBox="0 0 24 24"
-                                        fill="currentColor"
+                                @if (testimonial.logo) {
+                                    <img
+                                        [src]="testimonial.logo"
+                                        [alt]="testimonial.company"
+                                        class="h-4.5 w-auto max-w-[85px] object-contain brightness-105 sm:h-6 sm:max-w-[115px]"
+                                    />
+                                } @else {
+                                    <span
+                                        class="font-tight text-xs font-semibold tracking-tight text-white/90 sm:text-sm"
                                     >
-                                        <path
-                                            d="M4 4h7v7H4V4zm9 0h7v7h-7V4zm-9 9h7v7H4v-7zm9 0h7v7h-7v-7z"
-                                        />
-                                    </svg>
-                                } @else if (
-                                    testimonial.company === 'Lieblingsmode'
-                                ) {
-                                    <svg
-                                        class="size-3.5 text-[#e11d48] sm:size-4"
-                                        viewBox="0 0 24 24"
-                                        fill="currentColor"
-                                    >
-                                        <path
-                                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                                        />
-                                    </svg>
-                                } @else if (
-                                    testimonial.company === 'Quizzaro'
-                                ) {
-                                    <svg
-                                        class="size-3.5 text-[#7c3aed] sm:size-4"
-                                        viewBox="0 0 24 24"
-                                        fill="currentColor"
-                                    >
-                                        <path
-                                            d="M12 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z"
-                                        />
-                                    </svg>
+                                        {{ testimonial.company }}
+                                    </span>
                                 }
-                                <span
-                                    class="font-tight text-xs font-bold tracking-tight text-[#0d1220] sm:text-sm"
-                                >
-                                    {{ testimonial.company }}
-                                </span>
-                            </span>
+                            </div>
                         </div>
 
                         <!-- Bottom Content: Bold Headline + Paragraph Quote -->

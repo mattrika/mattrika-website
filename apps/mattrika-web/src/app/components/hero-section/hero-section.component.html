@@ -6,7 +6,7 @@
     ═══════════════════════════════════════════════════════ -->
     <svg
         aria-hidden="true"
-        class="pointer-events-none absolute inset-0 -z-10 h-full w-full opacity-70"
+        class="pointer-events-none absolute inset-0 -z-10 h-full w-full opacity-80"
         viewBox="0 0 1440 900"
         fill="none"
         preserveAspectRatio="xMidYMid slice"
@@ -20,7 +20,7 @@
                 y2="0%"
             >
                 <stop offset="0%" stop-color="#1aafab" stop-opacity="0" />
-                <stop offset="50%" stop-color="#1aafab" stop-opacity="0.5" />
+                <stop offset="50%" stop-color="#1aafab" stop-opacity="0.62" />
                 <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0" />
             </linearGradient>
             <linearGradient
@@ -31,7 +31,7 @@
                 y2="0%"
             >
                 <stop offset="0%" stop-color="#6366f1" stop-opacity="0" />
-                <stop offset="50%" stop-color="#6366f1" stop-opacity="0.45" />
+                <stop offset="50%" stop-color="#6366f1" stop-opacity="0.58" />
                 <stop offset="100%" stop-color="#1aafab" stop-opacity="0" />
             </linearGradient>
         </defs>
@@ -130,7 +130,7 @@
     >
         <!-- Eyebrow -->
         <div
-            class="hero-enter reveal-init reveal-delay-1 border-border/60 bg-muted/50 text-muted-foreground inline-flex items-center gap-2 rounded-full border px-3.5 py-1 text-[11px] font-medium tracking-wide"
+            class="hero-enter reveal-init reveal-delay-1 border-border/60 bg-muted/50 text-muted-foreground inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-xs font-semibold tracking-wide"
         >
             <span class="relative flex h-1.5 w-1.5">
                 <span
@@ -140,7 +140,7 @@
                     class="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500"
                 ></span>
             </span>
-            Available for new projects
+            Software & Web Development Agency
         </div>
 
         <!-- Headline -->
@@ -200,7 +200,7 @@
                     >
                         <span
                             class="font-tight text-foreground text-3xl font-extrabold tracking-[-0.03em] tabular-nums sm:text-4xl"
-                            >{{ stat.displayValue }}</span
+                            >{{ stat.displayValue() }}</span
                         >
                         <span
                             class="font-tight text-muted-foreground text-xs font-medium"
