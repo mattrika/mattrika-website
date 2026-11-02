@@ -39,6 +39,14 @@ export class NavbarComponent {
         }
     }
 
+    get isHomeRoute(): boolean {
+        return (
+            this._router.url === '/' ||
+            this._router.url === '' ||
+            this._router.url.startsWith('/#')
+        )
+    }
+
     get isProjectsRoute(): boolean {
         return this._router.url.includes('/projects')
     }
@@ -49,6 +57,16 @@ export class NavbarComponent {
                 { label: 'Home', id: 'home', isRoute: true, path: '/' },
                 { label: 'Portfolio', id: 'portfolio' },
                 { label: 'Contact', id: 'contact' },
+            ]
+        }
+        if (!this.isHomeRoute) {
+            return [
+                { label: 'Home', id: 'home', isRoute: true, path: '/' },
+                { label: 'Work', id: 'portfolio' },
+                { label: 'Services', id: 'services' },
+                { label: 'Process', id: 'process' },
+                { label: 'Why Us', id: 'why-us' },
+                { label: 'FAQ', id: 'faq' },
             ]
         }
         return [
@@ -63,7 +81,7 @@ export class NavbarComponent {
     getInTouchText = GET_IN_TOUCH_TEXT
 
     handleLogoClick(event: Event) {
-        if (this.isProjectsRoute) {
+        if (!this.isHomeRoute) {
             event.preventDefault()
             this._router.navigate(['/'])
         } else {
@@ -76,6 +94,10 @@ export class NavbarComponent {
             event.preventDefault()
             this._router.navigate([link.path])
             this.mobileOpen.set(false)
+        } else if (!this.isHomeRoute) {
+            event.preventDefault()
+            this.mobileOpen.set(false)
+            this._router.navigate(['/'], { fragment: link.id })
         } else {
             this.scrollTo(event, link.id)
         }
@@ -84,6 +106,12 @@ export class NavbarComponent {
     scrollTo(event: Event, id: string) {
         event.preventDefault()
         this.mobileOpen.set(false)
+        if (!this.isHomeRoute) {
+            this._router.navigate(['/'], {
+                fragment: id === 'top' || id === 'home' ? undefined : id,
+            })
+            return
+        }
         if (id === 'top' || id === 'home') {
             this._smoothScroll.scrollTo(0)
             return

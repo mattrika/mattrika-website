@@ -1,6 +1,18 @@
-<p>© {{ currentYear }} Mattrika. All rights reserved.</p>
+<div
+    class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-center sm:justify-start"
+>
+    <p>© {{ currentYear }} Mattrika. All rights reserved.</p>
+    <span class="text-ink/30 hidden sm:inline">•</span>
+    <a routerLink="/privacy" class="hover:text-brand transition-colors"
+        >Privacy Policy</a
+    >
+    <span class="text-ink/30">•</span>
+    <a routerLink="/terms" class="hover:text-brand transition-colors"
+        >Terms &amp; Conditions</a
+    >
+</div>
 
-<p class="hidden sm:block">Crafted with care in Northborough, Massachusetts.</p>
+<p class="hidden lg:block">Crafted with care in Northborough, Massachusetts.</p>
 
 <button
     type="button"
