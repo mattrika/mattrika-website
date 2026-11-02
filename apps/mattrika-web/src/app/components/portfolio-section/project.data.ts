@@ -30,7 +30,6 @@ export const projects: Project[] = [
             '/projects/Lieblings-Mode/main.png',
             '/projects/Lieblings-Mode/product-category.png',
             '/projects/Lieblings-Mode/product-design.png',
-            '/projects/Lieblings-Mode/product-design-custom-image.png',
             '/projects/Lieblings-Mode/single-product.png',
             '/projects/Lieblings-Mode/terndig-product.png',
         ],
