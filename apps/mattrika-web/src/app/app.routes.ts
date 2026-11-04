@@ -22,6 +22,30 @@ export const appRoutes: Route[] = [
             import('./pages/sign/sign.component').then((m) => m.SignComponent),
     },
     {
+        path: 'terms',
+        loadComponent: () =>
+            import('./pages/terms/terms.component').then(
+                (m) => m.TermsComponent,
+            ),
+    },
+    {
+        path: 'terms-and-conditions',
+        redirectTo: 'terms',
+        pathMatch: 'full',
+    },
+    {
+        path: 'privacy',
+        loadComponent: () =>
+            import('./pages/privacy/privacy.component').then(
+                (m) => m.PrivacyComponent,
+            ),
+    },
+    {
+        path: 'privacy-policy',
+        redirectTo: 'privacy',
+        pathMatch: 'full',
+    },
+    {
         path: '**',
         loadComponent: () =>
             import('./pages/landing/landing.component').then(

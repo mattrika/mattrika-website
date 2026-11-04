@@ -1,72 +1,37 @@
-<footer class="border-border/70 border-t bg-white">
-    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            <div class="lg:col-span-2">
-                <div class="flex items-center gap-2.5">
-                    <a href="#top" class="flex shrink-0 items-center">
-                        <img
-                            src="/Mattrika_logo.svg"
-                            alt="Mattrika"
-                            class="h-9 w-auto"
-                        />
-                    </a>
-                </div>
-                <p
-                    class="text-muted-foreground mt-4 max-w-sm text-sm leading-6"
-                >
-                    A software &amp; web development agency helping startups and
-                    enterprises design, build, and scale products people love.
-                </p>
-            </div>
+<footer
+    class="text-ink relative isolate overflow-hidden border-t border-slate-200/90 bg-gradient-to-b from-[#f8fafc] via-[#f1f5f9] to-[#e2e8f0]"
+>
+    <div
+        aria-hidden="true"
+        class="via-brand/40 pointer-events-none absolute inset-x-0 top-0 h-[1.5px] bg-gradient-to-r from-transparent to-transparent"
+    ></div>
 
-            <div>
-                <h3 class="text-foreground text-sm font-semibold">Company</h3>
-                <ul class="mt-4 space-y-3">
-                    @for (link of companyLinks; track link.label) {
-                        <li>
-                            <a
-                                [href]="link.href"
-                                class="text-muted-foreground hover:text-foreground inline-flex items-center gap-1 text-sm transition-colors"
-                            >
-                                {{ link.label }}
-                                <ng-icon
-                                    name="lucideArrowUpRight"
-                                    class="h-3.5 w-3.5"
-                                />
-                            </a>
-                        </li>
-                    }
-                </ul>
-            </div>
+    <div
+        aria-hidden="true"
+        class="bg-brand/10 pointer-events-none absolute -top-40 right-1/4 -z-10 h-96 w-96 rounded-full blur-[130px]"
+    ></div>
+    <div
+        aria-hidden="true"
+        class="pointer-events-none absolute -bottom-40 left-1/4 -z-10 h-96 w-96 rounded-full bg-teal-400/10 blur-[130px]"
+    ></div>
 
-            <div>
-                <h3 class="text-foreground text-sm font-semibold">Contact</h3>
-                <ul class="text-muted-foreground mt-4 space-y-3 text-sm">
-                    <li class="flex items-center gap-2">
-                        <ng-icon name="lucideMail" class="h-4 w-4" />
-                        info@mattrika.com
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <ng-icon name="lucidePhone" class="h-4 w-4" />
-                        (774) 260-5004, (774) 223-9731
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <ng-icon name="lucideMapPin" class="h-4 w-4" />
-                        Northborough, Massachusetts
-                    </li>
-                </ul>
-            </div>
-        </div>
-
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div
-            class="border-border/70 mt-10 flex flex-col items-center justify-between gap-4 border-t pt-6 sm:flex-row"
+            class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8"
         >
-            <p class="text-muted-foreground text-xs">
-                © {{ currentYear }} Mattrika. All rights reserved.
-            </p>
-            <p class="text-muted-foreground text-xs">
-                Crafted with care in Northborough, Massachusetts.
-            </p>
+            <app-footer-brand
+                class="reveal-init reveal-delay-1 lg:col-span-5"
+            />
+            <app-footer-links
+                class="reveal-init reveal-delay-2 lg:col-span-4 lg:col-start-6"
+            />
+            <app-footer-contact
+                class="reveal-init reveal-delay-3 lg:col-span-3"
+            />
         </div>
+
+        <app-footer-bottom
+            class="reveal-init reveal-delay-4 mt-16 block border-t border-slate-300/70 pt-8"
+        />
     </div>
 </footer>

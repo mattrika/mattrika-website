@@ -1,46 +1,112 @@
-<section id="services" class="border-border/70 border-t bg-white">
-    <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center">
+<section
+    id="services"
+    class="border-border/60 bg-surface/30 relative isolate overflow-hidden border-t py-24 sm:py-32"
+>
+    <!-- Soft Ambient Color Accents for Depth -->
+    <div
+        aria-hidden="true"
+        class="pointer-events-none absolute -top-24 left-1/4 -z-10 h-96 w-96 rounded-full bg-emerald-500/[0.04] blur-3xl"
+    ></div>
+    <div
+        aria-hidden="true"
+        class="pointer-events-none absolute right-1/4 -bottom-24 -z-10 h-96 w-96 rounded-full bg-indigo-500/[0.04] blur-3xl"
+    ></div>
+
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="mx-auto max-w-3xl text-center">
             <span
-                hlmBadge
-                variant="outline"
-                class="rounded-full px-4 py-1.5 text-xs font-medium"
+                class="reveal-init reveal-delay-1 font-tight border-border/80 text-foreground inline-flex items-center gap-2 rounded-full border bg-white px-3.5 py-1.5 text-xs font-semibold tracking-tight shadow-2xs backdrop-blur-md"
             >
-                What we do
+                <span class="relative flex h-2 w-2">
+                    <span
+                        class="bg-brand absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
+                    ></span>
+                    <span
+                        class="bg-brand relative inline-flex h-2 w-2 rounded-full"
+                    ></span>
+                </span>
+                Core Capabilities
             </span>
+
             <h2
-                class="text-foreground mt-4 text-3xl font-semibold tracking-tight text-balance sm:text-4xl"
+                class="reveal-init reveal-delay-2 font-tight text-foreground mt-5 text-3xl leading-[1.12] font-bold tracking-tight text-balance sm:text-4xl lg:text-5xl"
             >
-                Everything you need to ship great software
+                One Team. A Complete
+                <span
+                    class="from-brand via-brand-dark to-brand bg-gradient-to-r bg-clip-text text-transparent"
+                >
+                    Digital Experience.
+                </span>
             </h2>
-            <p class="text-muted-foreground mt-4 text-base leading-7">
-                One team, full ownership. From product strategy and design to
-                development and ongoing operations.
+
+            <p
+                class="reveal-init reveal-delay-3 font-tight text-muted-foreground mx-auto mt-4 max-w-2xl text-base leading-relaxed text-pretty sm:text-lg"
+            >
+                We bring full-lifecycle capability across product strategy,
+                UI/UX design, modern web platforms, mobile apps, and cloud
+                operations.
             </p>
         </div>
 
-        <div class="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            @for (service of services; track service.title) {
-                <section
-                    hlmCard
-                    class="border-border/70 hover:border-brand/40 rounded-xl transition-all hover:-translate-y-0.5 hover:shadow-md"
+        <!-- Capability Cards Grid (Clean, Premium & Uncluttered) -->
+        <div class="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            @for (service of services; track service.title; let idx = $index) {
+                <div
+                    class="reveal-card capability-card group relative flex flex-col justify-start rounded-2xl border border-border/70 bg-white p-7 sm:p-8 shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl overflow-hidden {{
+                        service.accent.hoverBorder
+                    }}"
+                    [style.transition-delay]="(idx % 3) * 80 + 'ms'"
                 >
-                    <div hlmCardHeader>
-                        <span
-                            class="bg-mist text-brand mb-2 flex h-11 w-11 items-center justify-center rounded-lg"
+                    <!-- Subtle Corner Radial Glow -->
+                    <div
+                        class="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-gradient-to-br {{
+                            service.accent.gradient
+                        }}"
+                    ></div>
+
+                    <!-- Glowing Top Accent Line -->
+                    <div
+                        class="absolute top-0 inset-x-0 h-[2.5px] opacity-0 transition-opacity duration-300 group-hover:opacity-100 {{
+                            service.accent.topBar
+                        }}"
+                    ></div>
+
+                    <div class="relative z-10 flex h-full flex-col">
+                        <!-- Header with Icon & Index Number -->
+                        <div class="mb-6 flex items-center justify-between">
+                            <span
+                                class="flex h-13 w-13 items-center justify-center rounded-2xl border transition-all duration-300 {{
+                                    service.accent.iconBg
+                                }} {{ service.accent.iconHover }}"
+                            >
+                                <ng-icon
+                                    [name]="service.icon"
+                                    class="h-6 w-6 transition-transform duration-300 group-hover:scale-110"
+                                />
+                            </span>
+                            <span
+                                class="text-muted-foreground/40 group-hover:text-foreground/70 font-mono text-xs font-semibold tracking-wider transition-colors duration-200"
+                            >
+                                0{{ idx + 1 }}
+                            </span>
+                        </div>
+
+                        <!-- Title -->
+                        <h3
+                            class="font-tight text-foreground mb-3 text-xl font-bold tracking-tight transition-colors duration-200"
                         >
-                            <ng-icon [name]="service.icon" class="h-5 w-5" />
-                        </span>
-                        <h3 hlmCardTitle class="text-base">
                             {{ service.title }}
                         </h3>
-                    </div>
-                    <div hlmCardContent>
-                        <p class="text-muted-foreground text-sm leading-6">
+
+                        <!-- Description -->
+                        <p
+                            class="font-tight text-muted-foreground text-sm leading-relaxed sm:text-[15px]"
+                        >
                             {{ service.description }}
                         </p>
                     </div>
-                </section>
+                </div>
             }
         </div>
     </div>

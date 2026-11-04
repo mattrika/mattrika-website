@@ -1,0 +1,139 @@
+/* ═══════════════════════════════════════════════════════════════════
+   HERO SECTION – Digital Architectural Circuit Traces
+   ► Random lines traversing across the whole hero section
+   ► Running light pulses (stroke-dashoffset animation)
+   ► Preserved: .digital-gradient-text
+═══════════════════════════════════════════════════════════════════ */
+
+/* ── 1. Base architectural traces (whisper-faint 1px static lines) ── */
+.tech-lines-base path {
+    stroke: rgba(26, 175, 171, 0.1);
+    stroke-width: 1.2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+/* ── 2. Micro junction nodes ─────────────────────────────────────── */
+.tech-nodes circle {
+    fill: rgba(26, 175, 171, 0.28);
+    filter: drop-shadow(0 0 1.5px rgba(26, 175, 171, 0.25));
+}
+
+/* ── 3. Running light pulse beams along traces ───────────────────── */
+.pulse-path {
+    fill: none;
+    stroke-width: 1.6px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 110 890;
+    stroke-dashoffset: 1000;
+    filter: drop-shadow(0 0 2.5px rgba(26, 175, 171, 0.25));
+    animation: trace-pulse var(--dur, 9s) cubic-bezier(0.4, 0, 0.2, 1)
+        var(--delay, 0s) infinite;
+}
+
+.pulse-1 {
+    --dur: 8s;
+    --delay: 0s;
+}
+.pulse-2 {
+    --dur: 11s;
+    --delay: 2.5s;
+}
+.pulse-3 {
+    --dur: 9s;
+    --delay: 5s;
+}
+.pulse-4 {
+    --dur: 13s;
+    --delay: 1.5s;
+}
+.pulse-5 {
+    --dur: 14s;
+    --delay: 4s;
+}
+.pulse-6 {
+    --dur: 10s;
+    --delay: 7s;
+}
+
+@keyframes trace-pulse {
+    0% {
+        stroke-dashoffset: 1000;
+        opacity: 0;
+    }
+    12% {
+        opacity: 0.6;
+    }
+    88% {
+        opacity: 0.6;
+    }
+    100% {
+        stroke-dashoffset: -110;
+        opacity: 0;
+    }
+}
+
+/* ── 4. Preserved: Digital Gradient Headline ─────────────────────── */
+.digital-gradient-text {
+    background: linear-gradient(
+        135deg,
+        #1aafab 0%,
+        #0ea5e9 40%,
+        #6366f1 70%,
+        #1aafab 100%
+    );
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: digital-shine 7s ease infinite;
+}
+
+@keyframes digital-shine {
+    0% {
+        background-position: 0% center;
+    }
+    50% {
+        background-position: 100% center;
+    }
+    100% {
+        background-position: 0% center;
+    }
+}
+
+/* ── 5. Primary CTA ─────────────────────────────────────────────── */
+.cta-primary {
+    background: linear-gradient(135deg, #1aafab 0%, #0ea5e9 60%, #6366f1 100%);
+    background-size: 200% auto;
+    box-shadow: 0 4px 22px rgba(26, 175, 171, 0.26);
+    transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease,
+        background-position 0.5s ease;
+}
+.cta-primary:hover {
+    background-position: right center;
+    box-shadow: 0 6px 30px rgba(26, 175, 171, 0.38);
+}
+
+/* ── 6. Hero parallax ────────────────────────────────────────────── */
+.hero-content {
+    transform: translateY(var(--hero-parallax, 0px));
+    will-change: transform;
+}
+
+/* ── 7. Reduced motion ───────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    .pulse-path,
+    .digital-gradient-text {
+        animation: none;
+    }
+    .pulse-path {
+        opacity: 0;
+    }
+    .hero-content {
+        transform: none !important;
+    }
+}

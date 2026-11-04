@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Syne:wght@400..800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @import '@angular/cdk/overlay-prebuilt.css';
 @import '@spartan-ng/brain/hlm-tailwind-preset.css';
@@ -9,13 +9,13 @@
     --radius: 0.625rem;
 
     --background: #fafafa;
-    --foreground: #111113;
+    --foreground: #0d1220;
 
     --card: #ffffff;
-    --card-foreground: #111113;
+    --card-foreground: #0d1220;
 
     --popover: #ffffff;
-    --popover-foreground: #111113;
+    --popover-foreground: #0d1220;
 
     --primary: #1aafab;
     --primary-foreground: #ffffff;
@@ -23,34 +23,48 @@
     --secondary: #e6f7f6;
     --secondary-foreground: #0f766e;
 
-    --muted: #f4f4f5;
-    --muted-foreground: #6b6b73;
+    --muted: #f3f4f7;
+    --muted-foreground: #5b626e;
 
-    --accent: #e6f7f6;
-    --accent-foreground: #0f766e;
+    --accent: #c6f24e;
+    --accent-foreground: #0d1220;
 
     --destructive: #dc2626;
     --destructive-foreground: #ffffff;
 
-    --border: #e4e4e7;
-    --input: #e4e4e7;
+    --border: #e6e8ee;
+    --input: #e6e8ee;
     --ring: #1aafab;
 }
 
 @theme {
-    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-tight:
+        'Bricolage Grotesque', 'Plus Jakarta Sans', ui-sans-serif, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
 
     --color-brand: #1aafab;
     --color-brand-dark: #159692;
     --color-brand-foreground: #ffffff;
-    --color-ink: #0c0c0f;
-    --color-ink-soft: #6b6b73;
+
+    --color-lime: #c6f24e;
+    --color-lime-hover: #b8e840;
+    --color-lime-foreground: #0d1220;
+
+    --color-navy: #0e2a52;
+    --color-navy-dark: #081a33;
+
+    --color-ink: #0d1220;
+    --color-ink-deep: #03040a;
+    --color-ink-soft: #5b626e;
+
+    --color-surface: #f3f4f7;
+    --color-line: #e6e8ee;
     --color-mist: #f4f4f5;
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto !important;
 }
 
 main > section {
@@ -67,4 +81,174 @@ body {
 
 body {
     @apply bg-background text-foreground;
+}
+
+/* Infinite Marquee Animation for Client Feedback */
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee-reverse {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 120s linear infinite;
+    will-change: transform;
+}
+
+.animate-marquee-reverse:hover {
+    animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-marquee-reverse {
+        animation: none;
+    }
+}
+
+/* ==========================================================================
+   Super-Smooth Scroll Reveal Animation System
+   ========================================================================== */
+/* Default / Pre-Init: Fully visible fallback */
+.reveal-init,
+.reveal-card,
+.reveal-left,
+.reveal-right {
+    opacity: 1;
+    transform: none;
+    filter: none;
+}
+
+/* Hero section immediate entrance animation on page load */
+@keyframes hero-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+        filter: blur(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0px);
+    }
+}
+
+.hero-enter {
+    animation: hero-fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* When the scroll reveal system is active (armed on client in browser) */
+.reveal-ready .reveal-init {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(4px);
+    transition:
+        opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform, filter;
+}
+
+.reveal-ready .reveal-init.is-revealed {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    filter: blur(0px) !important;
+}
+
+.reveal-ready .reveal-card {
+    opacity: 0;
+    transform: translateY(34px) scale(0.975);
+    filter: blur(4px);
+    transition:
+        opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform, filter;
+}
+
+.reveal-ready .reveal-card.is-revealed {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+    filter: blur(0px) !important;
+}
+
+/* Horizontal slide variants */
+.reveal-ready .reveal-left {
+    opacity: 0;
+    transform: translateX(-32px);
+    filter: blur(4px);
+    transition:
+        opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform, filter;
+}
+.reveal-ready .reveal-left.is-revealed {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+    filter: blur(0px) !important;
+}
+
+.reveal-ready .reveal-right {
+    opacity: 0;
+    transform: translateX(32px);
+    filter: blur(4px);
+    transition:
+        opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform, filter;
+}
+.reveal-ready .reveal-right.is-revealed {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+    filter: blur(0px) !important;
+}
+
+/* Staggered cascading delays */
+.reveal-delay-1 {
+    transition-delay: 60ms;
+    animation-delay: 60ms;
+}
+.reveal-delay-2 {
+    transition-delay: 140ms;
+    animation-delay: 140ms;
+}
+.reveal-delay-3 {
+    transition-delay: 220ms;
+    animation-delay: 220ms;
+}
+.reveal-delay-4 {
+    transition-delay: 300ms;
+    animation-delay: 300ms;
+}
+.reveal-delay-5 {
+    transition-delay: 380ms;
+    animation-delay: 380ms;
+}
+.reveal-delay-6 {
+    transition-delay: 460ms;
+    animation-delay: 460ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal-init,
+    .reveal-card,
+    .reveal-left,
+    .reveal-right,
+    .hero-enter,
+    .reveal-ready .reveal-init,
+    .reveal-ready .reveal-card,
+    .reveal-ready .reveal-left,
+    .reveal-ready .reveal-right {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+        animation: none !important;
+    }
 }

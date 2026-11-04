@@ -1,72 +1,214 @@
-<section class="relative overflow-hidden">
+<section
+    class="bg-background text-foreground relative isolate flex min-h-[95vh] flex-col justify-center overflow-hidden px-4 pt-24 pb-20 sm:px-6 lg:px-8"
+>
+    <!-- ══════════════════════════════════════════════════════
+         DIGITAL ARCHITECTURAL LINES — distributed across hero
+    ═══════════════════════════════════════════════════════ -->
+    <svg
+        aria-hidden="true"
+        class="pointer-events-none absolute inset-0 -z-10 h-full w-full opacity-80"
+        viewBox="0 0 1440 900"
+        fill="none"
+        preserveAspectRatio="xMidYMid slice"
+    >
+        <defs>
+            <linearGradient
+                id="beam-grad-teal"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%"
+            >
+                <stop offset="0%" stop-color="#1aafab" stop-opacity="0" />
+                <stop offset="50%" stop-color="#1aafab" stop-opacity="0.62" />
+                <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0" />
+            </linearGradient>
+            <linearGradient
+                id="beam-grad-indigo"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%"
+            >
+                <stop offset="0%" stop-color="#6366f1" stop-opacity="0" />
+                <stop offset="50%" stop-color="#6366f1" stop-opacity="0.58" />
+                <stop offset="100%" stop-color="#1aafab" stop-opacity="0" />
+            </linearGradient>
+        </defs>
+
+        <!-- Static Base Traces (whisper-faint 1px architectural paths) -->
+        <g class="tech-lines-base">
+            <!-- Line 1: Upper traverse -->
+            <path
+                d="M -20,140 L 280,140 L 380,220 L 760,220 L 840,150 L 1180,150 L 1260,230 L 1460,230"
+            />
+            <!-- Line 2: Left vertical stepped jog -->
+            <path
+                d="M 160,-20 L 160,260 L 240,340 L 240,640 L 140,740 L 140,920"
+            />
+            <!-- Line 3: Mid transverse line -->
+            <path
+                d="M -20,440 L 320,440 L 440,540 L 700,540 L 820,430 L 1120,430 L 1220,530 L 1460,530"
+            />
+            <!-- Line 4: Right vertical stepped jog -->
+            <path
+                d="M 1280,-20 L 1280,280 L 1200,360 L 1200,660 L 1280,740 L 1280,920"
+            />
+            <!-- Line 5: Diagonal network trace across hero -->
+            <path
+                d="M 1460,100 L 1080,100 L 980,200 L 980,340 L 860,460 L 580,460 L 460,580 L 460,760 L 360,860 L -20,860"
+            />
+            <!-- Line 6: Lower baseline across stats -->
+            <path
+                d="M -20,720 L 420,720 L 520,660 L 920,660 L 1020,740 L 1460,740"
+            />
+        </g>
+
+        <!-- Animated Running Light Pulses (pure CSS stroke-dashoffset) -->
+        <g class="tech-lines-pulses">
+            <path
+                pathLength="1000"
+                class="pulse-path pulse-1"
+                stroke="url(#beam-grad-teal)"
+                d="M -20,140 L 280,140 L 380,220 L 760,220 L 840,150 L 1180,150 L 1260,230 L 1460,230"
+            />
+            <path
+                pathLength="1000"
+                class="pulse-path pulse-2"
+                stroke="url(#beam-grad-indigo)"
+                d="M 160,-20 L 160,260 L 240,340 L 240,640 L 140,740 L 140,920"
+            />
+            <path
+                pathLength="1000"
+                class="pulse-path pulse-3"
+                stroke="url(#beam-grad-teal)"
+                d="M -20,440 L 320,440 L 440,540 L 700,540 L 820,430 L 1120,430 L 1220,530 L 1460,530"
+            />
+            <path
+                pathLength="1000"
+                class="pulse-path pulse-4"
+                stroke="url(#beam-grad-indigo)"
+                d="M 1280,-20 L 1280,280 L 1200,360 L 1200,660 L 1280,740 L 1280,920"
+            />
+            <path
+                pathLength="1000"
+                class="pulse-path pulse-5"
+                stroke="url(#beam-grad-teal)"
+                d="M 1460,100 L 1080,100 L 980,200 L 980,340 L 860,460 L 580,460 L 460,580 L 460,760 L 360,860 L -20,860"
+            />
+            <path
+                pathLength="1000"
+                class="pulse-path pulse-6"
+                stroke="url(#beam-grad-indigo)"
+                d="M -20,720 L 420,720 L 520,660 L 920,660 L 1020,740 L 1460,740"
+            />
+        </g>
+
+        <!-- Micro Junction Dots -->
+        <g class="tech-nodes">
+            <circle cx="380" cy="220" r="2.5" />
+            <circle cx="840" cy="150" r="2.5" />
+            <circle cx="240" cy="340" r="2.5" />
+            <circle cx="440" cy="540" r="2.5" />
+            <circle cx="1200" cy="360" r="2.5" />
+            <circle cx="860" cy="460" r="2.5" />
+            <circle cx="520" cy="660" r="2.5" />
+        </g>
+    </svg>
+
+    <!-- Very subtle top-edge line -->
     <div
         aria-hidden="true"
-        class="bg-brand/15 pointer-events-none absolute -top-40 left-1/2 h-125 w-125 -translate-x-1/2 rounded-full blur-3xl"
+        class="via-brand/30 pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent to-transparent"
     ></div>
 
+    <!-- ══════════════════════════════════════════════════════
+         HERO CONTENT
+    ═══════════════════════════════════════════════════════ -->
     <div
-        class="mx-auto flex w-full max-w-7xl flex-col items-center px-4 pt-24 pb-16 text-center sm:px-6 sm:pt-32 sm:pb-24 lg:px-8"
+        class="hero-content relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center text-center"
     >
-        <span
-            hlmBadge
-            variant="secondary"
-            class="gap-1.5 rounded-full px-4 py-1.5 text-xs font-medium"
+        <!-- Eyebrow -->
+        <div
+            class="hero-enter reveal-init reveal-delay-1 border-border/60 bg-muted/50 text-muted-foreground inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-xs font-semibold tracking-wide"
         >
-            <ng-icon name="lucideSparkles" class="h-3.5 w-3.5" />
-            Software &amp; Web Development Agency
-        </span>
-
-        <h1
-            class="text-foreground mt-6 max-w-4xl text-4xl leading-tight font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl"
-        >
-            We design &amp; build digital products
-            <span
-                class="from-brand via-brand-dark to-brand bg-gradient-to-r bg-clip-text text-transparent"
-            >
-                that people love
+            <span class="relative flex h-1.5 w-1.5">
+                <span
+                    class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-70"
+                ></span>
+                <span
+                    class="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500"
+                ></span>
             </span>
+            Software & Web Development Agency
+        </div>
+
+        <!-- Headline -->
+        <h1
+            class="hero-enter reveal-init reveal-delay-2 font-tight text-foreground mt-8 max-w-4xl text-[2.7rem] leading-[1.06] font-extrabold tracking-[-0.03em] text-balance sm:text-5xl md:text-6xl lg:text-[4.5rem]"
+        >
+            We build digital products<br />
+            <span class="digital-gradient-text">that move markets</span>
         </h1>
 
+        <!-- Subtitle -->
         <p
-            class="text-muted-foreground mt-6 max-w-2xl text-base leading-7 sm:text-lg"
+            class="hero-enter reveal-init reveal-delay-3 font-tight text-muted-foreground mt-6 max-w-2xl text-base leading-relaxed text-pretty sm:text-lg"
         >
             Mattrika is a full-cycle development agency partnering with startups
             and enterprises to ship fast, scalable web platforms and mobile
             apps—from first wireframe to global scale.
         </p>
 
-        <div class="mt-10 flex flex-col items-center gap-3 sm:flex-row">
-            <a hlmBtn size="lg" href="#contact" class="w-full sm:w-auto">
-                {{ getInTouchText }}
-                <ng-icon name="lucideArrowRight" class="h-4 w-4" />
+        <!-- CTAs -->
+        <div
+            class="hero-enter reveal-init reveal-delay-4 mt-10 flex flex-col items-center gap-3 sm:flex-row"
+        >
+            <a
+                href="#contact"
+                (click)="scrollTo($event, 'contact')"
+                class="cta-primary group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full px-8 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] sm:w-auto"
+            >
+                <span class="relative z-10">Let's Build Together</span>
+                <ng-icon
+                    name="lucideArrowRight"
+                    class="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
+                />
+                <span
+                    class="absolute inset-0 -translate-x-full bg-gradient-to-r from-white/0 via-white/20 to-white/0 transition-transform duration-700 ease-in-out group-hover:translate-x-full"
+                ></span>
             </a>
             <a
-                hlmBtn
-                size="lg"
-                variant="outline"
-                href="#services"
-                (click)="scrollTo($event, 'services')"
-                class="w-full sm:w-auto"
+                href="#portfolio"
+                (click)="scrollTo($event, 'portfolio')"
+                class="group border-border/70 text-foreground/70 hover:border-border hover:text-foreground flex w-full items-center justify-center gap-2 rounded-full border bg-white px-8 py-3.5 text-sm font-medium shadow-2xs transition-all duration-300 sm:w-auto"
             >
-                Explore Services
+                See Our Work
+                <ng-icon
+                    name="lucideExternalLink"
+                    class="h-3.5 w-3.5 opacity-40 transition-colors duration-300 group-hover:opacity-70"
+                />
             </a>
         </div>
 
-        <div
-            class="mt-16 grid w-full max-w-4xl grid-cols-2 gap-8 sm:grid-cols-4"
-        >
-            @for (stat of stats; track stat.label) {
-                <div class="flex flex-col items-center gap-1">
-                    <span
-                        class="text-foreground text-2xl font-semibold tracking-tight sm:text-3xl"
+        <!-- Stats -->
+        <div class="hero-enter reveal-card reveal-delay-5 mt-20 w-full">
+            <div class="grid grid-cols-2 sm:grid-cols-4">
+                @for (stat of stats; track stat.label) {
+                    <div
+                        class="[&:not(:last-child)]:border-border/40 hover:bg-muted/30 flex flex-col items-center gap-1.5 py-6 transition-colors duration-300 [&:not(:last-child)]:border-r"
                     >
-                        {{ stat.value }}
-                    </span>
-                    <span class="text-muted-foreground text-sm">
-                        {{ stat.label }}
-                    </span>
-                </div>
-            }
+                        <span
+                            class="font-tight text-foreground text-3xl font-extrabold tracking-[-0.03em] tabular-nums sm:text-4xl"
+                            >{{ stat.displayValue() }}</span
+                        >
+                        <span
+                            class="font-tight text-muted-foreground text-xs font-medium"
+                            >{{ stat.label }}</span
+                        >
+                    </div>
+                }
+            </div>
         </div>
     </div>
 </section>

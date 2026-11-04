@@ -1,0 +1,47 @@
+/* ═══════════════════════════════════════════════════════════════════
+   CORE CAPABILITIES SECTION – Colorful & Professional Card Styling
+═══════════════════════════════════════════════════════════════════ */
+
+.capability-card {
+    will-change: transform, box-shadow, border-color;
+    position: relative;
+    background: #ffffff;
+}
+
+/* Subtle shine sweep on card hover */
+.capability-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: left 0.7s ease;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.capability-card:hover::after {
+    left: 150%;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .capability-card {
+        transition: none !important;
+        transform: none !important;
+    }
+    .capability-card:hover {
+        transform: none !important;
+    }
+    .capability-card::after {
+        display: none;
+    }
+}

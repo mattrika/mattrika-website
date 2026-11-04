@@ -1,43 +1,58 @@
-<section id="contact" class="bg-mist">
-    <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+<section id="contact" class="bg-surface py-20 sm:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div
-            class="bg-ink relative overflow-hidden rounded-2xl px-6 py-16 text-center sm:px-16 sm:py-20"
+            class="relative isolate overflow-hidden rounded-3xl bg-[#03040a] px-6 py-16 text-center text-white shadow-2xl sm:px-16 sm:py-24"
         >
+            <!-- Ambient Radial Glows -->
             <div
                 aria-hidden="true"
-                class="bg-brand/25 pointer-events-none absolute -top-24 right-0 h-96 w-96 rounded-full blur-3xl"
+                class="bg-brand/25 pointer-events-none absolute -top-32 right-1/4 -z-10 h-[450px] w-[450px] rounded-full blur-[120px]"
+            ></div>
+            <div
+                aria-hidden="true"
+                class="bg-secondary/30 pointer-events-none absolute -bottom-32 left-1/4 -z-10 h-[450px] w-[450px] rounded-full blur-[120px]"
             ></div>
 
-            <div class="relative mx-auto max-w-2xl">
-                <h2
-                    class="text-3xl font-semibold tracking-tight text-balance text-white sm:text-4xl"
+            <div class="relative mx-auto max-w-3xl">
+                <span
+                    class="reveal-init reveal-delay-1 font-tight inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-xs font-semibold text-white shadow-2xs backdrop-blur-md"
                 >
-                    Have a product in mind?
+                    <span
+                        class="h-1.5 w-1.5 rounded-full bg-emerald-500"
+                    ></span>
+                    Start A Conversation
+                </span>
+
+                <h2
+                    class="reveal-init reveal-delay-2 font-tight mt-6 text-3xl leading-[1.08] font-bold tracking-tight text-balance text-white sm:text-5xl lg:text-6xl"
+                >
+                    Have a product in mind? Let’s engineer it.
                 </h2>
-                <p class="mt-4 text-base leading-7 text-white/70">
-                    Tell us what you're building. We'll get back within one
-                    business day with ideas you can use immediately.
+                <p
+                    class="reveal-init reveal-delay-3 font-tight mt-6 text-base leading-relaxed text-pretty text-white/75 sm:text-lg"
+                >
+                    Tell us about your product goals or technical challenges.
+                    We’ll respond within 24 hours with architectural feedback
+                    and realistic timeline estimates.
                 </p>
+
+                <!-- Action Button in Mattrika Brand Teal + Direct Channels -->
                 <div
-                    class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
+                    class="reveal-init reveal-delay-4 mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
                 >
                     <a
-                        hlmBtn
-                        size="lg"
                         href="mailto:info@mattrika.com"
-                        class="w-full sm:w-auto"
+                        class="font-tight bg-brand shadow-brand/25 hover:bg-brand-dark flex w-full items-center justify-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white shadow-lg transition-all hover:scale-105 active:scale-95 sm:w-auto"
                     >
                         <ng-icon name="lucideMail" class="h-4 w-4" />
-                        info@mattrika.com
+                        <span>info@mattrika.com</span>
                     </a>
                     <a
-                        hlmBtn
-                        size="lg"
                         href="tel:+17742605004"
-                        class="w-full sm:w-auto"
+                        class="font-tight flex w-full items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-8 py-4 text-base font-medium text-white shadow-2xs backdrop-blur-md transition-all hover:bg-white/20 sm:w-auto"
                     >
                         <ng-icon name="lucidePhone" class="h-4 w-4" />
-                        (774) 260-5004
+                        <span>(774) 260-5004</span>
                     </a>
                 </div>
             </div>

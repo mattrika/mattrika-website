@@ -1,15 +1,7 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    inject,
-    input,
-    computed,
-} from '@angular/core'
+import { Component, inject, input, computed } from '@angular/core'
 import { RouterLink } from '@angular/router'
 import { NgIcon } from '@ng-icons/core'
-import { HlmBadgeImports } from '@spartan-ng/helm/badge'
 import { HlmButtonImports } from '@spartan-ng/helm/button'
-import { HlmCardImports } from '@spartan-ng/helm/card'
 import { HlmDialogService } from '@spartan-ng/helm/dialog'
 import { SectionHeaderComponent } from '../shared/section-header/section-header.component'
 import { ProjectCardComponent } from './project-card/project-card.component'
@@ -27,17 +19,16 @@ import type { Project } from './project.model'
         ProjectCardComponent,
     ],
     templateUrl: './portfolio-section.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './portfolio-section.component.css',
 })
 export class PortfolioSectionComponent {
     private readonly _dialogService = inject(HlmDialogService)
 
     maxProjects = input<number>()
-    sectionTitle = input<string>('Portfolio')
-    sectionHeading = input<string>("Selected work we're proud of")
+    sectionTitle = input<string>('Selected Work')
+    sectionHeading = input<string>('Real projects. Real impact.')
     sectionDescription = input<string>(
-        "A snapshot of products we've designed, built, and shipped — from SaaS platforms to mobile apps. Click any project to see the full story.",
+        "A selection of digital products, scalable web platforms, and mobile applications we've architected and built.",
     )
 
     displayedProjects = computed(() =>
@@ -46,7 +37,10 @@ export class PortfolioSectionComponent {
 
     openProject(project: Project) {
         this._dialogService.open(ProjectDialogComponent, {
-            contentClass: 'sm:max-w-4xl!',
+            contentClass:
+                'w-full max-w-[calc(100%-1.5rem)] sm:max-w-3xl md:max-w-4xl lg:max-w-5xl p-0! gap-0! overflow-hidden rounded-2xl border border-border/70 shadow-2xl bg-card max-h-[92vh] sm:mx-auto!',
+            backdropClass: 'bg-black/60! backdrop-blur-xs!',
+            showCloseButton: false,
             context: project,
         })
     }

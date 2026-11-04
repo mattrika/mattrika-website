@@ -1,48 +1,80 @@
 <section
     hlmCard
-    class="border-border/70 hover:border-brand/40 group flex h-full flex-col overflow-hidden rounded-xl pt-0! transition-all hover:-translate-y-0.5 hover:shadow-md"
+    class="bg-primary! text-primary-foreground! border-primary/30 group hover:shadow-primary/25 flex h-full cursor-pointer flex-col gap-0! overflow-hidden rounded-xl p-0! shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-white/40 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
+    (click)="onClick()"
+    role="button"
+    tabindex="0"
+    (keydown.enter)="onClick()"
+    [attr.aria-label]="'Open case study for ' + project().title"
 >
-    <div class="relative overflow-hidden">
+    <!-- Full-Bleed Image Container (Flush to top & sides, crisp divider, zero fading) -->
+    <div class="relative overflow-hidden border-b border-white/20 bg-black/10">
         <img
             [src]="project().thumbnail"
             [alt]="project().title"
             loading="lazy"
-            class="aspect-[21/9] w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+            class="aspect-[2/1] w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105"
         />
+
+        <!-- Subtle inner highlight ring for framed polish -->
         <div
-            class="bg-brand/45 pointer-events-none absolute inset-0 transition-opacity duration-300 group-hover:opacity-35"
+            class="pointer-events-none absolute inset-0 ring-1 ring-black/5 ring-inset dark:ring-white/10"
         ></div>
+
+        <!-- Floating Case Study Action Pill on Hover -->
         <div
-            class="pointer-events-none absolute inset-0 bg-linear-to-t from-black/55 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        ></div>
-        <span
-            class="pointer-events-none absolute top-3 left-3 rounded-md bg-black/40 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm"
+            class="text-brand pointer-events-none absolute right-3 bottom-3 flex translate-y-1 items-center gap-1.5 rounded-lg bg-white px-3 py-1 text-xs font-bold opacity-0 shadow-md backdrop-blur-md transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
         >
-            {{ project().category }}
-        </span>
-        <button
-            class="absolute right-3 bottom-3 flex cursor-pointer items-center gap-1 text-sm font-medium text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-            (click)="onClick()"
-        >
-            View case study
-            <ng-icon name="lucideArrowUpRight" class="h-4 w-4" />
-        </button>
+            <span>View case study</span>
+            <ng-icon name="lucideArrowUpRight" class="h-3.5 w-3.5" />
+        </div>
     </div>
 
-    <div hlmCardHeader class="flex-grow">
-        <h3 hlmCardTitle class="text-base">
-            {{ project().title }}
-        </h3>
-        <p hlmCardDescription class="text-sm">
+    <!-- Text & Tags Section (Clean, high visibility, solid contrast) -->
+    <div class="flex flex-col gap-2.5 p-4 sm:p-5">
+        <!-- Title & Action Arrow Button -->
+        <div class="flex items-start justify-between gap-3">
+            <h3
+                class="text-base leading-snug font-bold tracking-tight text-white group-hover:text-white"
+                [title]="project().title"
+            >
+                {{ project().title }}
+            </h3>
+
+            <div
+                class="group-hover:text-brand flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/20 text-white shadow-2xs transition-all duration-300 group-hover:scale-110 group-hover:bg-white"
+            >
+                <ng-icon
+                    name="lucideArrowUpRight"
+                    class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+            </div>
+        </div>
+
+        <!-- Summary: Solid high-visibility text -->
+        <p
+            class="line-clamp-2 text-xs leading-relaxed font-medium text-pretty text-white"
+            [title]="project().summary"
+        >
             {{ project().summary }}
         </p>
-    </div>
 
-    <div hlmCardFooter class="flex-wrap gap-1.5">
-        @for (tech of project().stack.slice(0, 3); track tech) {
-            <span hlmBadge variant="secondary" class="rounded-full text-xs">
-                {{ tech }}
-            </span>
-        }
+        <!-- Tech Stack Tags in the Text Section -->
+        <div class="flex flex-wrap items-center gap-1.5 pt-0.5">
+            @for (tech of project().stack.slice(0, 3); track tech) {
+                <span
+                    class="rounded-md border border-white/25 bg-white/20 px-2 py-0.5 font-mono text-[11px] font-semibold text-white shadow-2xs backdrop-blur-xs"
+                >
+                    {{ tech }}
+                </span>
+            }
+            @if (project().stack.length > 3) {
+                <span
+                    class="rounded-md bg-white/15 px-1.5 py-0.5 font-mono text-[11px] font-semibold text-white/90"
+                >
+                    +{{ project().stack.length - 3 }}
+                </span>
+            }
+        </div>
     </div>
 </section>

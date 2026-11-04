@@ -30,7 +30,6 @@ export const projects: Project[] = [
             '/projects/Lieblings-Mode/main.png',
             '/projects/Lieblings-Mode/product-category.png',
             '/projects/Lieblings-Mode/product-design.png',
-            '/projects/Lieblings-Mode/product-design-custom-image.png',
             '/projects/Lieblings-Mode/single-product.png',
             '/projects/Lieblings-Mode/terndig-product.png',
         ],
@@ -141,7 +140,11 @@ export const projects: Project[] = [
         title: 'PdfAir',
         category: 'Tools',
         thumbnail: '/projects/PdfAir/main.png',
-        images: ['/projects/PdfAir/main.png'],
+        images: [
+            '/projects/PdfAir/main.png',
+            '/projects/PdfAir/1.png',
+            '/projects/PdfAir/2.png',
+        ],
         summary: 'Manage and Sync Your PDF Library Across Devices',
         description:
             'You have always wanted to read the books in your collection. You see interesting artictes online and want to save it as PDF to read it later. But you dont have enough time. Also, you forget where you stored them.',
@@ -194,10 +197,10 @@ export const projects: Project[] = [
         thumbnail: '/projects/Mrtasty/main.png',
         images: [
             'projects/Mrtasty/main.png',
-            'projects/Mrtasty/loaded favorites.png',
-            'projects/Mrtasty/sandwiches.png',
             'projects/Mrtasty/chicken-and-sides.png',
             'projects/Mrtasty/hot-dog.png',
+            'projects/Mrtasty/loaded favorites.png',
+            'projects/Mrtasty/sandwiches.png',
         ],
         summary: 'Restaurant Landing Page & Online Menu',
         description:

@@ -1,0 +1,115 @@
+<section
+    id="faq"
+    class="border-border/60 bg-surface/30 relative isolate overflow-hidden border-t py-20 sm:py-28"
+>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="mx-auto max-w-3xl text-center">
+            <span
+                class="reveal-init reveal-delay-1 font-tight border-border/80 text-foreground inline-flex items-center gap-2 rounded-full border bg-white px-3.5 py-1.5 text-xs font-semibold tracking-tight shadow-2xs backdrop-blur-md"
+            >
+                <span class="bg-brand size-2 rounded-full"></span>
+                Frequently Asked Questions
+            </span>
+
+            <h2
+                class="reveal-init reveal-delay-2 font-tight text-foreground mt-5 text-3xl leading-[1.12] font-bold tracking-tight text-balance sm:text-4xl lg:text-5xl"
+            >
+                Clear Answers to
+                <span
+                    class="from-brand bg-gradient-to-r via-teal-600 to-cyan-500 bg-clip-text text-transparent"
+                >
+                    Common Questions.
+                </span>
+            </h2>
+
+            <p
+                class="reveal-init reveal-delay-3 font-tight text-muted-foreground mx-auto mt-4 max-w-2xl text-base leading-relaxed text-pretty sm:text-lg"
+            >
+                Everything you need to know about our collaboration models,
+                delivery milestones, engineering standards, and post-launch
+                scale.
+            </p>
+        </div>
+
+        <!-- Minimalist Cards with Crisp Gradient Border (No Glow) -->
+        <div
+            class="reveal-card reveal-delay-2 mx-auto mt-12 flex max-w-3xl flex-col gap-3.5 sm:mt-14 sm:gap-4"
+        >
+            @for (faq of faqs; track faq.question; let idx = $index) {
+                <div
+                    class="group relative rounded-2xl p-[1.5px] transition-all duration-300"
+                    [class]="
+                        openIndex() === idx
+                            ? 'from-brand bg-gradient-to-r via-cyan-400 to-teal-400 shadow-sm'
+                            : 'bg-border/80 hover:from-brand/40 hover:bg-gradient-to-r hover:via-cyan-400/30 hover:to-teal-400/40 hover:shadow-xs'
+                    "
+                >
+                    <!-- Card Body Interior (Clean White) -->
+                    <div
+                        class="overflow-hidden rounded-[15px] bg-white transition-colors duration-200"
+                    >
+                        <!-- Accordion Trigger Button -->
+                        <button
+                            type="button"
+                            (click)="toggle(idx)"
+                            class="flex w-full cursor-pointer items-center justify-between gap-3.5 p-4.5 text-left transition-colors hover:bg-slate-50/50 sm:gap-4 sm:p-5.5"
+                            [attr.aria-expanded]="openIndex() === idx"
+                        >
+                            <div class="flex items-center gap-3 sm:gap-3.5">
+                                <!-- Minimal Numeric Pill -->
+                                <span
+                                    class="shrink-0 rounded-md px-2 py-0.5 font-mono text-xs font-semibold transition-colors"
+                                    [class]="
+                                        openIndex() === idx
+                                            ? 'bg-brand/10 text-brand-dark'
+                                            : 'bg-surface text-muted-foreground group-hover:bg-brand/5 group-hover:text-foreground'
+                                    "
+                                >
+                                    {{ faq.number }}
+                                </span>
+
+                                <span
+                                    class="font-tight text-foreground group-hover:text-brand text-base font-bold transition-colors sm:text-lg"
+                                    [class.text-brand-dark]="
+                                        openIndex() === idx
+                                    "
+                                >
+                                    {{ faq.question }}
+                                </span>
+                            </div>
+
+                            <!-- Expand / Collapse Icon Circle -->
+                            <span
+                                class="flex size-8 shrink-0 items-center justify-center rounded-full transition-all duration-300"
+                                [class]="
+                                    openIndex() === idx
+                                        ? 'bg-brand rotate-180 text-white shadow-xs'
+                                        : 'border-border/80 bg-surface/70 text-muted-foreground group-hover:border-border group-hover:text-foreground border'
+                                "
+                            >
+                                <ng-icon
+                                    name="lucideChevronDown"
+                                    class="size-4"
+                                />
+                            </span>
+                        </button>
+
+                        <!-- Expanded Answer Content with Clean Divider -->
+                        @if (openIndex() === idx) {
+                            <div class="px-4.5 pt-0 pb-5 sm:px-6 sm:pb-6">
+                                <div class="border-border/50 border-t pt-4">
+                                    <p
+                                        class="font-tight text-muted-foreground text-sm leading-relaxed sm:text-base"
+                                    >
+                                        {{ faq.answer }}
+                                    </p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

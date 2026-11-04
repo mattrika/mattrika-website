@@ -1,20 +1,18 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core'
-import { NgIcon } from '@ng-icons/core'
+import { Component } from '@angular/core'
+import { FooterBottomComponent } from './footer-bottom/footer-bottom.component'
+import { FooterBrandComponent } from './footer-brand/footer-brand.component'
+import { FooterContactComponent } from './footer-contact/footer-contact.component'
+import { FooterLinksComponent } from './footer-links/footer-links.component'
 
 @Component({
     selector: 'app-footer',
-    imports: [NgIcon],
+    imports: [
+        FooterBrandComponent,
+        FooterLinksComponent,
+        FooterContactComponent,
+        FooterBottomComponent,
+    ],
     templateUrl: './footer.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './footer.component.css',
 })
-export class FooterComponent {
-    protected currentYear = new Date().getFullYear()
-
-    companyLinks = [
-        { label: 'Services', href: '#services' },
-        { label: 'Our Work', href: '#work' },
-        { label: 'Why Us', href: '#why-us' },
-        { label: 'Contact', href: '#contact' },
-    ]
-}
+export class FooterComponent {}

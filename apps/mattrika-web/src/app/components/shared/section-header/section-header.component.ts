@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core'
+import { Component, input } from '@angular/core'
 import { HlmBadgeImports } from '@spartan-ng/helm/badge'
 
 @Component({
@@ -6,7 +6,6 @@ import { HlmBadgeImports } from '@spartan-ng/helm/badge'
     imports: [...HlmBadgeImports],
     templateUrl: './section-header.component.html',
     styleUrl: './section-header.component.css',
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SectionHeaderComponent {
     badge = input.required<string>()

@@ -1,9 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    input,
-    inject,
-} from '@angular/core'
+import { Component, input, inject } from '@angular/core'
 import { NgIconComponent } from '@ng-icons/core'
 import { HlmBadgeImports } from '@spartan-ng/helm/badge'
 import { HlmDialogService } from '@spartan-ng/helm/dialog'
@@ -14,7 +9,6 @@ import { TestimonialDialogComponent } from '../testimonial-dialog/testimonial-di
     standalone: true,
     imports: [...HlmBadgeImports, NgIconComponent],
     templateUrl: './testimonial-card.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TestimonialCardComponent {
     shortText = input<string>('')
@@ -22,6 +16,8 @@ export class TestimonialCardComponent {
     authorName = input<string>('')
     authorTitle = input<string>('')
     avatarInitials = input<string>('')
+    company = input<string>('')
+    logo = input<string>('')
 
     private readonly _dialogService = inject(HlmDialogService)
 
@@ -34,6 +30,8 @@ export class TestimonialCardComponent {
                 authorName: this.authorName(),
                 authorTitle: this.authorTitle(),
                 avatarInitials: this.avatarInitials(),
+                company: this.company(),
+                logo: this.logo(),
             },
         })
     }
